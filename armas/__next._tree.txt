@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/2qycgukjeowwm.css","style"]
+:HL["/_next/static/chunks/1l20vw84-7qc3.css","style"]
 :HL["/_next/static/media/03fc1b4a8d284b5e-s.p.0wiir8udbzjvx.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/b897c54bb211cfcd-s.p.44ggz8q6qt7y3.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-sova.jpg","image"]
@@ -13,4 +13,4 @@
 :HL["https://media.valorant-api.com/weapons/9c82e19d-4575-0200-1a81-3eacf00cf872/displayicon.png","image"]
 :HL["https://media.valorant-api.com/weapons/ee8e8d15-496b-07ac-e5f6-8fae5d4c7b1a/displayicon.png","image"]
 :HL["https://media.valorant-api.com/weapons/e336c6b8-418d-9340-d77f-7a9e4cfe0702/displayicon.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4180,"slots":{"children":{"name":"armas","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"hRU5S0jpFDoE6ULkx9o_g"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4180,"slots":{"children":{"name":"armas","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"sLbuQA2pxdq6H3S4mI9Zn"}
