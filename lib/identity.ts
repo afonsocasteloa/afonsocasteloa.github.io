@@ -1,4 +1,4 @@
-import { PLAYER } from "@/lib/config";
+import { PLAYER, SOCIALS } from "@/lib/config";
 import { grouped } from "@/lib/format";
 import type { ActRow, AgentRow, MapRow, MatchCard, TrackerSnapshot, WeaponRow } from "@/lib/types";
 
@@ -80,7 +80,7 @@ export function personJsonLd(data: TrackerSnapshot) {
     url: "https://afonsocasteloa.github.io/",
     image: data.avatar,
     description: identity.bio,
-    sameAs: [PLAYER.trackerOverview],
+    sameAs: [PLAYER.trackerOverview, ...SOCIALS.flatMap((row) => (row.href ? [row.href] : []))],
   };
 }
 

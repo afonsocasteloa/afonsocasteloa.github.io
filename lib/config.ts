@@ -23,6 +23,19 @@ export const PLAYER = {
     "https://tracker.gg/valorant/profile/riot/Fazed%23any/performance?platform=pc&playlist=competitive",
 } as const;
 
+export type SocialLink = {
+  id: "discord" | "twitch" | "youtube" | "instagram" | "tiktok" | "twitter" | "github";
+  label: string;
+  href?: string;
+  copy?: string;
+};
+
+export const SOCIALS: SocialLink[] = [
+  { id: "discord", label: "Discord", copy: "afonso4343" },
+  { id: "twitch", label: "Twitch", href: "https://www.twitch.tv/fazed_val", copy: "Fazed_val" },
+  { id: "github", label: "GitHub", href: "https://github.com/afonsocasteloa" },
+];
+
 export const REFRESH_MS = 90_000;
 export const VAL_ASSETS = "https://media.valorant-api.com";
 export const TRN_CDN = "https://trackercdn.com/cdn/tracker.gg";

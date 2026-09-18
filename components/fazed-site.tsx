@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { PLAYER, REFRESH_MS } from "@/lib/config";
+import { PLAYER, REFRESH_MS, SOCIALS, type SocialLink } from "@/lib/config";
 import { grouped, hintTone, isSnapshot, relativePt, signed, tabHref, wrClass } from "@/lib/format";
 import { buildIdentity } from "@/lib/identity";
 import {
@@ -128,10 +128,15 @@ function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; 
 
       <div className="glass hud p-5">
         <p className="max-w-3xl text-sm leading-7 text-[#d5dbe6]">{me.bio}</p>
-        {!compact ? (
-          <div className="mt-4 flex flex-wrap gap-2">
-            <CopyBtn text={me.handle} label="Copiar Riot ID" />
-            <ShareBtn />
+        <div className="mt-4 flex flex-wrap gap-2">
+          {compact ? null : (
+            <>
+              <CopyBtn text={me.handle} label="Copiar Riot ID" />
+              <ShareBtn />
+            </>
+          )}
+          <SocialsBar />
+          {compact ? null : (
             <a
               href={PLAYER.trackerOverview}
               target="_blank"
@@ -140,8 +145,8 @@ function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; 
             >
               Tracker
             </a>
-          </div>
-        ) : null}
+          )}
+        </div>
       </div>
 
       {kit ? (
@@ -259,6 +264,50 @@ function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; 
         </>
       ) : null}
     </section>
+  );
+}
+
+function SocialsBar() {
+  const [copied, setCopied] = useState<string | null>(null);
+  if (!SOCIALS.length) return null;
+  return (
+    <div className="flex flex-wrap gap-2">
+      {SOCIALS.map((row: SocialLink) => {
+        const caption = row.copy ? `${row.label} · ${row.copy}` : row.label;
+        if (row.copy && !row.href) {
+          return (
+            <button
+              key={row.id}
+              type="button"
+              className="clip-btn border border-white/10 px-4 py-2 text-sm tracking-wide text-[#ece8e1] hover:border-[#ff4655]"
+              onClick={async () => {
+                try {
+                  await navigator.clipboard.writeText(row.copy || "");
+                  setCopied(row.id);
+                  window.setTimeout(() => setCopied(null), 1600);
+                } catch {
+                  setCopied(null);
+                }
+              }}
+            >
+              {copied === row.id ? "Copiado" : caption}
+            </button>
+          );
+        }
+        if (!row.href) return null;
+        return (
+          <a
+            key={row.id}
+            href={row.href}
+            target="_blank"
+            rel="noreferrer"
+            className="clip-btn border border-white/10 px-4 py-2 text-sm tracking-wide text-[#ece8e1] hover:border-[#ff4655]"
+          >
+            {caption}
+          </a>
+        );
+      })}
+    </div>
   );
 }
 
@@ -1110,6 +1159,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
                 </a>
                 <CopyBtn text={`${data.name}#${data.tag}`} label="Copiar Riot ID" />
                 <ShareBtn />
+                <SocialsBar />
                 <p className="self-center text-xs tracking-[0.18em] text-[#9aa3b2] uppercase">
                   {data.playtime} · {grouped(data.matches)} partidas · {grouped(data.wins)}W {grouped(data.losses)}L
                 </p>
@@ -1215,6 +1265,9 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
       </main>
 
       <footer className="relative z-10 mx-auto max-w-6xl px-5 pb-10 text-xs text-[#9aa3b2]">
+        <div className="mb-3">
+          <SocialsBar />
+        </div>
         Site pessoal do Afonso — {data.name}#{data.tag}. Dados do perfil público{" "}
         <a className="text-[#ece8e1] underline" href={PLAYER.trackerOverview} target="_blank" rel="noreferrer">
           Fazed#any no Tracker.gg
