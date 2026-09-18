@@ -693,13 +693,6 @@ export function FazedSite({ data: initial, tab }: { data: TrackerSnapshot; tab: 
             {refreshing ? " · a ler…" : ""}
           </span>
           <span className="hidden sm:inline">· {grouped(data.views)} views</span>
-          <button
-            type="button"
-            onClick={() => void pull()}
-            className="clip-btn border border-white/15 px-3 py-1 text-[10px] tracking-[0.16em] uppercase text-[#ece8e1] hover:border-[#ff4655]"
-          >
-            Atualizar
-          </button>
         </div>
       </header>
 
