@@ -59,24 +59,68 @@ function streakOf(matches: MatchCard[]) {
   return { n, won };
 }
 
-function CopyBtn({ text, label }: { text: string; label: string }) {
-  const [done, setDone] = useState(false);
+async function copyText(text: string) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const field = document.createElement("textarea");
+    field.value = text;
+    field.setAttribute("readonly", "");
+    field.style.position = "fixed";
+    field.style.left = "-9999px";
+    document.body.appendChild(field);
+    field.select();
+    const ok = document.execCommand("copy");
+    field.remove();
+    return ok;
+  }
+}
+
+function Copyable({
+  text,
+  className,
+  children,
+}: {
+  text: string;
+  className?: string;
+  children: (copied: boolean) => React.ReactNode;
+}) {
+  const [copied, setCopied] = useState(false);
   return (
     <button
       type="button"
-      className="clip-btn border border-white/10 px-4 py-2 text-sm tracking-wide text-[#ece8e1] hover:border-[#ff4655]"
+      title="Clica para copiar"
+      aria-label={copied ? `${text} copiado` : `Copiar ${text}`}
+      className={`cursor-pointer select-none ${className ?? ""}`}
       onClick={async () => {
-        try {
-          await navigator.clipboard.writeText(text);
-          setDone(true);
-          window.setTimeout(() => setDone(false), 1600);
-        } catch {
-          setDone(false);
-        }
+        const ok = await copyText(text);
+        if (!ok) return;
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 1400);
       }}
     >
-      {done ? "Copiado" : label}
+      {children(copied)}
     </button>
+  );
+}
+
+function RiotId({ name, tag }: { name: string; tag: string }) {
+  const id = `${name}#${tag}`;
+  return (
+    <Copyable text={id} className="mt-1 flex items-center gap-2 text-left text-xl hover:text-white">
+      {(copied) => (
+        <>
+          <span>
+            {name}
+            <span className="text-[#ff4655]">#{tag}</span>
+          </span>
+          <span className={`text-[10px] tracking-[0.18em] uppercase ${copied ? "text-[#1be285]" : "text-[#9aa3b2]"}`}>
+            {copied ? "Copiado" : "copiar"}
+          </span>
+        </>
+      )}
+    </Copyable>
   );
 }
 
@@ -93,9 +137,9 @@ function ShareBtn() {
             await navigator.share({ title: "Afonso · Fazed#any", url });
             return;
           }
-          await navigator.clipboard.writeText(url);
+          await copyText(url);
           setDone(true);
-          window.setTimeout(() => setDone(false), 1600);
+          window.setTimeout(() => setDone(false), 1400);
         } catch {
           setDone(false);
         }
@@ -115,7 +159,7 @@ function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; 
         <div className="flex items-center gap-3">
           <span className="h-6 w-1 bg-[#ff4655]" />
           <div>
-            <h2 className="stat-num text-3xl">{compact ? "Quem sou" : "Sobre mim"}</h2>
+            <h2 className="stat-num text-3xl">O meu jogo</h2>
             <p className="text-sm text-[#9aa3b2]">Portugal · PC · competitive · {data.current.name}</p>
           </div>
         </div>
@@ -124,31 +168,6 @@ function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; 
             Ver o perfil
           </a>
         ) : null}
-      </div>
-
-      <div className="glass hud p-5">
-        <p className="text-[10px] tracking-[0.22em] text-[#ff4655] uppercase">Sobre mim</p>
-        <p className="mt-2 max-w-3xl text-base leading-7 text-[#ece8e1]">{PLAYER.about}</p>
-        {!compact ? <p className="mt-4 max-w-3xl text-sm leading-7 text-[#9aa3b2]">{me.bio}</p> : null}
-        <div className="mt-4 flex flex-wrap gap-2">
-          {compact ? null : (
-            <>
-              <CopyBtn text={me.handle} label="Copiar Riot ID" />
-              <ShareBtn />
-            </>
-          )}
-          <SocialsBar />
-          {compact ? null : (
-            <a
-              href={PLAYER.trackerOverview}
-              target="_blank"
-              rel="noreferrer"
-              className="clip-btn border border-white/10 px-4 py-2 text-sm text-[#ece8e1] hover:border-[#ff4655]"
-            >
-              Tracker
-            </a>
-          )}
-        </div>
       </div>
 
       {kit ? (
@@ -220,12 +239,29 @@ function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; 
       {!compact ? (
         <>
           <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-            {me.facts.map((fact) => (
-              <div key={fact.label} className="border border-white/10 bg-black/20 p-3">
-                <p className="text-[10px] tracking-[0.18em] text-[#9aa3b2] uppercase">{fact.label}</p>
-                <p className="stat-num mt-1 text-lg">{fact.value}</p>
-              </div>
-            ))}
+            {me.facts.map((fact) =>
+              fact.label === "Riot ID" ? (
+                <Copyable
+                  key={fact.label}
+                  text={fact.value}
+                  className="border border-white/10 bg-black/20 p-3 text-left hover:border-[#ff4655]"
+                >
+                  {(copied) => (
+                    <>
+                      <p className="text-[10px] tracking-[0.18em] text-[#9aa3b2] uppercase">{fact.label}</p>
+                      <p className={`stat-num mt-1 text-lg ${copied ? "text-[#1be285]" : ""}`}>
+                        {copied ? "Copiado" : fact.value}
+                      </p>
+                    </>
+                  )}
+                </Copyable>
+              ) : (
+                <div key={fact.label} className="border border-white/10 bg-black/20 p-3">
+                  <p className="text-[10px] tracking-[0.18em] text-[#9aa3b2] uppercase">{fact.label}</p>
+                  <p className="stat-num mt-1 text-lg">{fact.value}</p>
+                </div>
+              ),
+            )}
           </div>
 
           <div className="glass hud p-5">
@@ -331,13 +367,10 @@ function SocialsBar() {
               type="button"
               className={socialClass(row.id)}
               onClick={async () => {
-                try {
-                  await navigator.clipboard.writeText(row.copy || "");
-                  setCopied(row.id);
-                  window.setTimeout(() => setCopied(null), 1600);
-                } catch {
-                  setCopied(null);
-                }
+                const ok = await copyText(row.copy || "");
+                if (!ok) return;
+                setCopied(row.id);
+                window.setTimeout(() => setCopied(null), 1400);
               }}
             >
               {inner}
@@ -1175,15 +1208,10 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
                 <img src={data.avatar} alt="" className="h-20 w-20 border border-white/20 object-cover" />
                 <div>
                   <h1 className="stat-num text-6xl leading-none md:text-7xl">{PLAYER.displayName}</h1>
-                  <p className="mt-1 text-xl">
-                    {data.name}
-                    <span className="text-[#ff4655]">#{data.tag}</span>
-                  </p>
+                  <RiotId name={data.name} tag={data.tag} />
                 </div>
               </div>
-              <p className="mt-4 max-w-xl text-sm leading-6 text-[#b7c0cc]">
-                {tab === "about" ? PLAYER.about : buildIdentity(data).bio}
-              </p>
+              <p className="mt-4 max-w-xl text-sm leading-6 text-[#b7c0cc]">{PLAYER.about}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {data.badges.map((badge) => (
                   <span key={badge.name} className="flex items-center gap-2 border border-white/10 bg-black/30 px-2 py-1 text-xs">
@@ -1203,7 +1231,6 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
                 >
                   ABRIR TRACKER
                 </a>
-                <CopyBtn text={`${data.name}#${data.tag}`} label="Copiar Riot ID" />
                 <ShareBtn />
                 <SocialsBar />
                 <p className="self-center text-xs tracking-[0.18em] text-[#9aa3b2] uppercase">
@@ -1314,7 +1341,11 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
         <div className="mb-3">
           <SocialsBar />
         </div>
-        Site pessoal do Afonso — {data.name}#{data.tag}. Dados do perfil público{" "}
+        Site pessoal do Afonso —{" "}
+        <Copyable text={`${data.name}#${data.tag}`} className="inline text-[#ece8e1] underline decoration-white/20 hover:decoration-[#ff4655]">
+          {(copied) => (copied ? "Copiado" : `${data.name}#${data.tag}`)}
+        </Copyable>
+        . Dados do perfil público{" "}
         <a className="text-[#ece8e1] underline" href={PLAYER.trackerOverview} target="_blank" rel="noreferrer">
           Fazed#any no Tracker.gg
         </a>
