@@ -6,6 +6,11 @@
 <priority>1</priority>
 </url>
 <url>
+<loc>https://afonsocasteloa.github.io/eu/</loc>
+<changefreq>hourly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
 <loc>https://afonsocasteloa.github.io/atos/</loc>
 <changefreq>hourly</changefreq>
 <priority>0.8</priority>
