@@ -1,0 +1,26 @@
+[build]
+  command = "npx next build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[[redirects]]
+  from = "/partidas"
+  to = "/partidas/"
+  status = 301
+
+[[redirects]]
+  from = "/agentes"
+  to = "/agentes/"
+  status = 301
+
+[[redirects]]
+  from = "/mapas"
+  to = "/mapas/"
+  status = 301
+
+[[redirects]]
+  from = "/armas"
+  to = "/armas/"
+  status = 301

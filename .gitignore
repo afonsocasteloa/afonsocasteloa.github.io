@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+build
+.vercel
+*.log
+.env*.local
+.DS_Store
+.tmp-fetch
+playwright-report
+test-results
+/test-results/
