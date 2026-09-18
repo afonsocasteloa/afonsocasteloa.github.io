@@ -167,7 +167,7 @@ async function scrape() {
   try {
     await page.goto(TRACKER, { waitUntil: "domcontentloaded", timeout: 90_000 });
     await page.waitForTimeout(8000);
-    page.setDefaultTimeout(180_000);
+    page.setDefaultTimeout(360_000);
 
     const payload = await page.evaluate(
       async ({ api, encoded }) => {
@@ -183,6 +183,8 @@ async function scrape() {
           return { ok: res.ok, status: res.status, json };
         };
 
+        const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
         const profile = await grab(`${api}/profile/riot/${encoded}?`);
         const playlist = await grab(
           `${api}/profile/riot/${encoded}/segments/playlist?playlist=competitive&source=web`,
@@ -196,7 +198,23 @@ async function scrape() {
             `${api}/profile/riot/${encoded}/segments/season?playlist=competitive&seasonId=${season.id}&source=web`,
           );
           acts.push({ id: season.id, meta: season, status: row.status, json: row.json });
-          await new Promise((resolve) => setTimeout(resolve, 80));
+          await sleep(80);
+        }
+
+        const actMatches = {};
+        for (const row of acts) {
+          const data = row.json?.data;
+          const list = Array.isArray(data) ? data : data ? [data] : [];
+          const season = list.find((item) => item?.type === "season") ?? list[0];
+          const played = season?.stats?.matchesPlayed?.value ?? 0;
+          if (!played) continue;
+          let res = await grab(`${api}/matches/riot/${encoded}?platform=pc&type=competitive&season=${row.id}`);
+          const count = res.json?.data?.matches?.length ?? 0;
+          if (!count) {
+            res = await grab(`${api}/matches/riot/${encoded}?platform=pc&type=competitive&seasonId=${row.id}`);
+          }
+          actMatches[row.id] = res;
+          await sleep(80);
         }
 
         const rosterId = profile.json?.data?.metadata?.premierRosterId;
@@ -204,7 +222,7 @@ async function scrape() {
           ? await grab(`https://api.tracker.gg/api/v1/valorant/premier/roster/${rosterId}/summary`)
           : { ok: false, status: 0, json: null };
 
-        return { profile, playlist, matches, acts, premier };
+        return { profile, playlist, matches, acts, premier, actMatches };
       },
       { api: API, encoded: ENCODED },
     );
@@ -282,38 +300,15 @@ function buildSnapshot(payload) {
   const trackerScore = currentAct?.score ?? 0;
 
   const matchesJson = payload.matches?.json?.data?.matches ?? [];
-  const recent = matchesJson.slice(0, 20).map((match) => {
-    const overview = (match.segments || []).find((row) => row.type === "overview") ?? match.segments?.[0] ?? {};
-    const ms = overview.stats ?? {};
-    const meta = match.metadata ?? {};
-    const om = overview.metadata ?? {};
-    const kills = num(ms, "kills");
-    const deaths = num(ms, "deaths");
-    const timestamp = meta.timestamp;
-    const tags = (om.tags || []).filter((tag) => tag.tone !== "Negative").slice(0, 3);
-    return {
-      id: match.attributes?.id || timestamp,
-      agent: om.agentName || "—",
-      agentIcon: om.agentImageUrl || "",
-      map: meta.mapName || "—",
-      mapImage: meta.mapImageUrl || mapImage(meta.mapName),
-      when: timestamp ? relativePt(timestamp) : "",
-      timestamp,
-      won: Boolean(om.hasWon) || meta.result === "victory",
-      placement: placementLabel(num(ms, "placement", 0)),
-      roundsWon: num(ms, "roundsWon"),
-      roundsLost: num(ms, "roundsLost"),
-      kills,
-      deaths,
-      assists: num(ms, "assists"),
-      kd: round(num(ms, "kdRatio", deaths ? kills / deaths : kills), 1),
-      acs: Math.round(num(ms, "scorePerRound")),
-      hs: Math.round(num(ms, "headshotsPercentage")),
-      dd: Math.round(num(ms, "damageDeltaPerRound")),
-      trs: Math.round(num(ms, "trnPerformanceScore")),
-      badges: tags.map(badgeLabel),
-    };
-  });
+  const recent = matchesJson.slice(0, 20).map(toMatchCard);
+  const matchesByAct = {};
+  for (const [id, pack] of Object.entries(payload.actMatches || {})) {
+    const list = (pack?.json?.data?.matches ?? []).slice(0, 20).map(toMatchCard);
+    if (list.length) matchesByAct[id] = list;
+  }
+  if (currentAct && !matchesByAct[currentAct.id] && recent.length) {
+    matchesByAct[currentAct.id] = recent.map((row) => ({ ...row, seasonId: row.seasonId || currentAct.id }));
+  }
 
   let headHits = 0;
   let bodyHits = 0;
@@ -531,6 +526,41 @@ function buildSnapshot(payload) {
     agents: agents.map(({ role, wins: _w, losses: _l, kills: _k, deaths: _d, assists: _a, ...rest }) => rest),
     acts,
     recent,
+    matchesByAct,
+  };
+}
+
+function toMatchCard(match) {
+  const overview = (match.segments || []).find((row) => row.type === "overview") ?? match.segments?.[0] ?? {};
+  const ms = overview.stats ?? {};
+  const meta = match.metadata ?? {};
+  const om = overview.metadata ?? {};
+  const kills = num(ms, "kills");
+  const deaths = num(ms, "deaths");
+  const timestamp = meta.timestamp;
+  const tags = (om.tags || []).filter((tag) => tag.tone !== "Negative").slice(0, 3);
+  return {
+    id: match.attributes?.id || timestamp,
+    agent: om.agentName || "—",
+    agentIcon: om.agentImageUrl || "",
+    map: meta.mapName || "—",
+    mapImage: meta.mapImageUrl || mapImage(meta.mapName),
+    when: timestamp ? relativePt(timestamp) : "",
+    timestamp,
+    won: Boolean(om.hasWon) || meta.result === "victory",
+    placement: placementLabel(num(ms, "placement", 0)),
+    roundsWon: num(ms, "roundsWon"),
+    roundsLost: num(ms, "roundsLost"),
+    kills,
+    deaths,
+    assists: num(ms, "assists"),
+    kd: round(num(ms, "kdRatio", deaths ? kills / deaths : kills), 1),
+    acs: Math.round(num(ms, "scorePerRound")),
+    hs: Math.round(num(ms, "headshotsPercentage")),
+    dd: Math.round(num(ms, "damageDeltaPerRound")),
+    trs: Math.round(num(ms, "trnPerformanceScore")),
+    badges: tags.map(badgeLabel),
+    seasonId: match.attributes?.seasonId,
   };
 }
 
@@ -542,6 +572,13 @@ function mergeFallback(next, prev) {
   if (!next.weapons?.length && prev.weapons?.length) next.weapons = prev.weapons;
   if (!next.recent?.length && prev.recent?.length) next.recent = prev.recent;
   if (!next.roles?.length && prev.roles?.length) next.roles = prev.roles;
+  const prevActs = prev.matchesByAct && typeof prev.matchesByAct === "object" ? prev.matchesByAct : {};
+  const nextActs = next.matchesByAct && typeof next.matchesByAct === "object" ? next.matchesByAct : {};
+  const merged = { ...prevActs };
+  for (const [id, list] of Object.entries(nextActs)) {
+    if (Array.isArray(list) && list.length) merged[id] = list;
+  }
+  next.matchesByAct = merged;
   return next;
 }
 
@@ -552,7 +589,7 @@ async function main() {
     const snapshot = mergeFallback(await scrape(), fallback);
     writeFileSync(livePath, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
     console.log(
-      `live.json ${snapshot.fetchedAt} · ${snapshot.matches} partidas · ${snapshot.acts.length} atos · ${snapshot.recent.length} matches`,
+      `live.json ${snapshot.fetchedAt} · ${snapshot.matches} partidas · ${snapshot.acts.length} atos · ${snapshot.recent.length} recentes · ${Object.keys(snapshot.matchesByAct || {}).length} atos com partidas`,
     );
   } catch (error) {
     console.error(error);

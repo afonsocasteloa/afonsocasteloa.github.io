@@ -47,6 +47,17 @@ body {
   justify-content: center;
 }
 
+.tap {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.tap:hover,
+.tap:focus-visible {
+  color: inherit;
+}
+
 .glass {
   background: linear-gradient(165deg, rgba(18, 20, 28, 0.9), rgba(7, 8, 14, 0.96));
   border: 1px solid rgba(255, 255, 255, 0.08);

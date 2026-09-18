@@ -3,6 +3,14 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { PLAYER, REFRESH_MS } from "@/lib/config";
 import { grouped, hintTone, isSnapshot, relativePt, signed, tabHref, wrClass } from "@/lib/format";
+import {
+  actMatchesHref,
+  agentMatchesHref,
+  mapMatchesHref,
+  trackerActMatchesHref,
+  trackerMatchHref,
+  trackerPlayerHref,
+} from "@/lib/hrefs";
 import type { ActRow, MatchCard, TabId, TrackerSnapshot } from "@/lib/types";
 
 const TABS: { id: TabId; label: string }[] = [
@@ -22,6 +30,20 @@ function useNow(ms = 30_000) {
     return () => window.clearInterval(id);
   }, [ms]);
   return now;
+}
+
+function useQueryFilters() {
+  const [q, setQ] = useState({ agente: "", mapa: "" });
+  useEffect(() => {
+    const read = () => {
+      const p = new URLSearchParams(window.location.search);
+      setQ({ agente: p.get("agente") || "", mapa: p.get("mapa") || "" });
+    };
+    read();
+    window.addEventListener("popstate", read);
+    return () => window.removeEventListener("popstate", read);
+  }, []);
+  return q;
 }
 
 function streakOf(matches: MatchCard[]) {
@@ -46,23 +68,75 @@ function uniqueActs(rows: (ActRow | undefined)[]) {
   return out;
 }
 
+function collectMatches(data: TrackerSnapshot): MatchCard[] {
+  const seen = new Set<string>();
+  const out: MatchCard[] = [];
+  const push = (match: MatchCard) => {
+    if (!match?.id || seen.has(match.id)) return;
+    seen.add(match.id);
+    out.push(match);
+  };
+  for (const list of Object.values(data.matchesByAct || {})) {
+    for (const match of list) push(match);
+  }
+  for (const match of data.recent) push(match);
+  out.sort((a, b) => (b.timestamp || "").localeCompare(a.timestamp || ""));
+  return out;
+}
+
+function matchesForAct(data: TrackerSnapshot, actId: string): MatchCard[] {
+  const fromAct = data.matchesByAct?.[actId];
+  if (fromAct?.length) return fromAct;
+  const tagged = collectMatches(data).filter((match) => match.seasonId === actId);
+  if (tagged.length) return tagged;
+  const act = data.acts.find((row) => row.id === actId);
+  if (act?.current) return data.recent;
+  return [];
+}
+
+function peakAct(data: TrackerSnapshot) {
+  const season = (data.peak.season || "").toLowerCase();
+  if (!season) return data.acts.find((act) => act.current);
+  return data.acts.find((act) => {
+    const short = act.short.toLowerCase();
+    const compact = `${act.episode} ${act.act}`.toLowerCase();
+    return season.includes(short) || short.includes(season) || season.includes(compact) || compact.includes(season);
+  });
+}
+
+function tabIsActive(item: TabId, tab: TabId, actId?: string) {
+  if (item === "acts") return tab === "acts" || Boolean(actId);
+  if (item === "matches") return tab === "matches" && !actId;
+  return tab === item;
+}
+
 function StatTile({
   label,
   value,
   hint,
+  href,
 }: {
   label: string;
   value: string;
   hint?: string | null;
+  href?: string;
 }) {
   const gold = hint?.startsWith("Top 1") || hint?.startsWith("Top 2");
-  return (
-    <div className="clip-card glass hud lift p-4">
+  const inner = (
+    <>
       <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">{label}</p>
       <p className={`stat-num mt-2 text-3xl ${gold ? "gold-stat" : "text-[#ece8e1]"}`}>{value}</p>
       {hint ? <p className={`mt-1 text-xs ${hintTone(hint)}`}>{hint}</p> : null}
-    </div>
+    </>
   );
+  if (href) {
+    return (
+      <a href={href} className="tap glass hud lift p-4">
+        {inner}
+      </a>
+    );
+  }
+  return <div className="clip-card glass hud lift p-4">{inner}</div>;
 }
 
 function StatChip({ label, value, tone }: { label: string; value: string; tone?: string }) {
@@ -77,7 +151,12 @@ function StatChip({ label, value, tone }: { label: string; value: string; tone?:
 function MatchRow({ match, now }: { match: MatchCard; now: number | null }) {
   const when = match.timestamp && now ? relativePt(match.timestamp, now) : match.when;
   return (
-    <article className="clip-card lift relative overflow-hidden border border-white/10 bg-[#0c1018]">
+    <a
+      href={trackerMatchHref(match.id)}
+      target="_blank"
+      rel="noreferrer"
+      className="tap lift relative overflow-hidden border border-white/10 bg-[#0c1018]"
+    >
       <img src={match.mapImage} alt="" className="absolute inset-0 h-full w-full object-cover opacity-20" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#05060a] via-[#05060a]/88 to-[#05060a]/55" />
       <div className={`absolute inset-y-0 left-0 w-1.5 ${match.won ? "bg-[#1be285]" : "bg-[#ff4655]"}`} />
@@ -109,13 +188,17 @@ function MatchRow({ match, now }: { match: MatchCard; now: number | null }) {
         <StatChip label="TRS" value={String(match.trs)} />
         <p className="stat-num text-right text-2xl text-[#ece8e1]">{match.kd.toFixed(1)}</p>
       </div>
-    </article>
+    </a>
   );
 }
 
 function ActCard({ act }: { act: ActRow }) {
   return (
-    <article className={`clip-card glass hud lift p-4 ${act.current ? "border-[#ff4655]/50" : ""}`}>
+    <a
+      href={actMatchesHref(act.id)}
+      className={`tap glass hud lift p-4 ${act.current ? "border-[#ff4655]/50" : ""}`}
+      aria-label={`${act.short} · ver partidas`}
+    >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
           <img src={act.rankIcon} alt="" className="h-12 w-12 object-contain" />
@@ -149,7 +232,8 @@ function ActCard({ act }: { act: ActRow }) {
           </div>
         ))}
       </div>
-    </article>
+      <p className="mt-3 text-[10px] tracking-[0.18em] uppercase text-[#ff4655]">Ver partidas →</p>
+    </a>
   );
 }
 
@@ -160,7 +244,13 @@ function RankJourney({ acts }: { acts: ActRow[] }) {
       <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Caminho de rank</p>
       <div className="mt-3 flex flex-wrap items-end gap-2">
         {journey.map((act) => (
-          <div key={act.id} className="flex w-11 flex-col items-center gap-1" title={`${act.short} · ${act.rank}`}>
+          <a
+            key={act.id}
+            href={actMatchesHref(act.id)}
+            className="flex w-11 flex-col items-center gap-1"
+            title={`${act.short} · ${act.rank}`}
+            aria-label={`${act.short} · ver partidas`}
+          >
             <img
               src={act.rankIcon}
               alt={act.rank}
@@ -169,7 +259,7 @@ function RankJourney({ acts }: { acts: ActRow[] }) {
             <span className={`text-[8px] leading-tight ${act.current ? "text-[#ff4655]" : "text-[#9aa3b2]"}`}>
               {act.short}
             </span>
-          </div>
+          </a>
         ))}
       </div>
     </div>
@@ -293,8 +383,11 @@ function OverviewBody({ data }: { data: TrackerSnapshot }) {
           </div>
           <div className="flex items-end gap-[3px]" aria-hidden>
             {form.map((match) => (
-              <span
+              <a
                 key={match.id}
+                href={trackerMatchHref(match.id)}
+                target="_blank"
+                rel="noreferrer"
                 title={`${match.won ? "W" : "L"} · ${match.map} · ${match.agent}`}
                 className={`h-8 w-2.5 ${match.won ? "bg-[#1be285]" : "bg-[#ff4655]"}`}
               />
@@ -305,12 +398,18 @@ function OverviewBody({ data }: { data: TrackerSnapshot }) {
 
       <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {data.overview.map((stat) => (
-          <StatTile key={stat.label} label={stat.label} value={stat.value} hint={stat.hint} />
+          <StatTile
+            key={stat.label}
+            label={stat.label}
+            value={stat.value}
+            hint={stat.hint}
+            href={stat.label === "Win %" || stat.label === "Wins" ? "/atos/" : "/partidas/"}
+          />
         ))}
       </section>
 
       <section className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-        <div className="clip-card glass hud p-5">
+        <a href="/partidas/" className="tap glass hud p-5">
           <div className="flex items-end justify-between gap-4">
             <h2 className="stat-num text-3xl">Tracker Score</h2>
             <p className="stat-num text-4xl text-[#ff4655]">
@@ -329,9 +428,9 @@ function OverviewBody({ data }: { data: TrackerSnapshot }) {
               </div>
             ))}
           </div>
-        </div>
+        </a>
 
-        <div className="clip-card glass hud p-5">
+        <a href="/partidas/" className="tap glass hud p-5">
           <h2 className="stat-num text-3xl">Accuracy · last 20</h2>
           <div className="mt-5 flex items-center gap-6">
             <div className="h-32 w-32 shrink-0 rounded-full" style={{ background: pie }} />
@@ -350,12 +449,12 @@ function OverviewBody({ data }: { data: TrackerSnapshot }) {
               </li>
             </ul>
           </div>
-        </div>
+        </a>
       </section>
 
       <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {data.roles.map((role) => (
-          <div key={role.name} className="clip-card glass hud lift p-4">
+          <a key={role.name} href="/agentes/" className="tap glass hud lift p-4">
             <div className="flex items-center gap-3">
               <img src={role.icon} alt="" className="h-8 w-8 object-contain" />
               <h3 className="stat-num text-2xl">{role.name}</h3>
@@ -367,7 +466,7 @@ function OverviewBody({ data }: { data: TrackerSnapshot }) {
               {role.record} · KDA {role.kda}
             </p>
             <p className="mt-1 text-xs text-[#9aa3b2]">{role.kdaLine}</p>
-          </div>
+          </a>
         ))}
       </section>
 
@@ -384,9 +483,15 @@ function OverviewBody({ data }: { data: TrackerSnapshot }) {
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {data.premier.members.map((member) => (
-            <span key={member} className="border border-white/10 px-2 py-1 text-xs">
+            <a
+              key={member}
+              href={trackerPlayerHref(member)}
+              target="_blank"
+              rel="noreferrer"
+              className="border border-white/10 px-2 py-1 text-xs hover:border-[#ff4655]"
+            >
               {member}
-            </span>
+            </a>
           ))}
         </div>
       </section>
@@ -398,15 +503,49 @@ function MatchesBody({
   data,
   now,
   preview,
+  actId,
+  agente,
+  mapa,
 }: {
   data: TrackerSnapshot;
   now: number | null;
   preview?: boolean;
+  actId?: string;
+  agente?: string;
+  mapa?: string;
 }) {
   const [filter, setFilter] = useState<"all" | "win" | "loss">("all");
-  const rows = preview
-    ? data.recent.slice(0, 6)
-    : data.recent.filter((match) => (filter === "all" ? true : filter === "win" ? match.won : !match.won));
+  const act = actId ? data.acts.find((row) => row.id === actId) : undefined;
+  const pool = useMemo(() => {
+    if (preview) return data.recent.slice(0, 6);
+    if (actId) return matchesForAct(data, actId);
+    return collectMatches(data).slice(0, 40);
+  }, [actId, data, preview]);
+
+  const filtered = pool.filter((match) => {
+    if (!preview && filter === "win" && !match.won) return false;
+    if (!preview && filter === "loss" && match.won) return false;
+    if (agente && match.agent.toLowerCase() !== agente.toLowerCase()) return false;
+    if (mapa && match.map.toLowerCase() !== mapa.toLowerCase()) return false;
+    return true;
+  });
+
+  const wins = filtered.filter((match) => match.won).length;
+  const title = act
+    ? `Partidas · ${act.short}`
+    : agente
+      ? `Partidas · ${agente}`
+      : mapa
+        ? `Partidas · ${mapa}`
+        : preview
+          ? "Últimas partidas"
+          : "Últimas competitivas";
+  const subtitle = act
+    ? `${act.wins}W – ${act.losses}L · ${act.winRate}% WR · ${act.matches} partidas no ato`
+    : agente || mapa
+      ? `${filtered.length} no snapshot · ${wins}W – ${filtered.length - wins}L`
+      : `${data.last20.record} · ${data.last20.kd} K/D · ${data.last20.adr} ADR`;
+  const trackerHref = act ? trackerActMatchesHref(act.id) : PLAYER.trackerMatches;
 
   return (
     <section className="space-y-3">
@@ -414,10 +553,8 @@ function MatchesBody({
         <div className="flex items-center gap-3">
           <span className="h-6 w-1 bg-[#ff4655]" />
           <div>
-            <h2 className="stat-num text-3xl">{preview ? "Últimas partidas" : "Últimas 20 competitivas"}</h2>
-            <p className="text-sm text-[#9aa3b2]">
-              {data.last20.record} · {data.last20.kd} K/D · {data.last20.adr} ADR
-            </p>
+            <h2 className="stat-num text-3xl">{title}</h2>
+            <p className="text-sm text-[#9aa3b2]">{subtitle}</p>
           </div>
         </div>
         {preview ? (
@@ -426,6 +563,16 @@ function MatchesBody({
           </a>
         ) : (
           <div className="flex flex-wrap items-center gap-2">
+            {act ? (
+              <a href="/atos/" className="text-xs text-[#ff4655] underline">
+                Todos os atos
+              </a>
+            ) : null}
+            {agente || mapa ? (
+              <a href="/partidas/" className="text-xs text-[#ff4655] underline">
+                Limpar filtro
+              </a>
+            ) : null}
             {(["all", "win", "loss"] as const).map((item) => (
               <button
                 key={item}
@@ -438,15 +585,23 @@ function MatchesBody({
                 {item === "all" ? "Todas" : item === "win" ? "Vitórias" : "Derrotas"}
               </button>
             ))}
-            <a href={PLAYER.trackerMatches} className="text-xs text-[#ff4655] underline" target="_blank" rel="noreferrer">
+            <a href={trackerHref} className="text-xs text-[#ff4655] underline" target="_blank" rel="noreferrer">
               Tracker
             </a>
           </div>
         )}
       </div>
-      {rows.map((match) => (
+      {filtered.map((match) => (
         <MatchRow key={match.id} match={match} now={now} />
       ))}
+      {!preview && filtered.length === 0 ? (
+        <div className="glass hud p-6 text-sm text-[#9aa3b2]">
+          <p>Ainda não há estas partidas neste snapshot.</p>
+          <a href={trackerHref} className="mt-2 inline-block text-[#ff4655] underline" target="_blank" rel="noreferrer">
+            Abrir no Tracker
+          </a>
+        </div>
+      ) : null}
     </section>
   );
 }
@@ -490,7 +645,7 @@ function AgentsBody({ data, preview }: { data: TrackerSnapshot; preview?: boolea
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         {rows.map((agent) => (
-          <article key={agent.name} className="clip-card glass hud lift p-5">
+          <a key={agent.name} href={agentMatchesHref(agent.name)} className="tap glass hud lift p-5">
             <div className="flex items-center gap-3">
               <img src={agent.icon} alt="" className="h-14 w-14 object-contain" />
               <div>
@@ -519,7 +674,8 @@ function AgentsBody({ data, preview }: { data: TrackerSnapshot; preview?: boolea
             <p className="mt-3 text-xs text-[#9aa3b2]">
               Melhor mapa · {agent.bestMap} {agent.bestMapWr}
             </p>
-          </article>
+            <p className="mt-3 text-[10px] tracking-[0.18em] uppercase text-[#ff4655]">Ver partidas →</p>
+          </a>
         ))}
       </div>
       {!preview ? (
@@ -548,7 +704,7 @@ function MapsBody({ data, preview }: { data: TrackerSnapshot; preview?: boolean 
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         {rows.map((map) => (
-          <article key={map.name} className="clip-card lift relative overflow-hidden border border-white/10">
+          <a key={map.name} href={mapMatchesHref(map.name)} className="tap lift relative overflow-hidden border border-white/10">
             <img src={map.image} alt="" className="h-52 w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-4">
@@ -562,8 +718,9 @@ function MapsBody({ data, preview }: { data: TrackerSnapshot; preview?: boolean 
               <div className="mt-2 h-1.5 bg-white/15">
                 <div className="h-full bg-[#1be285]" style={{ width: `${map.winRate}%` }} />
               </div>
+              <p className="mt-2 text-[10px] tracking-[0.18em] uppercase text-[#ff4655]">Ver partidas →</p>
             </div>
-          </article>
+          </a>
         ))}
       </div>
       {!preview ? (
@@ -593,7 +750,13 @@ function WeaponsBody({ data, preview }: { data: TrackerSnapshot; preview?: boole
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         {list.map((weapon) => (
-          <article key={weapon.name} className="clip-card glass hud lift p-5">
+          <a
+            key={weapon.name}
+            href={PLAYER.trackerWeapons}
+            target="_blank"
+            rel="noreferrer"
+            className="tap glass hud lift p-5"
+          >
             <p className="text-[10px] tracking-[0.2em] text-[#9aa3b2] uppercase">{weapon.type}</p>
             <img src={weapon.icon} alt="" className="mx-auto my-4 h-16 object-contain" />
             <p className="stat-num text-3xl">{weapon.name}</p>
@@ -611,7 +774,8 @@ function WeaponsBody({ data, preview }: { data: TrackerSnapshot; preview?: boole
             <p className="mt-2 text-xs text-[#9aa3b2]">
               HS {weapon.head}% · Body {weapon.body}% · Legs {weapon.legs}%
             </p>
-          </article>
+            <p className="mt-3 text-[10px] tracking-[0.18em] uppercase text-[#ff4655]">Ver no Tracker →</p>
+          </a>
         ))}
       </div>
       {!preview ? (
@@ -623,12 +787,14 @@ function WeaponsBody({ data, preview }: { data: TrackerSnapshot; preview?: boole
   );
 }
 
-export function FazedSite({ data: initial, tab }: { data: TrackerSnapshot; tab: TabId }) {
+export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot; tab: TabId; actId?: string }) {
   const [data, setData] = useState(initial);
   const [live, setLive] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const now = useNow();
+  const query = useQueryFilters();
   const currentAct = data.acts.find((act) => act.current);
+  const peak = peakAct(data);
   const streak = useMemo(() => streakOf(data.recent), [data.recent]);
   const updated = now ? relativePt(data.fetchedAt, now) : null;
 
@@ -684,7 +850,9 @@ export function FazedSite({ data: initial, tab }: { data: TrackerSnapshot; tab: 
       <p className="watermark pointer-events-none absolute right-[-4%] top-24 select-none stat-num">VALORANT</p>
 
       <header className="relative z-10 mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-5">
-        <p className="stat-num text-sm tracking-[0.5em] text-[#ff4655]">FAZED</p>
+        <a href="/" className="stat-num text-sm tracking-[0.5em] text-[#ff4655]">
+          FAZED
+        </a>
         <div className="flex flex-wrap items-center justify-end gap-3 text-xs text-[#9aa3b2]">
           <span className={`h-2 w-2 rounded-full ${liveTone} ${live ? "live-dot" : ""}`} />
           <span>
@@ -746,10 +914,15 @@ export function FazedSite({ data: initial, tab }: { data: TrackerSnapshot; tab: 
             <div className="relative flex flex-col items-center justify-center overflow-hidden border border-white/10 bg-black/35 p-5 text-center">
               <img src={data.cardWide} alt="" className="absolute inset-0 h-full w-full object-cover opacity-30" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#05060a] via-[#05060a]/70 to-transparent" />
-              <img src={data.current.icon} alt={data.current.name} className="rank-glow relative h-28 w-28 object-contain" />
-              <p className="stat-num relative mt-3 text-3xl">{data.current.name}</p>
-              <p className="relative text-sm text-[#9aa3b2]">Rating atual</p>
-              <div className="relative mt-4 flex items-center gap-3 border-t border-white/10 pt-4">
+              <a href={currentAct ? actMatchesHref(currentAct.id) : "/atos/"} className="relative z-10 flex flex-col items-center">
+                <img src={data.current.icon} alt={data.current.name} className="rank-glow h-28 w-28 object-contain" />
+                <p className="stat-num mt-3 text-3xl">{data.current.name}</p>
+                <p className="text-sm text-[#9aa3b2]">Rating atual</p>
+              </a>
+              <a
+                href={peak ? actMatchesHref(peak.id) : "/atos/"}
+                className="relative z-10 mt-4 flex items-center gap-3 border-t border-white/10 pt-4"
+              >
                 <img src={data.peak.icon} alt="" className="h-10 w-10 object-contain" />
                 <div className="text-left">
                   <p className="text-[10px] tracking-[0.2em] text-[#9aa3b2] uppercase">Peak</p>
@@ -758,56 +931,59 @@ export function FazedSite({ data: initial, tab }: { data: TrackerSnapshot; tab: 
                   </p>
                   <p className="text-xs text-[#9aa3b2]">{data.peak.season}</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </section>
 
         <section className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {currentAct ? (
-            <div className="clip-card glass hud p-4">
+            <a href={actMatchesHref(currentAct.id)} className="tap glass hud p-4">
               <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Assinatura · acto atual</p>
               <p className="stat-num gold-stat mt-1 text-4xl">{currentAct.hs}</p>
               <p className="text-xs text-[#f5d76e]">{currentAct.short} HS%</p>
-            </div>
+            </a>
           ) : null}
-          <div className="clip-card glass hud p-4">
+          <a href="/atos/" className="tap glass hud p-4">
             <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Carreira</p>
             <p className="stat-num mt-1 text-4xl">{data.winRate}%</p>
             <p className="text-xs text-[#9aa3b2]">
               {grouped(data.wins)}W {grouped(data.losses)}L · {data.playtime}
             </p>
-          </div>
-          <div className="clip-card glass hud p-4">
+          </a>
+          <a href={currentAct ? actMatchesHref(currentAct.id) : "/partidas/"} className="tap glass hud p-4">
             <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Tracker Score</p>
             <p className="stat-num mt-1 text-4xl text-[#ff4655]">{data.trackerScore}</p>
             <p className="text-xs text-[#9aa3b2]">de 1000 · acto atual {currentAct?.short ?? "—"}</p>
-          </div>
-          <div className="clip-card glass hud p-4">
+          </a>
+          <a href="/partidas/" className="tap glass hud p-4">
             <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Sequência</p>
             <p className={`stat-num mt-1 text-4xl ${streak.won ? "text-[#1be285]" : "text-[#ff8a7a]"}`}>
               {streak.n}
               {streak.won ? "W" : "L"}
             </p>
             <p className="text-xs text-[#9aa3b2]">últimas competitivas</p>
-          </div>
+          </a>
         </section>
 
         <nav className="sticky top-3 z-20 mt-8 flex flex-wrap gap-2 overflow-x-auto border border-white/10 bg-[#05060a]/85 p-2 backdrop-blur-md" aria-label="Secções">
-          {TABS.map((item) => (
-            <a
-              key={item.id}
-              href={tabHref(item.id)}
-              aria-current={tab === item.id ? "page" : undefined}
-              className={`clip-btn px-4 py-2 text-sm tracking-[0.16em] uppercase ${
-                tab === item.id
-                  ? "bg-[#ff4655] text-[#05060a]"
-                  : "border border-white/10 text-[#d5dbe6] hover:border-[#ff4655]"
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
+          {TABS.map((item) => {
+            const active = tabIsActive(item.id, tab, actId);
+            return (
+              <a
+                key={item.id}
+                href={tabHref(item.id)}
+                aria-current={active ? "page" : undefined}
+                className={`clip-btn px-4 py-2 text-sm tracking-[0.16em] uppercase ${
+                  active
+                    ? "bg-[#ff4655] text-[#05060a]"
+                    : "border border-white/10 text-[#d5dbe6] hover:border-[#ff4655]"
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="mt-6 space-y-10">
@@ -822,7 +998,9 @@ export function FazedSite({ data: initial, tab }: { data: TrackerSnapshot; tab: 
             </>
           ) : null}
           {tab === "acts" ? <ActsBody data={data} /> : null}
-          {tab === "matches" ? <MatchesBody data={data} now={now} /> : null}
+          {tab === "matches" ? (
+            <MatchesBody data={data} now={now} actId={actId} agente={query.agente} mapa={query.mapa} />
+          ) : null}
           {tab === "agents" ? <AgentsBody data={data} /> : null}
           {tab === "maps" ? <MapsBody data={data} /> : null}
           {tab === "weapons" ? <WeaponsBody data={data} /> : null}

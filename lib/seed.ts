@@ -250,6 +250,7 @@ export const TRACKER_SEED: import("@/lib/types").TrackerSnapshot = {
     },
   ],
   acts: CAREER_ACTS,
+  matchesByAct: {},
   recent: [
     match({ id: "1", agent: "Skye", map: "Summit", when: "há 11h", won: true, placement: "3rd", roundsWon: 15, roundsLost: 13, kills: 33, deaths: 17, assists: 7, acs: 321, hs: 47, dd: 72, trs: 829, badges: ["4k x2", "3k x4"] }),
     match({ id: "2", agent: "Phoenix", map: "Ascent", when: "há 11h", won: true, placement: "4th", roundsWon: 14, roundsLost: 12, kills: 20, deaths: 17, assists: 6, acs: 222, hs: 54, dd: 14, trs: 606, badges: ["1v2 Clutch"] }),

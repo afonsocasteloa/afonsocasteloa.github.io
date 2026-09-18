@@ -44,5 +44,7 @@ export function relativePt(iso: string, now = Date.now()) {
 export function isSnapshot(value: unknown): value is import("@/lib/types").TrackerSnapshot {
   if (!value || typeof value !== "object") return false;
   const row = value as Record<string, unknown>;
-  return typeof row.name === "string" && Array.isArray(row.acts) && Array.isArray(row.recent);
+  if (typeof row.name !== "string" || !Array.isArray(row.acts) || !Array.isArray(row.recent)) return false;
+  if (!row.matchesByAct || typeof row.matchesByAct !== "object") row.matchesByAct = {};
+  return true;
 }

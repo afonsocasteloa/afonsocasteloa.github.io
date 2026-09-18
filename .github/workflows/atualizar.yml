@@ -33,6 +33,7 @@ jobs:
 
       - name: Ler o Tracker
         run: node scripts/refresh-tracker.mjs
+        timeout-minutes: 15
         env:
           CI: true
 

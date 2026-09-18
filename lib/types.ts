@@ -54,6 +54,7 @@ export type MatchCard = {
   dd: number;
   trs: number;
   badges: string[];
+  seasonId?: string;
 };
 
 export type AgentRow = {
@@ -133,4 +134,5 @@ export type TrackerSnapshot = {
   agents: AgentRow[];
   acts: ActRow[];
   recent: MatchCard[];
+  matchesByAct: Record<string, MatchCard[]>;
 };
