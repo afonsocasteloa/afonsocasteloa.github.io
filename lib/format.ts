@@ -1,3 +1,7 @@
+export function rankWithRr(rank: { name: string; rr: number | null }) {
+  return rank.rr != null ? `${rank.name} · ${rank.rr} RR` : rank.name;
+}
+
 export function grouped(n: number | string) {
   return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }

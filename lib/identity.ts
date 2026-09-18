@@ -1,5 +1,5 @@
 import { PLAYER, SOCIALS } from "@/lib/config";
-import { grouped } from "@/lib/format";
+import { grouped, rankWithRr } from "@/lib/format";
 import type { ActRow, AgentRow, MapRow, MatchCard, TrackerSnapshot, WeaponRow } from "@/lib/types";
 
 export type IdentityKit = {
@@ -123,7 +123,7 @@ export function buildIdentity(data: TrackerSnapshot): Identity {
     { label: "Nível", value: String(data.level) },
     { label: "Tempo de jogo", value: days ? `${data.playtime} · ~${grouped(days)} dias` : data.playtime },
     { label: "Partidas", value: grouped(data.matches) },
-    { label: "Rank", value: data.current.name },
+    { label: "Rank", value: rankWithRr(data.current) },
     { label: "Peak", value: `${data.peak.name}${data.peak.rr ? ` · ${data.peak.rr} RR` : ""}` },
     { label: "Atos", value: String(data.acts.length) },
     { label: "Tracker views", value: grouped(data.views) },

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { PLAYER, REFRESH_MS, SOCIALS, type SocialLink } from "@/lib/config";
-import { grouped, hintTone, isSnapshot, relativePt, signed, tabHref, wrClass } from "@/lib/format";
+import { grouped, hintTone, isSnapshot, rankWithRr, relativePt, signed, tabHref, wrClass } from "@/lib/format";
 import { buildIdentity } from "@/lib/identity";
 import {
   actMatchesHref,
@@ -134,7 +134,7 @@ function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; 
           <span className="h-6 w-1 bg-[#ff4655]" />
           <div>
             <h2 className="stat-num text-3xl">O meu jogo</h2>
-            <p className="text-sm text-[#9aa3b2]">Portugal · PC · competitive · {data.current.name}</p>
+            <p className="text-sm text-[#9aa3b2]">Portugal · PC · competitive · {rankWithRr(data.current)}</p>
           </div>
         </div>
         {compact ? (
@@ -199,7 +199,7 @@ function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; 
             <div className="mt-2 flex items-center gap-3">
               <img src={data.current.icon} alt="" className="h-12 w-12 object-contain" />
               <div>
-                <p className="stat-num text-2xl">{data.current.name}</p>
+                <p className="stat-num text-2xl">{rankWithRr(data.current)}</p>
                 <p className="text-xs text-[#9aa3b2]">
                   Peak {data.peak.name}
                   {data.peak.rr ? ` · ${data.peak.rr} RR` : ""} · {data.peak.season}
@@ -1203,7 +1203,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
               <div className="absolute inset-0 bg-gradient-to-t from-[#05060a] via-[#05060a]/70 to-transparent" />
               <a href={currentAct ? actMatchesHref(currentAct.id) : "/atos/"} className="relative z-10 flex flex-col items-center">
                 <img src={data.current.icon} alt={data.current.name} className="rank-glow h-28 w-28 object-contain" />
-                <p className="stat-num mt-3 text-3xl">{data.current.name}</p>
+                <p className="stat-num mt-3 text-3xl">{rankWithRr(data.current)}</p>
                 <p className="text-sm text-[#9aa3b2]">Rating atual</p>
               </a>
               <a

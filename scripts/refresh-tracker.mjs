@@ -190,6 +190,9 @@ async function scrape() {
           `${api}/profile/riot/${encoded}/segments/playlist?playlist=competitive&source=web`,
         );
         const matches = await grab(`${api}/matches/riot/${encoded}?platform=pc&type=competitive`);
+        const tier = await grab(
+          `${api}/profile/riot/${encoded}/stats/overview/competitiveTier?localOffset=${new Date().getTimezoneOffset()}&playlist=competitive`,
+        );
 
         const seasons = profile.json?.data?.metadata?.seasons ?? [];
         const acts = [];
@@ -222,7 +225,7 @@ async function scrape() {
           ? await grab(`https://api.tracker.gg/api/v1/valorant/premier/roster/${rosterId}/summary`)
           : { ok: false, status: 0, json: null };
 
-        return { profile, playlist, matches, acts, premier, actMatches };
+        return { profile, playlist, matches, acts, premier, actMatches, tier };
       },
       { api: API, encoded: ENCODED },
     );
@@ -231,6 +234,20 @@ async function scrape() {
   } finally {
     await browser.close();
   }
+}
+
+function latestLiveRank(payload) {
+  const history = payload?.json?.data?.history?.data;
+  if (!Array.isArray(history) || !history.length) return { rr: null, name: null, icon: null };
+  const newest = [...history].sort((a, b) => String(b?.[0] || "").localeCompare(String(a?.[0] || "")))[0];
+  const point = Array.isArray(newest) ? newest[1] : newest;
+  const rr = point?.metadata?.rr;
+  const name = Array.isArray(point?.value) ? point.value[0] : null;
+  return {
+    rr: typeof rr === "number" ? rr : null,
+    name: typeof name === "string" ? name : null,
+    icon: point?.metadata?.imageUrl || null,
+  };
 }
 
 function listFrom(payload) {
@@ -256,6 +273,7 @@ function buildSnapshot(payload) {
   const [name, tag] = handle.split("#");
 
   const peakMeta = stats.peakRank?.metadata ?? {};
+  const liveRank = latestLiveRank(payload.tier);
   const rankMeta = stats.rank?.metadata ?? {};
   const avatar = platform.avatarUrl || "";
   const cardId = avatar.match(/playercards\/([^/]+)/)?.[1];
@@ -461,9 +479,9 @@ function buildSnapshot(payload) {
       : avatar,
     badges,
     current: {
-      name: rankMeta.tierName || currentAct?.rank || "—",
-      rr: null,
-      icon: rankMeta.iconUrl || currentAct?.rankIcon || "",
+      name: liveRank.name || currentAct?.rank || rankMeta.tierName || "—",
+      rr: liveRank.rr,
+      icon: liveRank.icon || currentAct?.rankIcon || rankMeta.iconUrl || "",
     },
     peak: {
       name: peakMeta.tierName || "—",
@@ -579,6 +597,9 @@ function mergeFallback(next, prev) {
     if (Array.isArray(list) && list.length) merged[id] = list;
   }
   next.matchesByAct = merged;
+  if (next.current && next.current.rr == null && prev.current?.rr != null && next.current.name === prev.current.name) {
+    next.current = { ...next.current, rr: prev.current.rr };
+  }
   return next;
 }
 
