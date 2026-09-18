@@ -124,32 +124,6 @@ function RiotId({ name, tag }: { name: string; tag: string }) {
   );
 }
 
-function ShareBtn() {
-  const [done, setDone] = useState(false);
-  return (
-    <button
-      type="button"
-      className="clip-btn border border-white/10 px-4 py-2 text-sm tracking-wide text-[#ece8e1] hover:border-[#ff4655]"
-      onClick={async () => {
-        const url = "https://afonsocasteloa.github.io/";
-        try {
-          if (navigator.share) {
-            await navigator.share({ title: "Afonso · Fazed#any", url });
-            return;
-          }
-          await copyText(url);
-          setDone(true);
-          window.setTimeout(() => setDone(false), 1400);
-        } catch {
-          setDone(false);
-        }
-      }}
-    >
-      {done ? "Link copiado" : "Partilhar site"}
-    </button>
-  );
-}
-
 function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; compact?: boolean; now?: number | null }) {
   const me = buildIdentity(data);
   const kit = me.kit;
@@ -1200,29 +1174,18 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
           <div className="frame-line h-px w-full" />
           <div className="grid gap-8 p-6 md:grid-cols-[1.2fr_280px] md:p-8">
             <div>
-              <div className="flex flex-wrap items-center gap-3 text-[11px] tracking-[0.28em] text-[#ff4655] uppercase">
-                <img src="https://trackercdn.com/cdn/flags/4x3/pt.svg" alt="" className="h-4 w-6 object-cover" />
-                Site pessoal · Competitive PC · atualização contínua
-              </div>
-              <div className="mt-4 flex items-end gap-4">
+              <div className="flex items-end gap-4">
                 <img src={data.avatar} alt="" className="h-20 w-20 border border-white/20 object-cover" />
                 <div>
-                  <h1 className="stat-num text-6xl leading-none md:text-7xl">{PLAYER.displayName}</h1>
+                  <div className="flex items-center gap-2">
+                    <img src="https://trackercdn.com/cdn/flags/4x3/pt.svg" alt="" className="h-3.5 w-5 object-cover" />
+                    <h1 className="stat-num text-6xl leading-none md:text-7xl">{PLAYER.displayName}</h1>
+                  </div>
                   <RiotId name={data.name} tag={data.tag} />
                 </div>
               </div>
-              <p className="mt-4 max-w-xl text-sm leading-6 text-[#b7c0cc]">{PLAYER.about}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {data.badges.map((badge) => (
-                  <span key={badge.name} className="flex items-center gap-2 border border-white/10 bg-black/30 px-2 py-1 text-xs">
-                    <img src={badge.icon} alt="" className="h-5 w-5 object-contain" />
-                    {badge.name}
-                  </span>
-                ))}
-                <span className="border border-white/10 bg-black/30 px-2 py-1 text-xs">NV. {data.level}</span>
-                <span className="border border-white/10 bg-black/30 px-2 py-1 text-xs">Portugal · PC</span>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <p className="mt-4 max-w-md text-sm leading-6 text-[#b7c0cc]">{PLAYER.about}</p>
+              <div className="mt-5 flex flex-wrap gap-3">
                 <a
                   href={PLAYER.trackerOverview}
                   target="_blank"
@@ -1231,11 +1194,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
                 >
                   ABRIR TRACKER
                 </a>
-                <ShareBtn />
                 <SocialsBar />
-                <p className="self-center text-xs tracking-[0.18em] text-[#9aa3b2] uppercase">
-                  {data.playtime} · {grouped(data.matches)} partidas · {grouped(data.wins)}W {grouped(data.losses)}L
-                </p>
               </div>
             </div>
 
