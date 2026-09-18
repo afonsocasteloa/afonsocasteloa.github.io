@@ -8,6 +8,7 @@ export function signed(n: number) {
 
 export function tabHref(id: string) {
   if (id === "overview") return "/";
+  if (id === "about") return "/eu/";
   if (id === "acts") return "/atos/";
   if (id === "matches") return "/partidas/";
   if (id === "agents") return "/agentes/";

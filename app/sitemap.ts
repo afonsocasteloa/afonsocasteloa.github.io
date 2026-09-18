@@ -5,7 +5,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://afonsocasteloa.github.io";
-  const pages = ["", "/atos/", "/partidas/", "/agentes/", "/mapas/", "/armas/"];
+  const pages = ["", "/eu/", "/atos/", "/partidas/", "/agentes/", "/mapas/", "/armas/"];
   return [
     ...pages.map((path) => ({
       url: `${base}${path}`,

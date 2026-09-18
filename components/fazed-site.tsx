@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { PLAYER, REFRESH_MS } from "@/lib/config";
 import { grouped, hintTone, isSnapshot, relativePt, signed, tabHref, wrClass } from "@/lib/format";
+import { buildIdentity } from "@/lib/identity";
 import {
   actMatchesHref,
   agentMatchesHref,
@@ -15,6 +16,7 @@ import type { ActRow, MatchCard, TabId, TrackerSnapshot } from "@/lib/types";
 
 const TABS: { id: TabId; label: string }[] = [
   { id: "overview", label: "Tudo" },
+  { id: "about", label: "Eu" },
   { id: "acts", label: "Atos" },
   { id: "matches", label: "Partidas" },
   { id: "agents", label: "Agentes" },
@@ -55,6 +57,209 @@ function streakOf(matches: MatchCard[]) {
     n += 1;
   }
   return { n, won };
+}
+
+function CopyBtn({ text, label }: { text: string; label: string }) {
+  const [done, setDone] = useState(false);
+  return (
+    <button
+      type="button"
+      className="clip-btn border border-white/10 px-4 py-2 text-sm tracking-wide text-[#ece8e1] hover:border-[#ff4655]"
+      onClick={async () => {
+        try {
+          await navigator.clipboard.writeText(text);
+          setDone(true);
+          window.setTimeout(() => setDone(false), 1600);
+        } catch {
+          setDone(false);
+        }
+      }}
+    >
+      {done ? "Copiado" : label}
+    </button>
+  );
+}
+
+function ShareBtn() {
+  const [done, setDone] = useState(false);
+  return (
+    <button
+      type="button"
+      className="clip-btn border border-white/10 px-4 py-2 text-sm tracking-wide text-[#ece8e1] hover:border-[#ff4655]"
+      onClick={async () => {
+        const url = "https://afonsocasteloa.github.io/";
+        try {
+          if (navigator.share) {
+            await navigator.share({ title: "Afonso · Fazed#any", url });
+            return;
+          }
+          await navigator.clipboard.writeText(url);
+          setDone(true);
+          window.setTimeout(() => setDone(false), 1600);
+        } catch {
+          setDone(false);
+        }
+      }}
+    >
+      {done ? "Link copiado" : "Partilhar site"}
+    </button>
+  );
+}
+
+function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; compact?: boolean; now?: number | null }) {
+  const me = buildIdentity(data);
+  const kit = me.kit;
+  return (
+    <section className="space-y-4">
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <span className="h-6 w-1 bg-[#ff4655]" />
+          <div>
+            <h2 className="stat-num text-3xl">{compact ? "Quem sou" : "Afonso · Fazed#any"}</h2>
+            <p className="text-sm text-[#9aa3b2]">Portugal · PC · competitive · {data.current.name}</p>
+          </div>
+        </div>
+        {compact ? (
+          <a href="/eu/" className="text-xs text-[#ff4655] underline">
+            Ver o perfil
+          </a>
+        ) : null}
+      </div>
+
+      <div className="glass hud p-5">
+        <p className="max-w-3xl text-sm leading-7 text-[#d5dbe6]">{me.bio}</p>
+        {!compact ? (
+          <div className="mt-4 flex flex-wrap gap-2">
+            <CopyBtn text={me.handle} label="Copiar Riot ID" />
+            <ShareBtn />
+            <a
+              href={PLAYER.trackerOverview}
+              target="_blank"
+              rel="noreferrer"
+              className="clip-btn border border-white/10 px-4 py-2 text-sm text-[#ece8e1] hover:border-[#ff4655]"
+            >
+              Tracker
+            </a>
+          </div>
+        ) : null}
+      </div>
+
+      {kit ? (
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <a href={agentMatchesHref(kit.agent.name)} className="tap glass hud lift p-4">
+            <p className="text-[10px] tracking-[0.2em] text-[#9aa3b2] uppercase">Main</p>
+            <div className="mt-2 flex items-center gap-3">
+              <img src={kit.agent.icon} alt="" className="h-12 w-12 object-contain" />
+              <div>
+                <p className="stat-num text-2xl">{kit.agent.name}</p>
+                <p className="text-xs text-[#9aa3b2]">
+                  {grouped(kit.agent.matches)} partidas · {kit.agent.hours}
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href={PLAYER.trackerWeapons} target="_blank" rel="noreferrer" className="tap glass hud lift p-4">
+            <p className="text-[10px] tracking-[0.2em] text-[#9aa3b2] uppercase">Arma</p>
+            <p className="stat-num mt-2 text-2xl">{kit.weapon.name}</p>
+            <p className="text-xs text-[#9aa3b2]">
+              {grouped(kit.weapon.kills)} kills · {kit.weapon.head}% HS
+            </p>
+          </a>
+          <a href={mapMatchesHref(kit.map.name)} className="tap glass hud lift p-4">
+            <p className="text-[10px] tracking-[0.2em] text-[#9aa3b2] uppercase">Melhor mapa</p>
+            <p className="stat-num mt-2 text-2xl">{kit.map.name}</p>
+            <p className="text-xs text-[#9aa3b2]">
+              {kit.map.winRate}% WR · {kit.map.wins}W – {kit.map.losses}L
+            </p>
+          </a>
+          <a href="/agentes/" className="tap glass hud lift p-4">
+            <p className="text-[10px] tracking-[0.2em] text-[#9aa3b2] uppercase">Role</p>
+            <p className="stat-num mt-2 text-2xl">{kit.role}</p>
+            <p className="text-xs text-[#9aa3b2]">{data.roles[0]?.record}</p>
+          </a>
+        </div>
+      ) : null}
+
+      {me.origin && me.currentAct ? (
+        <div className="grid gap-3 md:grid-cols-2">
+          <a href={actMatchesHref(me.origin.id)} className="tap glass hud lift p-4">
+            <p className="text-[10px] tracking-[0.2em] text-[#9aa3b2] uppercase">Onde comecei</p>
+            <div className="mt-2 flex items-center gap-3">
+              <img src={me.origin.rankIcon} alt="" className="h-12 w-12 object-contain" />
+              <div>
+                <p className="stat-num text-2xl">{me.origin.rank}</p>
+                <p className="text-xs text-[#9aa3b2]">
+                  {me.origin.short} · {me.origin.matches} partidas
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href={actMatchesHref(me.currentAct.id)} className="tap glass hud lift p-4">
+            <p className="text-[10px] tracking-[0.2em] text-[#9aa3b2] uppercase">Onde estou</p>
+            <div className="mt-2 flex items-center gap-3">
+              <img src={data.current.icon} alt="" className="h-12 w-12 object-contain" />
+              <div>
+                <p className="stat-num text-2xl">{data.current.name}</p>
+                <p className="text-xs text-[#9aa3b2]">
+                  Peak {data.peak.name}
+                  {data.peak.rr ? ` · ${data.peak.rr} RR` : ""} · {data.peak.season}
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      ) : null}
+
+      {!compact ? (
+        <>
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+            {me.facts.map((fact) => (
+              <div key={fact.label} className="border border-white/10 bg-black/20 p-3">
+                <p className="text-[10px] tracking-[0.18em] text-[#9aa3b2] uppercase">{fact.label}</p>
+                <p className="stat-num mt-1 text-lg">{fact.value}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="glass hud p-5">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h3 className="stat-num text-2xl">Premier</h3>
+                <p className="text-xs text-[#9aa3b2]">{data.premier.league}</p>
+              </div>
+              <p className="stat-num text-xl">
+                {data.premier.name}
+                <span className="text-[#ff4655]">#{data.premier.tag}</span>
+              </p>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {data.premier.members.map((member) => (
+                <a
+                  key={member}
+                  href={trackerPlayerHref(member)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`border px-2 py-1 text-xs hover:border-[#ff4655] ${
+                    member === me.handle ? "border-[#ff4655] text-[#ece8e1]" : "border-white/10"
+                  }`}
+                >
+                  {member}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="stat-num text-2xl">Highlights</h3>
+            <p className="text-sm text-[#9aa3b2]">Aces, MVPs e clutches nas partidas guardadas do Tracker — não é uma lista inventada.</p>
+            {me.highlights.map((match) => (
+              <MatchRow key={match.id} match={match} now={now} />
+            ))}
+          </div>
+        </>
+      ) : null}
+    </section>
+  );
 }
 
 function uniqueActs(rows: (ActRow | undefined)[]) {
@@ -883,10 +1088,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
                   </p>
                 </div>
               </div>
-              <p className="mt-4 max-w-xl text-sm leading-6 text-[#b7c0cc]">
-                Ranked de carreira no Tracker — EP 5 até V26. O site relê o perfil público sozinho e mostra overview,
-                atos, partidas, agentes, mapas e armas, sem chave de API.
-              </p>
+              <p className="mt-4 max-w-xl text-sm leading-6 text-[#b7c0cc]">{buildIdentity(data).bio}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {data.badges.map((badge) => (
                   <span key={badge.name} className="flex items-center gap-2 border border-white/10 bg-black/30 px-2 py-1 text-xs">
@@ -895,6 +1097,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
                   </span>
                 ))}
                 <span className="border border-white/10 bg-black/30 px-2 py-1 text-xs">NV. {data.level}</span>
+                <span className="border border-white/10 bg-black/30 px-2 py-1 text-xs">Portugal · PC</span>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
@@ -905,6 +1108,8 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
                 >
                   ABRIR TRACKER
                 </a>
+                <CopyBtn text={`${data.name}#${data.tag}`} label="Copiar Riot ID" />
+                <ShareBtn />
                 <p className="self-center text-xs tracking-[0.18em] text-[#9aa3b2] uppercase">
                   {data.playtime} · {grouped(data.matches)} partidas · {grouped(data.wins)}W {grouped(data.losses)}L
                 </p>
@@ -989,6 +1194,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
         <div className="mt-6 space-y-10">
           {tab === "overview" ? (
             <>
+              <MeBody data={data} compact now={now} />
               <ActsBody data={data} compact />
               <OverviewBody data={data} />
               <MatchesBody data={data} now={now} preview />
@@ -997,6 +1203,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
               <WeaponsBody data={data} preview />
             </>
           ) : null}
+          {tab === "about" ? <MeBody data={data} now={now} /> : null}
           {tab === "acts" ? <ActsBody data={data} /> : null}
           {tab === "matches" ? (
             <MatchesBody data={data} now={now} actId={actId} agente={query.agente} mapa={query.mapa} />
@@ -1008,7 +1215,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
       </main>
 
       <footer className="relative z-10 mx-auto max-w-6xl px-5 pb-10 text-xs text-[#9aa3b2]">
-        Dados do perfil público{" "}
+        Site pessoal do Afonso — {data.name}#{data.tag}. Dados do perfil público{" "}
         <a className="text-[#ece8e1] underline" href={PLAYER.trackerOverview} target="_blank" rel="noreferrer">
           Fazed#any no Tracker.gg
         </a>

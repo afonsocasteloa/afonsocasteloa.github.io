@@ -1,4 +1,4 @@
-export type TabId = "overview" | "acts" | "matches" | "agents" | "maps" | "weapons";
+export type TabId = "overview" | "about" | "acts" | "matches" | "agents" | "maps" | "weapons";
 
 export type ActRow = {
   id: string;
