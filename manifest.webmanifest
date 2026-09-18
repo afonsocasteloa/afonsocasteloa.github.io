@@ -1,0 +1,16 @@
+{
+  "name": "Afonso · Fazed#any",
+  "short_name": "Fazed",
+  "lang": "pt",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05060a",
+  "theme_color": "#ff4655",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

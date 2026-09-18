@@ -1,0 +1,63 @@
+name: Atualizar Tracker
+
+on:
+  schedule:
+    - cron: "*/20 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [source]
+
+concurrency:
+  group: tracker-site
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Código do site
+        uses: actions/checkout@v4
+        with:
+          ref: source
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+
+      - name: Ler o Tracker
+        run: node scripts/refresh-tracker.mjs
+        env:
+          CI: true
+
+      - name: Guardar live.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/live.json
+          git diff --staged --quiet || git commit -m "Atualizar live.json a partir do Tracker. [skip ci]"
+          git push origin HEAD:source
+
+      - run: npm run build
+
+      - name: Publicar GitHub Pages
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: gh-pages-main
+
+      - name: Copiar site estático
+        run: |
+          rsync -a --delete --exclude '.git' --exclude '.github' out/ gh-pages-main/
+          cd gh-pages-main
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Atualizar o site com os dados mais recentes do Tracker."
+          git push
