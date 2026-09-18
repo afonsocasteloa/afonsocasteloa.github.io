@@ -1184,7 +1184,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
                   <RiotId name={data.name} tag={data.tag} />
                 </div>
               </div>
-              <p className="mt-4 max-w-md text-sm leading-6 text-[#b7c0cc]">{PLAYER.about}</p>
+              <p className="mt-4 max-w-xl text-sm leading-6 text-[#b7c0cc]">{PLAYER.about}</p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <a
                   href={PLAYER.trackerOverview}

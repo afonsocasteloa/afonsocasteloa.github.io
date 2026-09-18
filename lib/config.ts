@@ -4,7 +4,7 @@ export const PLAYER = {
   riotTag: "any",
   age: 19,
   about:
-    "Tenho 19 anos e o meu sonho é ser jogador profissional de Valorant. Jogo em PC, em Portugal, e o meu foco está no Iniciador.",
+    "Tenho 19 anos e o meu sonho é um dia ser jogador profissional de Valorant. Jogo ranked em PC, aqui em Portugal, e neste momento estou a focar-me no Iniciador — o papel em que quero evoluir.",
   platform: "pc",
   seasonId: "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b",
   seasonLabel: "Todos os atos",
