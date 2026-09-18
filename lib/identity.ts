@@ -79,7 +79,7 @@ export function personJsonLd(data: TrackerSnapshot) {
     nationality: "PT",
     url: "https://afonsocasteloa.github.io/",
     image: data.avatar,
-    description: identity.bio,
+    description: PLAYER.about,
     sameAs: [PLAYER.trackerOverview, ...SOCIALS.flatMap((row) => (row.href ? [row.href] : []))],
   };
 }
@@ -117,6 +117,7 @@ export function buildIdentity(data: TrackerSnapshot): Identity {
 
   const facts = [
     { label: "Riot ID", value: handle },
+    { label: "Idade", value: `${PLAYER.age} anos` },
     { label: "País", value: data.country === "PT" ? "Portugal" : data.country },
     { label: "Plataforma", value: "PC · Competitive" },
     { label: "Nível", value: String(data.level) },

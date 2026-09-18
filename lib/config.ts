@@ -2,6 +2,9 @@ export const PLAYER = {
   displayName: "Afonso",
   riotName: "Fazed",
   riotTag: "any",
+  age: 19,
+  about:
+    "Sou o Afonso, tenho 19 anos, e o meu sonho é ser jogador profissional de Valorant. Jogo competitive em PC, em Portugal, e atualmente o meu foco está no Iniciador.",
   platform: "pc",
   seasonId: "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b",
   seasonLabel: "Todos os atos",

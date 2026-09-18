@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Teko } from "next/font/google";
+import { PLAYER } from "@/lib/config";
 import { getTrackerSnapshot } from "@/lib/tracker";
-import { buildIdentity } from "@/lib/identity";
 import "./globals.css";
 
 const display = Teko({
@@ -25,8 +25,7 @@ export const viewport: Viewport = {
 
 export function generateMetadata(): Metadata {
   const data = getTrackerSnapshot();
-  const identity = buildIdentity(data);
-  const description = `${identity.handle} · ${data.current.name} · peak ${data.peak.name}. Site pessoal de Valorant do Afonso — competitive PC, Portugal.`;
+  const description = PLAYER.about;
   const image = data.cardWide || data.avatar;
   return {
     metadataBase: new URL("https://afonsocasteloa.github.io"),
@@ -65,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt">
+    <html lang="pt-PT">
       <body className={`${display.variable} ${body.variable} antialiased`}>{children}</body>
     </html>
   );

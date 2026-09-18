@@ -16,7 +16,7 @@ import type { ActRow, MatchCard, TabId, TrackerSnapshot } from "@/lib/types";
 
 const TABS: { id: TabId; label: string }[] = [
   { id: "overview", label: "Tudo" },
-  { id: "about", label: "Eu" },
+  { id: "about", label: "Sobre mim" },
   { id: "acts", label: "Atos" },
   { id: "matches", label: "Partidas" },
   { id: "agents", label: "Agentes" },
@@ -115,7 +115,7 @@ function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; 
         <div className="flex items-center gap-3">
           <span className="h-6 w-1 bg-[#ff4655]" />
           <div>
-            <h2 className="stat-num text-3xl">{compact ? "Quem sou" : "Afonso · Fazed#any"}</h2>
+            <h2 className="stat-num text-3xl">{compact ? "Quem sou" : "Sobre mim"}</h2>
             <p className="text-sm text-[#9aa3b2]">Portugal · PC · competitive · {data.current.name}</p>
           </div>
         </div>
@@ -127,7 +127,9 @@ function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; 
       </div>
 
       <div className="glass hud p-5">
-        <p className="max-w-3xl text-sm leading-7 text-[#d5dbe6]">{me.bio}</p>
+        <p className="text-[10px] tracking-[0.22em] text-[#ff4655] uppercase">Sobre mim</p>
+        <p className="mt-2 max-w-3xl text-base leading-7 text-[#ece8e1]">{PLAYER.about}</p>
+        {!compact ? <p className="mt-4 max-w-3xl text-sm leading-7 text-[#9aa3b2]">{me.bio}</p> : null}
         <div className="mt-4 flex flex-wrap gap-2">
           {compact ? null : (
             <>
@@ -1137,7 +1139,9 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
                   </p>
                 </div>
               </div>
-              <p className="mt-4 max-w-xl text-sm leading-6 text-[#b7c0cc]">{buildIdentity(data).bio}</p>
+              <p className="mt-4 max-w-xl text-sm leading-6 text-[#b7c0cc]">
+                {tab === "about" ? PLAYER.about : buildIdentity(data).bio}
+              </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {data.badges.map((badge) => (
                   <span key={badge.name} className="flex items-center gap-2 border border-white/10 bg-black/30 px-2 py-1 text-xs">
