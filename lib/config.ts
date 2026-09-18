@@ -39,6 +39,6 @@ export const SOCIALS: SocialLink[] = [
   { id: "github", label: "GitHub", href: "https://github.com/afonsocasteloa" },
 ];
 
-export const REFRESH_MS = 90_000;
+export const REFRESH_MS = 180_000;
 export const VAL_ASSETS = "https://media.valorant-api.com";
 export const TRN_CDN = "https://trackercdn.com/cdn/tracker.gg";

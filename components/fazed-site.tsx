@@ -1308,7 +1308,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
         <a className="text-[#ece8e1] underline" href={PLAYER.trackerOverview} target="_blank" rel="noreferrer">
           Fazed#any no Tracker.gg
         </a>
-        . Competitive {PLAYER.seasonLabel} · {PLAYER.seasonRange}. O site atualiza sozinho a cada 90 segundos e o
+        . Competitive {PLAYER.seasonLabel} · {PLAYER.seasonRange}. O site atualiza sozinho a cada 3 minutos e o
         Tracker é relido em segundo plano.
       </footer>
     </div>
