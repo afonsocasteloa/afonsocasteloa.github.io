@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T10:00:28.687Z",
+  "fetchedAt": "2026-09-21T10:02:31.104Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -39,8 +39,8 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
-      "Minx#bubu",
       "Fazed#any",
+      "Minx#bubu",
       "Chxse Atlantic#nez",
       "マズ ッ#MAZZ",
       "wxlf#1410"
@@ -1592,7 +1592,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
       "map": "Lotus",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-      "when": "há 1 dia",
+      "when": "há 2 dias",
       "timestamp": "2026-09-19T22:32:12.658+00:00",
       "won": false,
       "placement": "5th",
@@ -2089,7 +2089,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
         "map": "Lotus",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-        "when": "há 1 dia",
+        "when": "há 2 dias",
         "timestamp": "2026-09-19T22:32:12.658+00:00",
         "won": false,
         "placement": "5th",
@@ -7637,7 +7637,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Abyss",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/9.0/abyss.jpg",
-        "when": "há 621 dias",
+        "when": "há 622 dias",
         "timestamp": "2025-01-07T22:32:45.432+00:00",
         "won": true,
         "placement": "2nd",
