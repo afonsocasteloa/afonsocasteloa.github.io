@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T16:04:46.987Z",
+  "fetchedAt": "2026-09-21T16:07:50.601Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -39,11 +39,11 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
+      "Fazed#any",
       "マズ ッ#MAZZ",
       "wxlf#1410",
-      "Chxse Atlantic#nez",
-      "Fazed#any",
-      "Minx#bubu"
+      "Minx#bubu",
+      "Chxse Atlantic#nez"
     ]
   },
   "playtime": "3 489h",
@@ -1388,7 +1388,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Haven",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-      "when": "há 21h",
+      "when": "há 22h",
       "timestamp": "2026-09-20T18:37:27.708+00:00",
       "won": false,
       "placement": "9th",
@@ -1885,7 +1885,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 21h",
+        "when": "há 22h",
         "timestamp": "2026-09-20T18:37:27.708+00:00",
         "won": false,
         "placement": "9th",
