@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T19:41:38.756Z",
+  "fetchedAt": "2026-09-21T19:43:47.987Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -47,11 +47,11 @@
     ]
   },
   "playtime": "3 490h",
-  "matches": 6095,
+  "matches": 6096,
   "wins": 3023,
-  "losses": 2985,
+  "losses": 2986,
   "winRate": 49.6,
-  "trackerScore": 462,
+  "trackerScore": 466,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -71,12 +71,12 @@
     {
       "label": "Win %",
       "value": "49.6%",
-      "hint": "3023W 2985L"
+      "hint": "3023W 2986L"
     },
     {
       "label": "Wins",
       "value": "3 023",
-      "hint": "6095 partidas"
+      "hint": "6096 partidas"
     },
     {
       "label": "KAST",
@@ -97,15 +97,15 @@
   "extras": [
     {
       "label": "Kills",
-      "value": "98 962"
+      "value": "98 985"
     },
     {
       "label": "Deaths",
-      "value": "94 277"
+      "value": "94 294"
     },
     {
       "label": "Assists",
-      "value": "24 740"
+      "value": "24 743"
     },
     {
       "label": "KAD",
@@ -133,24 +133,24 @@
     }
   ],
   "accuracy": {
-    "head": 38.9,
-    "body": 58.6,
-    "legs": 2.5,
-    "headHits": 252,
-    "bodyHits": 380,
-    "legHits": 16
+    "head": 40.5,
+    "body": 56.7,
+    "legs": 2.8,
+    "headHits": 264,
+    "bodyHits": 370,
+    "legHits": 18
   },
   "last20": {
     "record": "7W – 13L (35%)",
-    "kd": 0.8,
-    "adr": 131
+    "kd": 0.9,
+    "adr": 134
   },
   "roles": [
     {
       "name": "Duelist",
       "icon": "https://media.valorant-api.com/agents/roles/dbe8757e-9e92-4ed4-b39f-9dfc589691d4/displayicon.png",
       "winRate": 51.4,
-      "record": "1192W – 1125L",
+      "record": "1192W – 1126L",
       "kda": 1.27,
       "kdaLine": "40K / 37K / 7.47K"
     },
@@ -184,7 +184,7 @@
       "name": "Vandal",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/9c82e19d-4575-0200-1a81-3eacf00cf872/shop/newimage.png",
-      "kills": 48478,
+      "kills": 48498,
       "head": 43,
       "body": 53,
       "legs": 3
@@ -202,7 +202,7 @@
       "name": "Sheriff",
       "type": "Sidearms",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/e336c6b8-418d-9340-d77f-7a9e4cfe0702/shop/newimage.png",
-      "kills": 9278,
+      "kills": 9280,
       "head": 54,
       "body": 45,
       "legs": 1
@@ -274,7 +274,7 @@
       "name": "Marshal",
       "type": "Sniper Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/c4883e50-4494-202c-3ec3-6b8a9284f00b/shop/newimage.png",
-      "kills": 819,
+      "kills": 820,
       "head": 50,
       "body": 49,
       "legs": 1
@@ -457,7 +457,7 @@
       "image": "https://media.valorant-api.com/maps/d960549e-485c-e861-8d71-aa9d1aed12a2/splash.png",
       "winRate": 47.9,
       "wins": 314,
-      "losses": 334
+      "losses": 335
     },
     {
       "name": "Breeze",
@@ -745,13 +745,13 @@
     {
       "name": "Waylay",
       "icon": "https://titles.trackercdn.com/valorant-api/agents/df1cb487-4902-002e-5c17-d28e83e78588/displayicon.png",
-      "hours": "39h",
-      "matches": 73,
-      "winRate": 46.6,
+      "hours": "40h",
+      "matches": 74,
+      "winRate": 45.9,
       "kd": 1.01,
-      "adr": 145.1,
-      "acs": 222.4,
-      "dd": 2,
+      "adr": 145.8,
+      "acs": 223.4,
+      "dd": 3,
       "bestMap": "Corrode",
       "bestMapWr": "51% WR"
     },
@@ -867,18 +867,18 @@
       "act": "ACT V",
       "short": "V26: A5",
       "current": true,
-      "matches": 159,
+      "matches": 160,
       "wins": 81,
-      "losses": 78,
-      "winRate": 50.9,
-      "playtime": "87h",
-      "kd": "1.01",
-      "hs": "39.0%",
-      "acs": "213.3",
-      "adr": "142.7",
+      "losses": 79,
+      "winRate": 50.6,
+      "playtime": "88h",
+      "kd": "1.02",
+      "hs": "39.1%",
+      "acs": "213.8",
+      "adr": "143.0",
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
-      "score": 462
+      "score": 466
     },
     {
       "id": "4f0864e2-40af-28a4-de2c-0e9e64e75f23",
@@ -1358,6 +1358,32 @@
   ],
   "recent": [
     {
+      "id": "dea65cec-c26d-4efb-85be-46c77a100513",
+      "agent": "Waylay",
+      "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/df1cb487-4902-002e-5c17-d28e83e78588/displayicon.png",
+      "map": "Split",
+      "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
+      "when": "há 47 min",
+      "timestamp": "2026-09-21T18:56:54.522+00:00",
+      "won": false,
+      "placement": "2nd",
+      "roundsWon": 9,
+      "roundsLost": 13,
+      "kills": 23,
+      "deaths": 17,
+      "assists": 3,
+      "kd": 1.4,
+      "acs": 296,
+      "hs": 52,
+      "dd": 46,
+      "trs": 673,
+      "badges": [
+        "1v2 Clutch",
+        "3k"
+      ],
+      "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
+    },
+    {
       "id": "44a8efc8-2acb-4fee-b395-51db58532e17",
       "agent": "Clove",
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1dbf2edd-4729-0984-3115-daa5eed44993/displayicon.png",
@@ -1825,33 +1851,6 @@
       "trs": 393,
       "badges": [],
       "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
-    },
-    {
-      "id": "f8ab3fff-3e85-4ffa-8a38-048a627f475f",
-      "agent": "Sova",
-      "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
-      "map": "Haven",
-      "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-      "when": "há 3 dias",
-      "timestamp": "2026-09-18T19:28:57.139+00:00",
-      "won": false,
-      "placement": "7th",
-      "roundsWon": 9,
-      "roundsLost": 13,
-      "kills": 15,
-      "deaths": 18,
-      "assists": 6,
-      "kd": 0.8,
-      "acs": 203,
-      "hs": 26,
-      "dd": 2,
-      "trs": 569,
-      "badges": [
-        "1v2 Clutch",
-        "1v1 Clutch",
-        "3k"
-      ],
-      "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
     }
   ],
   "matchesByAct": {
@@ -1862,7 +1861,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/df1cb487-4902-002e-5c17-d28e83e78588/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 45 min",
+        "when": "há 47 min",
         "timestamp": "2026-09-21T18:56:54.522+00:00",
         "won": false,
         "placement": "2nd",
