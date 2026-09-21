@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T08:20:11.189Z",
+  "fetchedAt": "2026-09-21T08:22:21.459Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -41,9 +41,9 @@
     "members": [
       "Chxse Atlantic#nez",
       "Fazed#any",
+      "Minx#bubu",
       "マズ ッ#MAZZ",
-      "wxlf#1410",
-      "Minx#bubu"
+      "wxlf#1410"
     ]
   },
   "playtime": "3 489h",
@@ -4266,7 +4266,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/displayicon.png",
         "map": "Pearl",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/pearl.jpg",
-        "when": "há 189 dias",
+        "when": "há 190 dias",
         "timestamp": "2026-03-15T20:50:47.674+00:00",
         "won": true,
         "placement": "4th",
@@ -5283,7 +5283,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/displayicon.png",
         "map": "Abyss",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/9.0/abyss.jpg",
-        "when": "há 344 dias",
+        "when": "há 345 dias",
         "timestamp": "2025-10-11T20:50:58.681+00:00",
         "won": true,
         "placement": "5th",
@@ -5667,7 +5667,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Icebox",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg",
-        "when": "há 397 dias",
+        "when": "há 398 dias",
         "timestamp": "2025-08-19T20:52:50.468+00:00",
         "won": true,
         "placement": "MVP",
@@ -6200,7 +6200,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/displayicon.png",
         "map": "Pearl",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/pearl.jpg",
-        "when": "há 456 dias",
+        "when": "há 457 dias",
         "timestamp": "2025-06-21T20:51:51.17+00:00",
         "won": false,
         "placement": "2nd",
