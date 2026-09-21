@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-21T11:58:44.786Z",
+  "fetchedAt": "2026-09-21T12:03:29.890Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 5883,
+  "views": 5889,
   "level": 845,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -40,10 +40,10 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Chxse Atlantic#nez",
-      "Fazed#any",
-      "Minx#bubu",
       "マズ ッ#MAZZ",
-      "wxlf#1410"
+      "wxlf#1410",
+      "Fazed#any",
+      "Minx#bubu"
     ]
   },
   "playtime": "3 489h",
@@ -6699,7 +6699,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 514 dias",
+        "when": "há 515 dias",
         "timestamp": "2025-04-25T00:32:22.206+00:00",
         "won": true,
         "placement": "8th",
@@ -10409,7 +10409,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/f94c3b30-42be-e959-889c-5aa313dba261/displayicon.png",
         "map": "Sunset",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/sunset.jpg",
-        "when": "há 939 dias",
+        "when": "há 940 dias",
         "timestamp": "2024-02-25T00:30:56.574+00:00",
         "won": true,
         "placement": "MVP",
