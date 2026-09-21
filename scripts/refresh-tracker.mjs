@@ -141,99 +141,187 @@ function badgeLabel(tag) {
   return `${tag.name}${count}`;
 }
 
-async function scrape() {
-  let chromium;
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+function engineList() {
+  if (process.env.CI) return ["chrome", "firefox", "chromium"];
+  return [process.env.PLAYWRIGHT_CHANNEL || "msedge", "chrome"];
+}
+
+async function playwright() {
   try {
-    ({ chromium } = await import("playwright"));
-  } catch {
-    ({ chromium } = await import("playwright-core"));
+    return await import("playwright");
+  } catch (error) {
+    try {
+      return await import("playwright-core");
+    } catch {
+      throw error;
+    }
+  }
+}
+
+async function launchSession(kind) {
+  const pw = await playwright();
+  const args = ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage"];
+  let browser;
+  if (kind === "firefox") {
+    browser = await pw.firefox.launch({ headless: true });
+  } else if (kind === "chrome") {
+    browser = await pw.chromium.launch({ channel: "chrome", headless: true, args });
+  } else if (kind === "msedge") {
+    browser = await pw.chromium.launch({ channel: "msedge", headless: true, args });
+  } else {
+    browser = await pw.chromium.launch({
+      headless: true,
+      args: [...args, "--headless=new"],
+    });
   }
 
-  const launch = process.env.CI
-    ? { headless: true, args: ["--disable-blink-features=AutomationControlled", "--no-sandbox"] }
-    : {
-        channel: process.env.PLAYWRIGHT_CHANNEL || "msedge",
-        headless: true,
-        args: ["--disable-blink-features=AutomationControlled"],
-      };
-
-  const browser = await chromium.launch(launch);
-  const page = await browser.newPage({
-    userAgent:
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0",
-    viewport: { width: 1440, height: 1800 },
+  const firefox = kind === "firefox";
+  const context = await browser.newContext({
+    userAgent: firefox
+      ? "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0"
+      : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    locale: "pt-PT",
+    viewport: { width: 1444, height: 1800 },
+    extraHTTPHeaders: { "Accept-Language": "pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7" },
   });
+  await context.addInitScript(() => {
+    Object.defineProperty(navigator, "webdriver", { get: () => undefined });
+  });
+  const page = await context.newPage();
+  page.setDefaultTimeout(120_000);
+  return { browser, page };
+}
+
+async function grab(page, url, tries = 4) {
+  const fromPage = await page.evaluate(async ({ url, tries }) => {
+    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    let last = { ok: false, status: 0, json: null };
+    for (let i = 0; i < tries; i += 1) {
+      try {
+        const res = await fetch(url, {
+          credentials: "include",
+          headers: { accept: "application/json,text/plain,*/*" },
+        });
+        const text = await res.text();
+        let json = null;
+        try {
+          json = JSON.parse(text);
+        } catch {
+          json = null;
+        }
+        last = { ok: res.ok, status: res.status, json };
+        if (json && res.status !== 403 && res.status !== 429) return last;
+      } catch {
+        last = { ok: false, status: 0, json: null };
+      }
+      await sleep(800 * (i + 1));
+    }
+    return last;
+  }, { url, tries });
+
+  if (fromPage?.json) return fromPage;
 
   try {
-    await page.goto(TRACKER, { waitUntil: "domcontentloaded", timeout: 90_000 });
-    await page.waitForTimeout(8000);
-    page.setDefaultTimeout(360_000);
-
-    const payload = await page.evaluate(
-      async ({ api, encoded }) => {
-        const grab = async (url) => {
-          const res = await fetch(url, { credentials: "include" });
-          const text = await res.text();
-          let json = null;
-          try {
-            json = JSON.parse(text);
-          } catch {
-            json = null;
-          }
-          return { ok: res.ok, status: res.status, json };
-        };
-
-        const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-        const profile = await grab(`${api}/profile/riot/${encoded}?`);
-        const playlist = await grab(
-          `${api}/profile/riot/${encoded}/segments/playlist?playlist=competitive&source=web`,
-        );
-        const matches = await grab(`${api}/matches/riot/${encoded}?platform=pc&type=competitive`);
-        const tier = await grab(
-          `${api}/profile/riot/${encoded}/stats/overview/competitiveTier?localOffset=${new Date().getTimezoneOffset()}&playlist=competitive`,
-        );
-
-        const seasons = profile.json?.data?.metadata?.seasons ?? [];
-        const acts = [];
-        for (const season of seasons) {
-          const row = await grab(
-            `${api}/profile/riot/${encoded}/segments/season?playlist=competitive&seasonId=${season.id}&source=web`,
-          );
-          acts.push({ id: season.id, meta: season, status: row.status, json: row.json });
-          await sleep(80);
-        }
-
-        const actMatches = {};
-        for (const row of acts) {
-          const data = row.json?.data;
-          const list = Array.isArray(data) ? data : data ? [data] : [];
-          const season = list.find((item) => item?.type === "season") ?? list[0];
-          const played = season?.stats?.matchesPlayed?.value ?? 0;
-          if (!played) continue;
-          let res = await grab(`${api}/matches/riot/${encoded}?platform=pc&type=competitive&season=${row.id}`);
-          const count = res.json?.data?.matches?.length ?? 0;
-          if (!count) {
-            res = await grab(`${api}/matches/riot/${encoded}?platform=pc&type=competitive&seasonId=${row.id}`);
-          }
-          actMatches[row.id] = res;
-          await sleep(80);
-        }
-
-        const rosterId = profile.json?.data?.metadata?.premierRosterId;
-        const premier = rosterId
-          ? await grab(`https://api.tracker.gg/api/v1/valorant/premier/roster/${rosterId}/summary`)
-          : { ok: false, status: 0, json: null };
-
-        return { profile, playlist, matches, acts, premier, actMatches, tier };
+    const res = await page.request.get(url, {
+      headers: {
+        accept: "application/json,text/plain,*/*",
+        origin: "https://tracker.gg",
+        referer: TRACKER,
       },
-      { api: API, encoded: ENCODED },
+    });
+    const json = await res.json().catch(() => null);
+    return { ok: res.ok(), status: res.status(), json };
+  } catch {
+    return fromPage || { ok: false, status: 0, json: null };
+  }
+}
+
+async function warmUp(page) {
+  await page.goto(TRACKER, { waitUntil: "domcontentloaded", timeout: 120_000 });
+  const probe = `${API}/profile/riot/${ENCODED}`;
+  for (let i = 0; i < 18; i += 1) {
+    const row = await grab(page, probe, 1);
+    if (row.json?.data?.platformInfo || row.json?.data?.metadata) {
+      console.log(`Tracker API pronta após ${i + 1} tentativa(s) (${row.status}).`);
+      return;
+    }
+    const title = await page.title().catch(() => "");
+    console.log(`À espera do Tracker (${i + 1}/18) title="${title}" status=${row.status}`);
+    await sleep(2500);
+    if (i === 5 || i === 11) {
+      await page.reload({ waitUntil: "domcontentloaded" }).catch(() => {});
+    }
+  }
+  throw new Error(`Tracker API bloqueada (${await page.title()} ${page.url()})`);
+}
+
+async function scrapeWith(kind) {
+  const { browser, page } = await launchSession(kind);
+  try {
+    await warmUp(page);
+    const profile = await grab(page, `${API}/profile/riot/${ENCODED}`);
+    const playlist = await grab(
+      page,
+      `${API}/profile/riot/${ENCODED}/segments/playlist?playlist=competitive&source=web`,
+    );
+    const matches = await grab(page, `${API}/matches/riot/${ENCODED}?platform=pc&type=competitive`);
+    const tier = await grab(
+      page,
+      `${API}/profile/riot/${ENCODED}/stats/overview/competitiveTier?localOffset=${new Date().getTimezoneOffset()}&playlist=competitive`,
     );
 
-    return buildSnapshot(payload);
+    const seasons = profile.json?.data?.metadata?.seasons ?? [];
+    const acts = [];
+    for (const season of seasons) {
+      const row = await grab(
+        page,
+        `${API}/profile/riot/${ENCODED}/segments/season?playlist=competitive&seasonId=${season.id}&source=web`,
+      );
+      acts.push({ id: season.id, meta: season, status: row.status, json: row.json });
+      await sleep(80);
+    }
+
+    const actMatches = {};
+    for (const row of acts) {
+      const data = row.json?.data;
+      const list = Array.isArray(data) ? data : data ? [data] : [];
+      const season = list.find((item) => item?.type === "season") ?? list[0];
+      const played = season?.stats?.matchesPlayed?.value ?? 0;
+      if (!played) continue;
+      let res = await grab(page, `${API}/matches/riot/${ENCODED}?platform=pc&type=competitive&season=${row.id}`);
+      const count = res.json?.data?.matches?.length ?? 0;
+      if (!count) {
+        res = await grab(page, `${API}/matches/riot/${ENCODED}?platform=pc&type=competitive&seasonId=${row.id}`);
+      }
+      actMatches[row.id] = res;
+      await sleep(80);
+    }
+
+    const rosterId = profile.json?.data?.metadata?.premierRosterId;
+    const premier = rosterId
+      ? await grab(page, `https://api.tracker.gg/api/v1/valorant/premier/roster/${rosterId}/summary`)
+      : { ok: false, status: 0, json: null };
+
+    return buildSnapshot({ profile, playlist, matches, acts, premier, actMatches, tier });
   } finally {
     await browser.close();
   }
+}
+
+async function scrape() {
+  const errors = [];
+  for (const kind of engineList()) {
+    try {
+      console.log(`A ler o Tracker com ${kind}...`);
+      return await scrapeWith(kind);
+    } catch (error) {
+      console.error(`${kind} falhou:`, error);
+      errors.push(`${kind}: ${error?.message || error}`);
+    }
+  }
+  throw new Error(`Não foi possível ler o Tracker. ${errors.join(" | ")}`);
 }
 
 function latestLiveRank(payload) {
@@ -614,11 +702,10 @@ async function main() {
     );
   } catch (error) {
     console.error(error);
-    if (!fallback && !existsSync(livePath)) {
-      process.exitCode = 1;
-    } else {
+    if (fallback && existsSync(livePath)) {
       console.log("A manter o live.json anterior.");
     }
+    process.exitCode = 1;
   }
 }
 

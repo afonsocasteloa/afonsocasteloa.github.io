@@ -2,17 +2,20 @@ name: Atualizar Tracker
 
 on:
   schedule:
-    - cron: "*/3 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
   push:
     branches: [source]
+  repository_dispatch:
+    types: [tracker-refresh]
 
 concurrency:
   group: tracker-site
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   atualizar:
@@ -28,16 +31,35 @@ jobs:
           node-version: 22
           cache: npm
 
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps chrome firefox chromium
 
       - name: Ler o Tracker
-        run: node scripts/refresh-tracker.mjs
-        timeout-minutes: 15
+        id: scrape
+        timeout-minutes: 20
         env:
           CI: true
+          PLAYWRIGHT_CHROMIUM_USE_HEADLESS_SHELL: "0"
+        run: |
+          set -e
+          n=0
+          until [ "$n" -ge 3 ]; do
+            if node scripts/refresh-tracker.mjs; then
+              exit 0
+            fi
+            n=$((n + 1))
+            echo "Falhou a leitura $n, nova tentativa..."
+            sleep 20
+          done
+          exit 1
 
       - name: Guardar live.json
+        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -45,15 +67,19 @@ jobs:
           git diff --staged --quiet || git commit -m "Atualizar live.json a partir do Tracker. [skip ci]"
           git push origin HEAD:source
 
-      - run: npm run build
+      - name: Construir o site
+        if: success()
+        run: npm run build
 
       - name: Publicar GitHub Pages
+        if: success()
         uses: actions/checkout@v4
         with:
           ref: main
           path: gh-pages-main
 
       - name: Copiar site estático
+        if: success()
         run: |
           rsync -a --delete --exclude '.git' --exclude '.github' out/ gh-pages-main/
           cd gh-pages-main
@@ -62,3 +88,9 @@ jobs:
           git add -A
           git diff --staged --quiet || git commit -m "Atualizar o site com os dados mais recentes do Tracker."
           git push
+
+      - name: Agendar a próxima leitura
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run "Atualizar Tracker" --repo "$GITHUB_REPOSITORY"

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { PLAYER, REFRESH_MS, SOCIALS, type SocialLink } from "@/lib/config";
+import { LIVE_URLS, PLAYER, REFRESH_MS, SOCIALS, type SocialLink } from "@/lib/config";
 import { grouped, hintTone, isSnapshot, rankWithRr, relativePt, signed, tabHref, wrClass } from "@/lib/format";
 import { buildIdentity } from "@/lib/identity";
 import {
@@ -1106,11 +1106,25 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
   const pull = useCallback(async (signal?: AbortSignal) => {
     setRefreshing(true);
     try {
-      const res = await fetch(`/live.json?t=${Date.now()}`, { cache: "no-store", signal });
-      if (!res.ok) throw new Error("live");
-      const next: unknown = await res.json();
-      if (!isSnapshot(next)) throw new Error("shape");
-      setData(next);
+      const reads = await Promise.allSettled(
+        LIVE_URLS.map(async (url) => {
+          const res = await fetch(`${url}${url.includes("?") ? "&" : "?"}t=${Date.now()}`, {
+            cache: "no-store",
+            signal,
+            headers: { accept: "application/json" },
+          });
+          if (!res.ok) throw new Error("live");
+          const next: unknown = await res.json();
+          if (!isSnapshot(next)) throw new Error("shape");
+          return next;
+        }),
+      );
+      const snapshots = reads
+        .filter((row): row is PromiseFulfilledResult<TrackerSnapshot> => row.status === "fulfilled")
+        .map((row) => row.value)
+        .sort((a, b) => Date.parse(b.fetchedAt) - Date.parse(a.fetchedAt));
+      if (!snapshots.length) throw new Error("live");
+      setData(snapshots[0]);
       setLive(true);
     } catch (error) {
       if (signal?.aborted || (error instanceof DOMException && error.name === "AbortError")) return;
@@ -1127,11 +1141,16 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
     const onVis = () => {
       if (document.visibilityState === "visible") void pull();
     };
+    const onFocus = () => void pull();
     document.addEventListener("visibilitychange", onVis);
+    window.addEventListener("focus", onFocus);
+    window.addEventListener("online", onFocus);
     return () => {
       ctrl.abort();
       window.clearInterval(id);
       document.removeEventListener("visibilitychange", onVis);
+      window.removeEventListener("focus", onFocus);
+      window.removeEventListener("online", onFocus);
     };
   }, [pull]);
 
@@ -1308,8 +1327,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
         <a className="text-[#ece8e1] underline" href={PLAYER.trackerOverview} target="_blank" rel="noreferrer">
           Fazed#any no Tracker.gg
         </a>
-        . Competitive {PLAYER.seasonLabel} · {PLAYER.seasonRange}. O site atualiza sozinho a cada 3 minutos e o
-        Tracker é relido em segundo plano.
+        . Competitive {PLAYER.seasonLabel} · {PLAYER.seasonRange}. O site atualiza sozinho a partir do Tracker.
       </footer>
     </div>
   );
