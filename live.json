@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T11:49:26.463Z",
+  "fetchedAt": "2026-09-21T11:51:37.145Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -41,9 +41,9 @@
     "members": [
       "Minx#bubu",
       "Chxse Atlantic#nez",
+      "Fazed#any",
       "マズ ッ#MAZZ",
-      "wxlf#1410",
-      "Fazed#any"
+      "wxlf#1410"
     ]
   },
   "playtime": "3 489h",
@@ -1437,7 +1437,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
       "map": "Lotus",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-      "when": "há 18h",
+      "when": "há 19h",
       "timestamp": "2026-09-20T17:21:02.701+00:00",
       "won": true,
       "placement": "MVP",
@@ -1934,7 +1934,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
         "map": "Lotus",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-        "when": "há 18h",
+        "when": "há 19h",
         "timestamp": "2026-09-20T17:21:02.701+00:00",
         "won": true,
         "placement": "MVP",
