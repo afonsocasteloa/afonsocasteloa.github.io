@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T19:39:11.420Z",
+  "fetchedAt": "2026-09-21T19:41:38.756Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -1857,6 +1857,32 @@
   "matchesByAct": {
     "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b": [
       {
+        "id": "dea65cec-c26d-4efb-85be-46c77a100513",
+        "agent": "Waylay",
+        "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/df1cb487-4902-002e-5c17-d28e83e78588/displayicon.png",
+        "map": "Split",
+        "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
+        "when": "há 45 min",
+        "timestamp": "2026-09-21T18:56:54.522+00:00",
+        "won": false,
+        "placement": "2nd",
+        "roundsWon": 9,
+        "roundsLost": 13,
+        "kills": 23,
+        "deaths": 17,
+        "assists": 3,
+        "kd": 1.4,
+        "acs": 296,
+        "hs": 52,
+        "dd": 46,
+        "trs": 673,
+        "badges": [
+          "1v2 Clutch",
+          "3k"
+        ],
+        "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
+      },
+      {
         "id": "44a8efc8-2acb-4fee-b395-51db58532e17",
         "agent": "Clove",
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1dbf2edd-4729-0984-3115-daa5eed44993/displayicon.png",
@@ -2323,33 +2349,6 @@
         "dd": -36,
         "trs": 393,
         "badges": [],
-        "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
-      },
-      {
-        "id": "f8ab3fff-3e85-4ffa-8a38-048a627f475f",
-        "agent": "Sova",
-        "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
-        "map": "Haven",
-        "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 3 dias",
-        "timestamp": "2026-09-18T19:28:57.139+00:00",
-        "won": false,
-        "placement": "7th",
-        "roundsWon": 9,
-        "roundsLost": 13,
-        "kills": 15,
-        "deaths": 18,
-        "assists": 6,
-        "kd": 0.8,
-        "acs": 203,
-        "hs": 26,
-        "dd": 2,
-        "trs": 569,
-        "badges": [
-          "1v2 Clutch",
-          "1v1 Clutch",
-          "3k"
-        ],
         "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
       }
     ],
