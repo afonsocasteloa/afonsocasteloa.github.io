@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T08:44:16.531Z",
+  "fetchedAt": "2026-09-21T08:46:57.231Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -39,10 +39,10 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
-      "Chxse Atlantic#nez",
-      "Fazed#any",
       "マズ ッ#MAZZ",
       "wxlf#1410",
+      "Chxse Atlantic#nez",
+      "Fazed#any",
       "Minx#bubu"
     ]
   },
@@ -12182,7 +12182,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/f94c3b30-42be-e959-889c-5aa313dba261/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 1184 dias",
+        "when": "há 1185 dias",
         "timestamp": "2023-06-24T21:15:23.593+00:00",
         "won": false,
         "placement": "5th",
