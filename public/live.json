@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T12:35:23.495Z",
+  "fetchedAt": "2026-09-21T12:38:29.669Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -41,9 +41,9 @@
     "members": [
       "Chxse Atlantic#nez",
       "Fazed#any",
-      "Minx#bubu",
       "マズ ッ#MAZZ",
-      "wxlf#1410"
+      "wxlf#1410",
+      "Minx#bubu"
     ]
   },
   "playtime": "3 489h",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1126,25 +1126,6 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 681
-    },
-    {
-      "id": "4539cac3-47ae-90e5-3d01-b3812ca3274e",
-      "episode": "EP 8",
-      "act": "ACT III",
-      "short": "E8: A3",
-      "current": false,
-      "matches": 220,
-      "wins": 112,
-      "losses": 104,
-      "winRate": 50.9,
-      "playtime": "127h",
-      "kd": "1.14",
-      "hs": "35.5%",
-      "acs": "226.6",
-      "adr": "150.2",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 608
     },
     {
       "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
@@ -10382,7 +10363,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/707eab51-4836-f488-046a-cda6bf494859/displayicon.png",
         "map": "Icebox",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg",
-        "when": "há 939 dias",
+        "when": "há 940 dias",
         "timestamp": "2024-02-25T01:08:34.303+00:00",
         "won": true,
         "placement": "2nd",
@@ -10607,7 +10588,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/displayicon.png",
         "map": "Breeze",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/breeze.jpg",
-        "when": "há 988 dias",
+        "when": "há 989 dias",
         "timestamp": "2024-01-07T01:07:50.889+00:00",
         "won": false,
         "placement": "2nd",
