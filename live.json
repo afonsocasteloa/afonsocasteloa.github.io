@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T16:44:09.307Z",
+  "fetchedAt": "2026-09-21T16:46:20.200Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -36,9 +36,15 @@
   "premier": {
     "name": "Krypto Gaming",
     "tag": "KRYP",
-    "league": "—",
-    "icon": "",
-    "members": []
+    "league": "IBIT · Contender · #27",
+    "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
+    "members": [
+      "Chxse Atlantic#nez",
+      "Fazed#any",
+      "マズ ッ#MAZZ",
+      "wxlf#1410",
+      "Minx#bubu"
+    ]
   },
   "playtime": "3 489h",
   "matches": 6094,
@@ -119,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "23"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -913,6 +919,25 @@
       "score": 694
     },
     {
+      "id": "9d85c932-4820-c060-09c3-668636d4df1b",
+      "episode": "V26",
+      "act": "ACT II",
+      "short": "V26: A2",
+      "current": false,
+      "matches": 159,
+      "wins": 77,
+      "losses": 77,
+      "winRate": 48.4,
+      "playtime": "87h",
+      "kd": "1.10",
+      "hs": "36.5%",
+      "acs": "229.2",
+      "adr": "151.0",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 627
+    },
+    {
       "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
       "episode": "V26",
       "act": "ACT I",
@@ -949,6 +974,25 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 481
+    },
+    {
+      "id": "5adc33fa-4f30-2899-f131-6fba64c5dd3a",
+      "episode": "V25",
+      "act": "ACT V",
+      "short": "V25: A5",
+      "current": false,
+      "matches": 269,
+      "wins": 145,
+      "losses": 124,
+      "winRate": 53.9,
+      "playtime": "148h",
+      "kd": "1.03",
+      "hs": "38.2%",
+      "acs": "214.5",
+      "adr": "142.3",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 556
     },
     {
       "id": "ac12e9b3-47e6-9599-8fa1-0bb473e5efc7",
@@ -1006,6 +1050,25 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 456
+    },
+    {
+      "id": "476b0893-4c2e-abd6-c5fe-708facff0772",
+      "episode": "V25",
+      "act": "ACT I",
+      "short": "V25: A1",
+      "current": false,
+      "matches": 177,
+      "wins": 97,
+      "losses": 79,
+      "winRate": 54.8,
+      "playtime": "100h",
+      "kd": "1.05",
+      "hs": "37.0%",
+      "acs": "213.4",
+      "adr": "142.0",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 597
     },
     {
       "id": "dcde7346-4085-de4f-c463-2489ed47983b",
