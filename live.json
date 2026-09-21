@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T12:59:51.380Z",
+  "fetchedAt": "2026-09-21T13:03:00.724Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 38.4,
-    "body": 58.9,
-    "legs": 2.7,
-    "headHits": 245,
-    "bodyHits": 376,
-    "legHits": 17
+    "head": 0,
+    "body": 0,
+    "legs": 0,
+    "headHits": 0,
+    "bodyHits": 0,
+    "legHits": 0
   },
   "last20": {
-    "record": "8W – 12L (40%)",
-    "kd": 0.9,
-    "adr": 132
+    "record": "0W – 1L (0%)",
+    "kd": 0,
+    "adr": 0
   },
   "roles": [
     {
