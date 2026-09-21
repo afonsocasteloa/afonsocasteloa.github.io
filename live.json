@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T15:35:59.238Z",
+  "fetchedAt": "2026-09-21T15:39:36.289Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -39,10 +39,10 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
-      "Chxse Atlantic#nez",
       "マズ ッ#MAZZ",
       "wxlf#1410",
       "Fazed#any",
+      "Chxse Atlantic#nez",
       "Minx#bubu"
     ]
   },
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "24"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1259,44 +1259,6 @@
       "rank": "Gold 2",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/13.png",
       "score": 547
-    },
-    {
-      "id": "34093c29-4306-43de-452f-3f944bde22be",
-      "episode": "EP 6",
-      "act": "ACT II",
-      "short": "E6: A2",
-      "current": false,
-      "matches": 300,
-      "wins": 145,
-      "losses": 145,
-      "winRate": 48.3,
-      "playtime": "180h",
-      "kd": "1.11",
-      "hs": "24.4%",
-      "acs": "222.0",
-      "adr": "145.5",
-      "rank": "Gold 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/12.png",
-      "score": 554
-    },
-    {
-      "id": "9c91a445-4f78-1baa-a3ea-8f8aadf4914d",
-      "episode": "EP 6",
-      "act": "ACT I",
-      "short": "E6: A1",
-      "current": false,
-      "matches": 390,
-      "wins": 182,
-      "losses": 204,
-      "winRate": 46.7,
-      "playtime": "227h",
-      "kd": "1.10",
-      "hs": "21.9%",
-      "acs": "228.3",
-      "adr": "148.2",
-      "rank": "Silver 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/11.png",
-      "score": 523
     },
     {
       "id": "aca29595-40e4-01f5-3f35-b1b3d304c96e",
