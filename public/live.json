@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T23:12:43.998Z",
+  "fetchedAt": "2026-09-21T23:14:40.796Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -47,11 +47,11 @@
     ]
   },
   "playtime": "3 491h",
-  "matches": 6097,
-  "wins": 3023,
+  "matches": 6098,
+  "wins": 3024,
   "losses": 2987,
   "winRate": 49.6,
-  "trackerScore": 462,
+  "trackerScore": 463,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -71,12 +71,12 @@
     {
       "label": "Win %",
       "value": "49.6%",
-      "hint": "3023W 2987L"
+      "hint": "3024W 2987L"
     },
     {
       "label": "Wins",
-      "value": "3 023",
-      "hint": "6097 partidas"
+      "value": "3 024",
+      "hint": "6098 partidas"
     },
     {
       "label": "KAST",
@@ -97,15 +97,15 @@
   "extras": [
     {
       "label": "Kills",
-      "value": "98 997"
+      "value": "99 011"
     },
     {
       "label": "Deaths",
-      "value": "94 307"
+      "value": "94 323"
     },
     {
       "label": "Assists",
-      "value": "24 744"
+      "value": "24 752"
     },
     {
       "label": "KAD",
@@ -121,7 +121,7 @@
     },
     {
       "label": "Flawless",
-      "value": "4 726"
+      "value": "4 728"
     },
     {
       "label": "Atos jogados",
@@ -157,8 +157,8 @@
     {
       "name": "Initiator",
       "icon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
-      "winRate": 50.5,
-      "record": "699W – 684L",
+      "winRate": 50.6,
+      "record": "700W – 684L",
       "kda": 1.37,
       "kdaLine": "22K / 21K / 7.29K"
     },
@@ -184,7 +184,7 @@
       "name": "Vandal",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/9c82e19d-4575-0200-1a81-3eacf00cf872/shop/newimage.png",
-      "kills": 48506,
+      "kills": 48517,
       "head": 43,
       "body": 53,
       "legs": 3
@@ -193,7 +193,7 @@
       "name": "Phantom",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/ee8e8d15-496b-07ac-e5f6-8fae5d4c7b1a/shop/newimage.png",
-      "kills": 13929,
+      "kills": 13931,
       "head": 40,
       "body": 56,
       "legs": 4
@@ -390,18 +390,18 @@
   ],
   "maps": [
     {
+      "name": "Summit",
+      "image": "https://media.valorant-api.com/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
+      "winRate": 57.4,
+      "wins": 31,
+      "losses": 23
+    },
+    {
       "name": "Abyss",
       "image": "https://media.valorant-api.com/maps/224b0a95-48b9-f703-1bd8-67aca101a61f/splash.png",
       "winRate": 57,
       "wins": 146,
       "losses": 109
-    },
-    {
-      "name": "Summit",
-      "image": "https://media.valorant-api.com/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-      "winRate": 56.6,
-      "wins": 30,
-      "losses": 23
     },
     {
       "name": "Icebox",
@@ -499,11 +499,11 @@
       "name": "Sova",
       "icon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "hours": "323h",
-      "matches": 573,
-      "winRate": 52.5,
+      "matches": 574,
+      "winRate": 52.6,
       "kd": 1.05,
       "adr": 139.7,
-      "acs": 208.1,
+      "acs": 208,
       "dd": 7,
       "bestMap": "Haven",
       "bestMapWr": "57% WR"
@@ -867,18 +867,18 @@
       "act": "ACT V",
       "short": "V26: A5",
       "current": true,
-      "matches": 161,
-      "wins": 81,
+      "matches": 162,
+      "wins": 82,
       "losses": 80,
-      "winRate": 50.3,
-      "playtime": "88h",
-      "kd": "1.02",
-      "hs": "39.2%",
-      "acs": "214.0",
-      "adr": "143.1",
-      "rank": "Immortal 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
-      "score": 462
+      "winRate": 50.6,
+      "playtime": "89h",
+      "kd": "1.01",
+      "hs": "39.3%",
+      "acs": "213.8",
+      "adr": "143.0",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 463
     },
     {
       "id": "4f0864e2-40af-28a4-de2c-0e9e64e75f23",
@@ -1363,7 +1363,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Summit",
       "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-      "when": "há 40 min",
+      "when": "há 42 min",
       "timestamp": "2026-09-21T22:32:40.29+00:00",
       "won": true,
       "placement": "5th",
@@ -1863,7 +1863,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Summit",
         "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-        "when": "há 40 min",
+        "when": "há 42 min",
         "timestamp": "2026-09-21T22:32:40.29+00:00",
         "won": true,
         "placement": "5th",
