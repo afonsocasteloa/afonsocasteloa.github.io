@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-21T10:59:55.647Z",
+  "fetchedAt": "2026-09-21T11:02:27.360Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 5869,
+  "views": 5876,
   "level": 845,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -40,10 +40,10 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Chxse Atlantic#nez",
-      "Fazed#any",
       "Minx#bubu",
       "マズ ッ#MAZZ",
-      "wxlf#1410"
+      "wxlf#1410",
+      "Fazed#any"
     ]
   },
   "playtime": "3 489h",
