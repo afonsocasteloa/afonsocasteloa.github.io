@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-21T13:03:00.724Z",
+  "fetchedAt": "2026-09-21T13:05:16.643Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 5901,
+  "views": 5910,
   "level": 845,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -39,10 +39,10 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
-      "Fazed#any",
-      "Chxse Atlantic#nez",
       "マズ ッ#MAZZ",
       "wxlf#1410",
+      "Chxse Atlantic#nez",
+      "Fazed#any",
       "Minx#bubu"
     ]
   },
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 0,
-    "body": 0,
-    "legs": 0,
-    "headHits": 0,
-    "bodyHits": 0,
-    "legHits": 0
+    "head": 38.4,
+    "body": 58.9,
+    "legs": 2.7,
+    "headHits": 245,
+    "bodyHits": 376,
+    "legHits": 17
   },
   "last20": {
-    "record": "0W – 1L (0%)",
-    "kd": 0,
-    "adr": 0
+    "record": "8W – 12L (40%)",
+    "kd": 0.9,
+    "adr": 132
   },
   "roles": [
     {
