@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T11:44:24.802Z",
+  "fetchedAt": "2026-09-22T11:46:44.249Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "25"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -974,6 +974,25 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 481
+    },
+    {
+      "id": "5adc33fa-4f30-2899-f131-6fba64c5dd3a",
+      "episode": "V25",
+      "act": "ACT V",
+      "short": "V25: A5",
+      "current": false,
+      "matches": 269,
+      "wins": 145,
+      "losses": 124,
+      "winRate": 53.9,
+      "playtime": "148h",
+      "kd": "1.03",
+      "hs": "38.2%",
+      "acs": "214.5",
+      "adr": "142.3",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 556
     },
     {
       "id": "ac12e9b3-47e6-9599-8fa1-0bb473e5efc7",
@@ -4209,7 +4228,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Pearl",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/pearl.jpg",
-        "when": "há 190 dias",
+        "when": "há 191 dias",
         "timestamp": "2026-03-16T00:15:32.02+00:00",
         "won": true,
         "placement": "7th",
@@ -12328,7 +12347,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 1187 dias",
+        "when": "há 1188 dias",
         "timestamp": "2023-06-23T00:16:29.606+00:00",
         "won": true,
         "placement": "7th",
