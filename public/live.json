@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-22T18:01:58.251Z",
+  "fetchedAt": "2026-09-22T18:05:31.794Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6368,
+  "views": 6375,
   "level": 845,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -39,10 +39,10 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
-      "Fazed#any",
       "Chxse Atlantic#nez",
       "マズ ッ#MAZZ",
       "wxlf#1410",
+      "Fazed#any",
       "Minx#bubu"
     ]
   },
@@ -51,7 +51,7 @@
   "wins": 3025,
   "losses": 2987,
   "winRate": 49.6,
-  "trackerScore": 465,
+  "trackerScore": 576,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "24"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -862,25 +862,6 @@
   ],
   "acts": [
     {
-      "id": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b",
-      "episode": "V26",
-      "act": "ACT V",
-      "short": "V26: A5",
-      "current": true,
-      "matches": 163,
-      "wins": 83,
-      "losses": 80,
-      "winRate": 50.9,
-      "playtime": "89h",
-      "kd": "1.02",
-      "hs": "39.3%",
-      "acs": "213.7",
-      "adr": "143.0",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 465
-    },
-    {
       "id": "4f0864e2-40af-28a4-de2c-0e9e64e75f23",
       "episode": "V26",
       "act": "ACT IV",
@@ -1335,25 +1316,6 @@
       "rank": "Bronze 2",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/7.png",
       "score": 107
-    },
-    {
-      "id": "67e373c7-48f7-b422-641b-079ace30b427",
-      "episode": "EP 5",
-      "act": "ACT I",
-      "short": "E5: A1",
-      "current": false,
-      "matches": 28,
-      "wins": 11,
-      "losses": 17,
-      "winRate": 39.3,
-      "playtime": "15h",
-      "kd": "0.59",
-      "hs": "13.6%",
-      "acs": "130.2",
-      "adr": "88.2",
-      "rank": "Iron 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/5.png",
-      "score": 100
     }
   ],
   "recent": [
@@ -1388,7 +1350,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Summit",
       "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-      "when": "há 19h",
+      "when": "há 20h",
       "timestamp": "2026-09-21T22:32:40.29+00:00",
       "won": true,
       "placement": "5th",
