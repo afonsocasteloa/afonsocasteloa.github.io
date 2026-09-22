@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T14:10:33.131Z",
+  "fetchedAt": "2026-09-22T14:22:24.239Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -40,10 +40,10 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Chxse Atlantic#nez",
-      "Fazed#any",
-      "Minx#bubu",
       "マズ ッ#MAZZ",
-      "wxlf#1410"
+      "wxlf#1410",
+      "Fazed#any",
+      "Minx#bubu"
     ]
   },
   "playtime": "3 492h",
@@ -14605,7 +14605,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/displayicon.png",
         "map": "Ascent",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg",
-        "when": "há 1499 dias",
+        "when": "há 1500 dias",
         "timestamp": "2022-08-15T02:45:34.625+00:00",
         "won": true,
         "placement": "9th",
