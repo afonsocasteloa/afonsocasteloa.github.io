@@ -1,10 +1,10 @@
 {
-  "fetchedAt": "2026-09-22T18:14:10.639Z",
+  "fetchedAt": "2026-09-22T18:17:28.517Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
   "views": 6375,
-  "level": 845,
+  "level": 846,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
   "cardWide": "https://media.valorant-api.com/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/wideart.png",
@@ -40,18 +40,18 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Chxse Atlantic#nez",
-      "Fazed#any",
-      "Minx#bubu",
       "マズ ッ#MAZZ",
-      "wxlf#1410"
+      "wxlf#1410",
+      "Fazed#any",
+      "Minx#bubu"
     ]
   },
   "playtime": "3 492h",
-  "matches": 6099,
-  "wins": 3025,
+  "matches": 6100,
+  "wins": 3026,
   "losses": 2987,
   "winRate": 49.6,
-  "trackerScore": 465,
+  "trackerScore": 462,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -71,12 +71,12 @@
     {
       "label": "Win %",
       "value": "49.6%",
-      "hint": "3025W 2987L"
+      "hint": "3026W 2987L"
     },
     {
       "label": "Wins",
-      "value": "3 025",
-      "hint": "6099 partidas"
+      "value": "3 026",
+      "hint": "6100 partidas"
     },
     {
       "label": "KAST",
@@ -97,15 +97,15 @@
   "extras": [
     {
       "label": "Kills",
-      "value": "99 027"
+      "value": "99 037"
     },
     {
       "label": "Deaths",
-      "value": "94 336"
+      "value": "94 352"
     },
     {
       "label": "Assists",
-      "value": "24 757"
+      "value": "24 763"
     },
     {
       "label": "KAD",
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 41.3,
-    "body": 56,
+    "head": 41.8,
+    "body": 55.6,
     "legs": 2.7,
-    "headHits": 272,
-    "bodyHits": 369,
-    "legHits": 18
+    "headHits": 266,
+    "bodyHits": 354,
+    "legHits": 17
   },
   "last20": {
     "record": "8W – 12L (40%)",
     "kd": 0.9,
-    "adr": 139
+    "adr": 136
   },
   "roles": [
     {
@@ -158,7 +158,7 @@
       "name": "Initiator",
       "icon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
       "winRate": 50.6,
-      "record": "701W – 684L",
+      "record": "702W – 684L",
       "kda": 1.37,
       "kdaLine": "22K / 21K / 7.3K"
     },
@@ -184,7 +184,7 @@
       "name": "Vandal",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/9c82e19d-4575-0200-1a81-3eacf00cf872/shop/newimage.png",
-      "kills": 48525,
+      "kills": 48529,
       "head": 43,
       "body": 53,
       "legs": 3
@@ -193,7 +193,7 @@
       "name": "Phantom",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/ee8e8d15-496b-07ac-e5f6-8fae5d4c7b1a/shop/newimage.png",
-      "kills": 13931,
+      "kills": 13932,
       "head": 40,
       "body": 56,
       "legs": 4
@@ -202,7 +202,7 @@
       "name": "Sheriff",
       "type": "Sidearms",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/e336c6b8-418d-9340-d77f-7a9e4cfe0702/shop/newimage.png",
-      "kills": 9282,
+      "kills": 9285,
       "head": 54,
       "body": 45,
       "legs": 1
@@ -229,7 +229,7 @@
       "name": "Guardian",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/4ade7faa-4cf1-8376-95ef-39884480959b/shop/newimage.png",
-      "kills": 3392,
+      "kills": 3394,
       "head": 51,
       "body": 48,
       "legs": 1
@@ -449,7 +449,7 @@
       "name": "Lotus",
       "image": "https://media.valorant-api.com/maps/2fe4ed3a-450a-948b-6d6b-e89a78e680a9/splash.png",
       "winRate": 49.2,
-      "wins": 324,
+      "wins": 325,
       "losses": 317
     },
     {
@@ -550,12 +550,12 @@
     {
       "name": "Fade",
       "icon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
-      "hours": "169h",
-      "matches": 303,
-      "winRate": 48.2,
+      "hours": "170h",
+      "matches": 304,
+      "winRate": 48.4,
       "kd": 1.04,
-      "adr": 135.9,
-      "acs": 207.6,
+      "adr": 135.8,
+      "acs": 207.5,
       "dd": 3,
       "bestMap": "Bind",
       "bestMapWr": "65% WR"
@@ -867,18 +867,18 @@
       "act": "ACT V",
       "short": "V26: A5",
       "current": true,
-      "matches": 163,
-      "wins": 83,
+      "matches": 164,
+      "wins": 84,
       "losses": 80,
-      "winRate": 50.9,
-      "playtime": "89h",
-      "kd": "1.02",
-      "hs": "39.3%",
-      "acs": "213.7",
-      "adr": "143.0",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 465
+      "winRate": 51.2,
+      "playtime": "90h",
+      "kd": "1.01",
+      "hs": "39.2%",
+      "acs": "213.4",
+      "adr": "142.8",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 462
     },
     {
       "id": "4f0864e2-40af-28a4-de2c-0e9e64e75f23",
@@ -1358,6 +1358,29 @@
   ],
   "recent": [
     {
+      "id": "2241067d-1a9d-4d5b-8cc2-382a902c2d88",
+      "agent": "Fade",
+      "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
+      "map": "Lotus",
+      "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
+      "when": "há 36 min",
+      "timestamp": "2026-09-22T17:41:56.086+00:00",
+      "won": true,
+      "placement": "10th",
+      "roundsWon": 13,
+      "roundsLost": 6,
+      "kills": 10,
+      "deaths": 16,
+      "assists": 6,
+      "kd": 0.6,
+      "acs": 164,
+      "hs": 33,
+      "dd": -53,
+      "trs": 360,
+      "badges": [],
+      "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
+    },
+    {
       "id": "8f9bac97-f211-4415-8d54-2a0a111a2ac8",
       "agent": "Sova",
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
@@ -1830,35 +1853,33 @@
       "trs": 689,
       "badges": [],
       "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
-    },
-    {
-      "id": "9438f1f9-dd01-44ad-b626-641edcd3cd8f",
-      "agent": "Raze",
-      "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/f94c3b30-42be-e959-889c-5aa313dba261/displayicon.png",
-      "map": "Lotus",
-      "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-      "when": "há 3 dias",
-      "timestamp": "2026-09-19T11:06:55.815+00:00",
-      "won": true,
-      "placement": "4th",
-      "roundsWon": 13,
-      "roundsLost": 8,
-      "kills": 17,
-      "deaths": 14,
-      "assists": 3,
-      "kd": 1.2,
-      "acs": 233,
-      "hs": 31,
-      "dd": 57,
-      "trs": 729,
-      "badges": [
-        "3k x2"
-      ],
-      "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
     }
   ],
   "matchesByAct": {
     "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b": [
+      {
+        "id": "2241067d-1a9d-4d5b-8cc2-382a902c2d88",
+        "agent": "Fade",
+        "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
+        "map": "Lotus",
+        "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
+        "when": "há 36 min",
+        "timestamp": "2026-09-22T17:41:56.086+00:00",
+        "won": true,
+        "placement": "10th",
+        "roundsWon": 13,
+        "roundsLost": 6,
+        "kills": 10,
+        "deaths": 16,
+        "assists": 6,
+        "kd": 0.6,
+        "acs": 164,
+        "hs": 33,
+        "dd": -53,
+        "trs": 360,
+        "badges": [],
+        "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
+      },
       {
         "id": "8f9bac97-f211-4415-8d54-2a0a111a2ac8",
         "agent": "Sova",
@@ -2331,31 +2352,6 @@
         "dd": 28,
         "trs": 689,
         "badges": [],
-        "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
-      },
-      {
-        "id": "9438f1f9-dd01-44ad-b626-641edcd3cd8f",
-        "agent": "Raze",
-        "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/f94c3b30-42be-e959-889c-5aa313dba261/displayicon.png",
-        "map": "Lotus",
-        "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-        "when": "há 3 dias",
-        "timestamp": "2026-09-19T11:06:55.815+00:00",
-        "won": true,
-        "placement": "4th",
-        "roundsWon": 13,
-        "roundsLost": 8,
-        "kills": 17,
-        "deaths": 14,
-        "assists": 3,
-        "kd": 1.2,
-        "acs": 233,
-        "hs": 31,
-        "dd": 57,
-        "trs": 729,
-        "badges": [
-          "3k x2"
-        ],
         "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
       }
     ],
