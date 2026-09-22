@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T19:46:45.314Z",
+  "fetchedAt": "2026-09-22T19:49:08.451Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -24,7 +24,7 @@
   ],
   "current": {
     "name": "Immortal 1",
-    "rr": 42,
+    "rr": 48,
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png"
   },
   "peak": {
@@ -39,19 +39,19 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
+      "Chxse Atlantic#nez",
+      "Fazed#any",
       "Minx#bubu",
       "マズ ッ#MAZZ",
-      "wxlf#1410",
-      "Chxse Atlantic#nez",
-      "Fazed#any"
+      "wxlf#1410"
     ]
   },
   "playtime": "3 493h",
-  "matches": 6101,
+  "matches": 6102,
   "wins": 3027,
-  "losses": 2987,
+  "losses": 2988,
   "winRate": 49.6,
-  "trackerScore": 474,
+  "trackerScore": 465,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -71,12 +71,12 @@
     {
       "label": "Win %",
       "value": "49.6%",
-      "hint": "3027W 2987L"
+      "hint": "3027W 2988L"
     },
     {
       "label": "Wins",
       "value": "3 027",
-      "hint": "6101 partidas"
+      "hint": "6102 partidas"
     },
     {
       "label": "KAST",
@@ -97,15 +97,15 @@
   "extras": [
     {
       "label": "Kills",
-      "value": "99 055"
+      "value": "99 066"
     },
     {
       "label": "Deaths",
-      "value": "94 365"
+      "value": "94 380"
     },
     {
       "label": "Assists",
-      "value": "24 769"
+      "value": "24 778"
     },
     {
       "label": "KAD",
@@ -121,7 +121,7 @@
     },
     {
       "label": "Flawless",
-      "value": "4 729"
+      "value": "4 730"
     },
     {
       "label": "Atos jogados",
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 41.8,
-    "body": 55,
-    "legs": 3.3,
-    "headHits": 270,
-    "bodyHits": 355,
-    "legHits": 21
+    "head": 41.6,
+    "body": 54.9,
+    "legs": 3.6,
+    "headHits": 268,
+    "bodyHits": 354,
+    "legHits": 23
   },
   "last20": {
     "record": "8W – 12L (40%)",
     "kd": 0.9,
-    "adr": 140
+    "adr": 139
   },
   "roles": [
     {
@@ -157,10 +157,10 @@
     {
       "name": "Initiator",
       "icon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
-      "winRate": 50.7,
-      "record": "703W – 684L",
+      "winRate": 50.6,
+      "record": "703W – 685L",
       "kda": 1.37,
-      "kdaLine": "22K / 21K / 7.31K"
+      "kdaLine": "22K / 21K / 7.32K"
     },
     {
       "name": "Sentinel",
@@ -184,7 +184,7 @@
       "name": "Vandal",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/9c82e19d-4575-0200-1a81-3eacf00cf872/shop/newimage.png",
-      "kills": 48537,
+      "kills": 48542,
       "head": 43,
       "body": 53,
       "legs": 3
@@ -193,7 +193,7 @@
       "name": "Phantom",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/ee8e8d15-496b-07ac-e5f6-8fae5d4c7b1a/shop/newimage.png",
-      "kills": 13932,
+      "kills": 13934,
       "head": 40,
       "body": 56,
       "legs": 4
@@ -202,7 +202,7 @@
       "name": "Sheriff",
       "type": "Sidearms",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/e336c6b8-418d-9340-d77f-7a9e4cfe0702/shop/newimage.png",
-      "kills": 9288,
+      "kills": 9290,
       "head": 54,
       "body": 45,
       "legs": 1
@@ -229,7 +229,7 @@
       "name": "Guardian",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/4ade7faa-4cf1-8376-95ef-39884480959b/shop/newimage.png",
-      "kills": 3399,
+      "kills": 3401,
       "head": 51,
       "body": 48,
       "legs": 1
@@ -455,9 +455,9 @@
     {
       "name": "Split",
       "image": "https://media.valorant-api.com/maps/d960549e-485c-e861-8d71-aa9d1aed12a2/splash.png",
-      "winRate": 47.9,
+      "winRate": 47.8,
       "wins": 314,
-      "losses": 335
+      "losses": 336
     },
     {
       "name": "Breeze",
@@ -629,11 +629,11 @@
       "name": "Skye",
       "icon": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
       "hours": "107h",
-      "matches": 178,
-      "winRate": 46.6,
+      "matches": 179,
+      "winRate": 46.4,
       "kd": 1,
-      "adr": 129.7,
-      "acs": 200.3,
+      "adr": 129.6,
+      "acs": 200.1,
       "dd": -4,
       "bestMap": "Sunset",
       "bestMapWr": "58% WR"
@@ -867,18 +867,18 @@
       "act": "ACT V",
       "short": "V26: A5",
       "current": true,
-      "matches": 165,
+      "matches": 166,
       "wins": 85,
-      "losses": 80,
-      "winRate": 51.5,
-      "playtime": "90h",
-      "kd": "1.02",
+      "losses": 81,
+      "winRate": 51.2,
+      "playtime": "91h",
+      "kd": "1.01",
       "hs": "39.2%",
-      "acs": "213.8",
-      "adr": "143.1",
+      "acs": "213.6",
+      "adr": "143.0",
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
-      "score": 474
+      "score": 465
     },
     {
       "id": "4f0864e2-40af-28a4-de2c-0e9e64e75f23",
@@ -1358,6 +1358,29 @@
   ],
   "recent": [
     {
+      "id": "b36dbd27-e407-4c5f-a0ed-ec419b9de367",
+      "agent": "Skye",
+      "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
+      "map": "Split",
+      "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
+      "when": "há 37 min",
+      "timestamp": "2026-09-22T19:12:06.039+00:00",
+      "won": false,
+      "placement": "8th",
+      "roundsWon": 6,
+      "roundsLost": 13,
+      "kills": 11,
+      "deaths": 15,
+      "assists": 9,
+      "kd": 0.7,
+      "acs": 175,
+      "hs": 33,
+      "dd": -37,
+      "trs": 283,
+      "badges": [],
+      "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
+    },
+    {
       "id": "a8eaa871-cf29-43ed-878e-d97f5b70440d",
       "agent": "Sova",
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
@@ -1831,31 +1854,6 @@
       "trs": 405,
       "badges": [],
       "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
-    },
-    {
-      "id": "b7d96d22-8b54-4053-b074-aac2ce319575",
-      "agent": "Omen",
-      "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/8e253930-4c05-31dd-1b6c-968525494517/displayicon.png",
-      "map": "Summit",
-      "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-      "when": "há 3 dias",
-      "timestamp": "2026-09-19T12:12:47.43+00:00",
-      "won": false,
-      "placement": "7th",
-      "roundsWon": 7,
-      "roundsLost": 13,
-      "kills": 12,
-      "deaths": 18,
-      "assists": 17,
-      "kd": 0.7,
-      "acs": 200,
-      "hs": 39,
-      "dd": -26,
-      "trs": 510,
-      "badges": [
-        "3k"
-      ],
-      "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
     }
   ],
   "matchesByAct": {
@@ -1866,7 +1864,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 35 min",
+        "when": "há 37 min",
         "timestamp": "2026-09-22T19:12:06.039+00:00",
         "won": false,
         "placement": "8th",
