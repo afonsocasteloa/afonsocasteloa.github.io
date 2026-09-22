@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T11:11:04.324Z",
+  "fetchedAt": "2026-09-22T11:13:25.008Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "25"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1050,6 +1050,25 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 456
+    },
+    {
+      "id": "476b0893-4c2e-abd6-c5fe-708facff0772",
+      "episode": "V25",
+      "act": "ACT I",
+      "short": "V25: A1",
+      "current": false,
+      "matches": 177,
+      "wins": 97,
+      "losses": 79,
+      "winRate": 54.8,
+      "playtime": "100h",
+      "kd": "1.05",
+      "hs": "37.0%",
+      "acs": "213.4",
+      "adr": "142.0",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 597
     },
     {
       "id": "dcde7346-4085-de4f-c463-2489ed47983b",
@@ -9550,7 +9569,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Icebox",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg",
-        "when": "há 877 dias",
+        "when": "há 878 dias",
         "timestamp": "2024-04-27T23:43:02.71+00:00",
         "won": true,
         "placement": "2nd",
