@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-22T20:00:35.833Z",
+  "fetchedAt": "2026-09-22T20:02:49.084Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6395,
+  "views": 6402,
   "level": 846,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "25"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1014,6 +1014,25 @@
       "score": 497
     },
     {
+      "id": "aef237a0-494d-3a14-a1c8-ec8de84e309c",
+      "episode": "V25",
+      "act": "ACT III",
+      "short": "V25: A3",
+      "current": false,
+      "matches": 176,
+      "wins": 67,
+      "losses": 106,
+      "winRate": 38.1,
+      "playtime": "96h",
+      "kd": "0.99",
+      "hs": "39.4%",
+      "acs": "213.6",
+      "adr": "141.6",
+      "rank": "Ascendant 2",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
+      "score": 398
+    },
+    {
       "id": "16118998-4705-5813-86dd-0292a2439d90",
       "episode": "V25",
       "act": "ACT II",
@@ -1344,7 +1363,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
       "map": "Split",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-      "when": "há 48 min",
+      "when": "há 51 min",
       "timestamp": "2026-09-22T19:12:06.039+00:00",
       "won": false,
       "placement": "8th",
@@ -1441,7 +1460,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Summit",
       "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-      "when": "há 21h",
+      "when": "há 22h",
       "timestamp": "2026-09-21T22:32:40.29+00:00",
       "won": true,
       "placement": "5th",
@@ -1845,7 +1864,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 48 min",
+        "when": "há 51 min",
         "timestamp": "2026-09-22T19:12:06.039+00:00",
         "won": false,
         "placement": "8th",
@@ -1942,7 +1961,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Summit",
         "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-        "when": "há 21h",
+        "when": "há 22h",
         "timestamp": "2026-09-21T22:32:40.29+00:00",
         "won": true,
         "placement": "5th",
