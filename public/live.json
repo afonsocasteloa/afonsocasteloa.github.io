@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T23:57:45.874Z",
+  "fetchedAt": "2026-09-21T23:59:59.457Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -41,8 +41,8 @@
     "members": [
       "マズ ッ#MAZZ",
       "wxlf#1410",
-      "Chxse Atlantic#nez",
       "Fazed#any",
+      "Chxse Atlantic#nez",
       "Minx#bubu"
     ]
   },
@@ -1363,7 +1363,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Haven",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-      "when": "há 43 min",
+      "when": "há 45 min",
       "timestamp": "2026-09-21T23:14:39.461+00:00",
       "won": true,
       "placement": "4th",
@@ -1865,7 +1865,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 43 min",
+        "when": "há 45 min",
         "timestamp": "2026-09-21T23:14:39.461+00:00",
         "won": true,
         "placement": "4th",
