@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-22T12:01:17.884Z",
+  "fetchedAt": "2026-09-22T12:03:42.161Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6284,
+  "views": 6291,
   "level": 845,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 0,
-    "body": 0,
-    "legs": 0,
-    "headHits": 0,
-    "bodyHits": 0,
-    "legHits": 0
+    "head": 41.3,
+    "body": 56,
+    "legs": 2.7,
+    "headHits": 272,
+    "bodyHits": 369,
+    "legHits": 18
   },
   "last20": {
-    "record": "0W – 1L (0%)",
-    "kd": 0,
-    "adr": 0
+    "record": "8W – 12L (40%)",
+    "kd": 0.9,
+    "adr": 139
   },
   "roles": [
     {
@@ -1388,7 +1388,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Summit",
       "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-      "when": "há 13h",
+      "when": "há 14h",
       "timestamp": "2026-09-21T22:32:40.29+00:00",
       "won": true,
       "placement": "5th",
@@ -1691,7 +1691,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Ascent",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg",
-      "when": "há 2 dias",
+      "when": "há 3 dias",
       "timestamp": "2026-09-20T00:28:49.305+00:00",
       "won": false,
       "placement": "8th",
@@ -1890,7 +1890,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Summit",
         "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-        "when": "há 13h",
+        "when": "há 14h",
         "timestamp": "2026-09-21T22:32:40.29+00:00",
         "won": true,
         "placement": "5th",
@@ -6709,7 +6709,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 515 dias",
+        "when": "há 516 dias",
         "timestamp": "2025-04-25T00:32:22.206+00:00",
         "won": true,
         "placement": "8th",
