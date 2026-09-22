@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T19:57:05.368Z",
+  "fetchedAt": "2026-09-22T20:00:35.833Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -40,8 +40,8 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Minx#bubu",
-      "Chxse Atlantic#nez",
       "Fazed#any",
+      "Chxse Atlantic#nez",
       "マズ ッ#MAZZ",
       "wxlf#1410"
     ]
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1014,25 +1014,6 @@
       "score": 497
     },
     {
-      "id": "aef237a0-494d-3a14-a1c8-ec8de84e309c",
-      "episode": "V25",
-      "act": "ACT III",
-      "short": "V25: A3",
-      "current": false,
-      "matches": 176,
-      "wins": 67,
-      "losses": 106,
-      "winRate": 38.1,
-      "playtime": "96h",
-      "kd": "0.99",
-      "hs": "39.4%",
-      "acs": "213.6",
-      "adr": "141.6",
-      "rank": "Ascendant 2",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
-      "score": 398
-    },
-    {
       "id": "16118998-4705-5813-86dd-0292a2439d90",
       "episode": "V25",
       "act": "ACT II",
@@ -1363,7 +1344,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
       "map": "Split",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-      "when": "há 45 min",
+      "when": "há 48 min",
       "timestamp": "2026-09-22T19:12:06.039+00:00",
       "won": false,
       "placement": "8th",
@@ -1864,7 +1845,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 45 min",
+        "when": "há 48 min",
         "timestamp": "2026-09-22T19:12:06.039+00:00",
         "won": false,
         "placement": "8th",
