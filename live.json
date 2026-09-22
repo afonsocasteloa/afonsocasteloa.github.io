@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T14:51:57.785Z",
+  "fetchedAt": "2026-09-22T14:54:49.291Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -40,10 +40,10 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Chxse Atlantic#nez",
+      "Minx#bubu",
       "Fazed#any",
       "マズ ッ#MAZZ",
-      "wxlf#1410",
-      "Minx#bubu"
+      "wxlf#1410"
     ]
   },
   "playtime": "3 492h",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1145,25 +1145,6 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 608
-    },
-    {
-      "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
-      "episode": "EP 8",
-      "act": "ACT II",
-      "short": "E8: A2",
-      "current": false,
-      "matches": 186,
-      "wins": 102,
-      "losses": 83,
-      "winRate": 54.8,
-      "playtime": "107h",
-      "kd": "1.03",
-      "hs": "31.3%",
-      "acs": "204.8",
-      "adr": "134.3",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 492
     },
     {
       "id": "ec876e6c-43e8-fa63-ffc1-2e8d4db25525",
