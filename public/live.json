@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T07:50:05.863Z",
+  "fetchedAt": "2026-09-22T07:53:04.089Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "25"
+      "value": "24"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -919,6 +919,25 @@
       "score": 694
     },
     {
+      "id": "9d85c932-4820-c060-09c3-668636d4df1b",
+      "episode": "V26",
+      "act": "ACT II",
+      "short": "V26: A2",
+      "current": false,
+      "matches": 159,
+      "wins": 77,
+      "losses": 77,
+      "winRate": 48.4,
+      "playtime": "87h",
+      "kd": "1.10",
+      "hs": "36.5%",
+      "acs": "229.2",
+      "adr": "151.0",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 627
+    },
+    {
       "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
       "episode": "V26",
       "act": "ACT I",
@@ -1128,25 +1147,6 @@
       "score": 608
     },
     {
-      "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
-      "episode": "EP 8",
-      "act": "ACT II",
-      "short": "E8: A2",
-      "current": false,
-      "matches": 186,
-      "wins": 102,
-      "losses": 83,
-      "winRate": 54.8,
-      "playtime": "107h",
-      "kd": "1.03",
-      "hs": "31.3%",
-      "acs": "204.8",
-      "adr": "134.3",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 492
-    },
-    {
       "id": "ec876e6c-43e8-fa63-ffc1-2e8d4db25525",
       "episode": "EP 8",
       "act": "ACT I",
@@ -1202,25 +1202,6 @@
       "rank": "Platinum 2",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/16.png",
       "score": 421
-    },
-    {
-      "id": "0981a882-4e7d-371a-70c4-c3b4f46c504a",
-      "episode": "EP 7",
-      "act": "ACT I",
-      "short": "E7: A1",
-      "current": false,
-      "matches": 358,
-      "wins": 181,
-      "losses": 170,
-      "winRate": 50.6,
-      "playtime": "215h",
-      "kd": "1.04",
-      "hs": "26.1%",
-      "acs": "212.9",
-      "adr": "139.5",
-      "rank": "Platinum 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/15.png",
-      "score": 487
     },
     {
       "id": "2de5423b-4aad-02ad-8d9b-c0a931958861",
@@ -2545,7 +2526,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/707eab51-4836-f488-046a-cda6bf494859/displayicon.png",
         "map": "Breeze",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/breeze.jpg",
-        "when": "há 35 dias",
+        "when": "há 36 dias",
         "timestamp": "2026-08-17T20:22:04.251+00:00",
         "won": true,
         "placement": "8th",
@@ -8959,7 +8940,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/bb2a4828-46eb-8cd1-e765-15848195d751/displayicon.png",
         "map": "Lotus",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-        "when": "há 817 dias",
+        "when": "há 818 dias",
         "timestamp": "2024-06-26T20:23:29.977+00:00",
         "won": true,
         "placement": "3rd",
