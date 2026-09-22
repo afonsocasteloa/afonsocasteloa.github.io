@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T04:29:55.375Z",
+  "fetchedAt": "2026-09-22T04:31:58.303Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -40,10 +40,10 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Chxse Atlantic#nez",
-      "Fazed#any",
       "マズ ッ#MAZZ",
       "wxlf#1410",
-      "Minx#bubu"
+      "Minx#bubu",
+      "Fazed#any"
     ]
   },
   "playtime": "3 492h",
@@ -3327,7 +3327,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/displayicon.png",
         "map": "Breeze",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/breeze.jpg",
-        "when": "há 93 dias",
+        "when": "há 94 dias",
         "timestamp": "2026-06-20T17:02:19.337+00:00",
         "won": false,
         "placement": "5th",
@@ -4682,7 +4682,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 260 dias",
+        "when": "há 261 dias",
         "timestamp": "2026-01-04T17:01:43.755+00:00",
         "won": false,
         "placement": "9th",
@@ -12884,7 +12884,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Lotus",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-        "when": "há 1247 dias",
+        "when": "há 1248 dias",
         "timestamp": "2023-04-23T17:00:57.506+00:00",
         "won": false,
         "placement": "4th",
