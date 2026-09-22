@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T10:53:03.599Z",
+  "fetchedAt": "2026-09-22T10:55:15.064Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "24"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 0,
-    "body": 0,
-    "legs": 0,
-    "headHits": 0,
-    "bodyHits": 0,
-    "legHits": 0
+    "head": 41.3,
+    "body": 56,
+    "legs": 2.7,
+    "headHits": 272,
+    "bodyHits": 369,
+    "legHits": 18
   },
   "last20": {
-    "record": "0W – 1L (0%)",
-    "kd": 0,
-    "adr": 0
+    "record": "8W – 12L (40%)",
+    "kd": 0.9,
+    "adr": 139
   },
   "roles": [
     {
@@ -919,6 +919,25 @@
       "score": 694
     },
     {
+      "id": "9d85c932-4820-c060-09c3-668636d4df1b",
+      "episode": "V26",
+      "act": "ACT II",
+      "short": "V26: A2",
+      "current": false,
+      "matches": 159,
+      "wins": 77,
+      "losses": 77,
+      "winRate": 48.4,
+      "playtime": "87h",
+      "kd": "1.10",
+      "hs": "36.5%",
+      "acs": "229.2",
+      "adr": "151.0",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 627
+    },
+    {
       "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
       "episode": "V26",
       "act": "ACT I",
@@ -936,6 +955,25 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 577
+    },
+    {
+      "id": "4c4b8cff-43eb-13d3-8f14-96b783c90cd2",
+      "episode": "V25",
+      "act": "ACT VI",
+      "short": "V25: A6",
+      "current": false,
+      "matches": 300,
+      "wins": 152,
+      "losses": 142,
+      "winRate": 50.7,
+      "playtime": "164h",
+      "kd": "1.03",
+      "hs": "42.3%",
+      "acs": "215.4",
+      "adr": "141.7",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 481
     },
     {
       "id": "5adc33fa-4f30-2899-f131-6fba64c5dd3a",
