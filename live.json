@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-22T12:31:07.064Z",
+  "fetchedAt": "2026-09-22T12:33:52.035Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6291,
+  "views": 6297,
   "level": 845,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -39,9 +39,9 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
+      "Chxse Atlantic#nez",
       "マズ ッ#MAZZ",
       "wxlf#1410",
-      "Chxse Atlantic#nez",
       "Fazed#any",
       "Minx#bubu"
     ]
@@ -1665,7 +1665,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Summit",
       "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-      "when": "há 2 dias",
+      "when": "há 3 dias",
       "timestamp": "2026-09-20T01:04:13.713+00:00",
       "won": true,
       "placement": "4th",
@@ -2167,7 +2167,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Summit",
         "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-        "when": "há 2 dias",
+        "when": "há 3 dias",
         "timestamp": "2026-09-20T01:04:13.713+00:00",
         "won": true,
         "placement": "4th",
