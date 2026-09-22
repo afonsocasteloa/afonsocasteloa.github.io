@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T11:53:20.084Z",
+  "fetchedAt": "2026-09-22T11:56:03.160Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -39,11 +39,11 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
+      "Fazed#any",
       "Chxse Atlantic#nez",
-      "Minx#bubu",
       "マズ ッ#MAZZ",
       "wxlf#1410",
-      "Fazed#any"
+      "Minx#bubu"
     ]
   },
   "playtime": "3 492h",
