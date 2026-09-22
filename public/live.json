@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T18:28:41.622Z",
+  "fetchedAt": "2026-09-22T18:31:14.742Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "25"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -881,6 +881,25 @@
       "score": 462
     },
     {
+      "id": "4f0864e2-40af-28a4-de2c-0e9e64e75f23",
+      "episode": "V26",
+      "act": "ACT IV",
+      "short": "V26: A4",
+      "current": false,
+      "matches": 204,
+      "wins": 105,
+      "losses": 98,
+      "winRate": 51.5,
+      "playtime": "109h",
+      "kd": "1.04",
+      "hs": "38.7%",
+      "acs": "224.0",
+      "adr": "149.7",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 576
+    },
+    {
       "id": "ce2783e8-44fc-dd48-3da3-33b5ba6c4a22",
       "episode": "V26",
       "act": "ACT III",
@@ -1344,7 +1363,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
       "map": "Lotus",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-      "when": "há 47 min",
+      "when": "há 49 min",
       "timestamp": "2026-09-22T17:41:56.086+00:00",
       "won": true,
       "placement": "10th",
@@ -1844,7 +1863,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
         "map": "Lotus",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-        "when": "há 47 min",
+        "when": "há 49 min",
         "timestamp": "2026-09-22T17:41:56.086+00:00",
         "won": true,
         "placement": "10th",
