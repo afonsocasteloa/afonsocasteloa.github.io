@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T11:08:15.739Z",
+  "fetchedAt": "2026-09-22T11:11:04.324Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1050,25 +1050,6 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 456
-    },
-    {
-      "id": "476b0893-4c2e-abd6-c5fe-708facff0772",
-      "episode": "V25",
-      "act": "ACT I",
-      "short": "V25: A1",
-      "current": false,
-      "matches": 177,
-      "wins": 97,
-      "losses": 79,
-      "winRate": 54.8,
-      "playtime": "100h",
-      "kd": "1.05",
-      "hs": "37.0%",
-      "acs": "213.4",
-      "adr": "142.0",
-      "rank": "Immortal 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
-      "score": 597
     },
     {
       "id": "dcde7346-4085-de4f-c463-2489ed47983b",
@@ -5576,7 +5557,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1dbf2edd-4729-0984-3115-daa5eed44993/displayicon.png",
         "map": "Corrode",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/11.0/corrode.jpg",
-        "when": "há 398 dias",
+        "when": "há 399 dias",
         "timestamp": "2025-08-19T23:40:00.719+00:00",
         "won": false,
         "placement": "2nd",
@@ -10444,7 +10425,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/displayicon.png",
         "map": "Lotus",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-        "when": "há 940 dias",
+        "when": "há 941 dias",
         "timestamp": "2024-02-24T23:39:57.801+00:00",
         "won": true,
         "placement": "7th",
