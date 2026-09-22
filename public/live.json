@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T19:43:47.946Z",
+  "fetchedAt": "2026-09-22T19:46:45.314Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -1412,7 +1412,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Haven",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-      "when": "há 20h",
+      "when": "há 21h",
       "timestamp": "2026-09-21T23:14:39.461+00:00",
       "won": true,
       "placement": "4th",
@@ -1861,6 +1861,29 @@
   "matchesByAct": {
     "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b": [
       {
+        "id": "b36dbd27-e407-4c5f-a0ed-ec419b9de367",
+        "agent": "Skye",
+        "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
+        "map": "Split",
+        "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
+        "when": "há 35 min",
+        "timestamp": "2026-09-22T19:12:06.039+00:00",
+        "won": false,
+        "placement": "8th",
+        "roundsWon": 6,
+        "roundsLost": 13,
+        "kills": 11,
+        "deaths": 15,
+        "assists": 9,
+        "kd": 0.7,
+        "acs": 175,
+        "hs": 33,
+        "dd": -37,
+        "trs": 283,
+        "badges": [],
+        "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
+      },
+      {
         "id": "a8eaa871-cf29-43ed-878e-d97f5b70440d",
         "agent": "Sova",
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
@@ -1915,7 +1938,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 20h",
+        "when": "há 21h",
         "timestamp": "2026-09-21T23:14:39.461+00:00",
         "won": true,
         "placement": "4th",
@@ -2333,31 +2356,6 @@
         "dd": -5,
         "trs": 405,
         "badges": [],
-        "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
-      },
-      {
-        "id": "b7d96d22-8b54-4053-b074-aac2ce319575",
-        "agent": "Omen",
-        "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/8e253930-4c05-31dd-1b6c-968525494517/displayicon.png",
-        "map": "Summit",
-        "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-        "when": "há 3 dias",
-        "timestamp": "2026-09-19T12:12:47.43+00:00",
-        "won": false,
-        "placement": "7th",
-        "roundsWon": 7,
-        "roundsLost": 13,
-        "kills": 12,
-        "deaths": 18,
-        "assists": 17,
-        "kd": 0.7,
-        "acs": 200,
-        "hs": 39,
-        "dd": -26,
-        "trs": 510,
-        "badges": [
-          "3k"
-        ],
         "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
       }
     ],
