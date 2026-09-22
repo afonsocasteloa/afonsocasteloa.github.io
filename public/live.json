@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T11:42:15.281Z",
+  "fetchedAt": "2026-09-22T11:44:24.802Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -39,9 +39,9 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
+      "Chxse Atlantic#nez",
       "マズ ッ#MAZZ",
       "wxlf#1410",
-      "Chxse Atlantic#nez",
       "Fazed#any",
       "Minx#bubu"
     ]
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -976,25 +976,6 @@
       "score": 481
     },
     {
-      "id": "5adc33fa-4f30-2899-f131-6fba64c5dd3a",
-      "episode": "V25",
-      "act": "ACT V",
-      "short": "V25: A5",
-      "current": false,
-      "matches": 269,
-      "wins": 145,
-      "losses": 124,
-      "winRate": 53.9,
-      "playtime": "148h",
-      "kd": "1.03",
-      "hs": "38.2%",
-      "acs": "214.5",
-      "adr": "142.3",
-      "rank": "Immortal 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
-      "score": 556
-    },
-    {
       "id": "ac12e9b3-47e6-9599-8fa1-0bb473e5efc7",
       "episode": "V25",
       "act": "ACT IV",
@@ -1363,7 +1344,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Haven",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-      "when": "há 12h",
+      "when": "há 13h",
       "timestamp": "2026-09-21T23:14:39.461+00:00",
       "won": true,
       "placement": "4th",
@@ -1865,7 +1846,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 12h",
+        "when": "há 13h",
         "timestamp": "2026-09-21T23:14:39.461+00:00",
         "won": true,
         "placement": "4th",
