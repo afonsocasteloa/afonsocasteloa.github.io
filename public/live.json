@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T05:38:50.162Z",
+  "fetchedAt": "2026-09-22T05:41:47.713Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -23,9 +23,9 @@
     }
   ],
   "current": {
-    "name": "Immortal 1",
-    "rr": 48,
-    "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png"
+    "name": "Ascendant 3",
+    "rr": null,
+    "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png"
   },
   "peak": {
     "name": "Immortal 3",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1183,25 +1183,6 @@
       "rank": "Ascendant 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/21.png",
       "score": 632
-    },
-    {
-      "id": "4401f9fd-4170-2e4c-4bc3-f3b4d7d150d1",
-      "episode": "EP 7",
-      "act": "ACT III",
-      "short": "E7: A3",
-      "current": false,
-      "matches": 263,
-      "wins": 129,
-      "losses": 132,
-      "winRate": 49,
-      "playtime": "156h",
-      "kd": "1.11",
-      "hs": "29.5%",
-      "acs": "215.1",
-      "adr": "142.4",
-      "rank": "Diamond 2",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/19.png",
-      "score": 604
     },
     {
       "id": "03dfd004-45d4-ebfd-ab0a-948ce780dac4",
@@ -7725,7 +7706,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 622 dias",
+        "when": "há 623 dias",
         "timestamp": "2025-01-07T18:11:25.904+00:00",
         "won": true,
         "placement": "MVP",
