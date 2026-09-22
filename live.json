@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T16:43:00.122Z",
+  "fetchedAt": "2026-09-22T16:45:23.846Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -51,7 +51,7 @@
   "wins": 3025,
   "losses": 2987,
   "winRate": 49.6,
-  "trackerScore": 576,
+  "trackerScore": 465,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "25"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -862,6 +862,25 @@
   ],
   "acts": [
     {
+      "id": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b",
+      "episode": "V26",
+      "act": "ACT V",
+      "short": "V26: A5",
+      "current": true,
+      "matches": 163,
+      "wins": 83,
+      "losses": 80,
+      "winRate": 50.9,
+      "playtime": "89h",
+      "kd": "1.02",
+      "hs": "39.3%",
+      "acs": "213.7",
+      "adr": "143.0",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 465
+    },
+    {
       "id": "4f0864e2-40af-28a4-de2c-0e9e64e75f23",
       "episode": "V26",
       "act": "ACT IV",
@@ -1344,7 +1363,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Haven",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-      "when": "há 17h",
+      "when": "há 18h",
       "timestamp": "2026-09-21T23:14:39.461+00:00",
       "won": true,
       "placement": "4th",
@@ -1846,7 +1865,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 17h",
+        "when": "há 18h",
         "timestamp": "2026-09-21T23:14:39.461+00:00",
         "won": true,
         "placement": "4th",
