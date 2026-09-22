@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T01:51:21.422Z",
+  "fetchedAt": "2026-09-22T01:53:42.384Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -36,9 +36,15 @@
   "premier": {
     "name": "Krypto Gaming",
     "tag": "KRYP",
-    "league": "—",
-    "icon": "",
-    "members": []
+    "league": "IBIT · Contender · #27",
+    "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
+    "members": [
+      "Chxse Atlantic#nez",
+      "Fazed#any",
+      "Minx#bubu",
+      "マズ ッ#MAZZ",
+      "wxlf#1410"
+    ]
   },
   "playtime": "3 492h",
   "matches": 6099,
@@ -6852,7 +6858,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/displayicon.png",
         "map": "Fracture",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/fracture.jpg",
-        "when": "há 516 dias",
+        "when": "há 517 dias",
         "timestamp": "2025-04-23T14:23:24.845+00:00",
         "won": true,
         "placement": "MVP",
@@ -8869,7 +8875,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/707eab51-4836-f488-046a-cda6bf494859/displayicon.png",
         "map": "Icebox",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg",
-        "when": "há 765 dias",
+        "when": "há 766 dias",
         "timestamp": "2024-08-17T14:22:54.2+00:00",
         "won": true,
         "placement": "5th",
