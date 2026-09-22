@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T20:47:27.410Z",
+  "fetchedAt": "2026-09-22T20:50:46.977Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -974,25 +974,6 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 481
-    },
-    {
-      "id": "5adc33fa-4f30-2899-f131-6fba64c5dd3a",
-      "episode": "V25",
-      "act": "ACT V",
-      "short": "V25: A5",
-      "current": false,
-      "matches": 269,
-      "wins": 145,
-      "losses": 124,
-      "winRate": 53.9,
-      "playtime": "148h",
-      "kd": "1.03",
-      "hs": "38.2%",
-      "acs": "214.5",
-      "adr": "142.3",
-      "rank": "Immortal 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
-      "score": 556
     },
     {
       "id": "ac12e9b3-47e6-9599-8fa1-0bb473e5efc7",
