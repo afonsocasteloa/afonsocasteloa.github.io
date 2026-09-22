@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-22T13:31:24.544Z",
+  "fetchedAt": "2026-09-22T13:39:18.868Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6303,
+  "views": 6309,
   "level": 845,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -39,11 +39,11 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
-      "Minx#bubu",
       "Chxse Atlantic#nez",
-      "Fazed#any",
       "マズ ッ#MAZZ",
-      "wxlf#1410"
+      "wxlf#1410",
+      "Fazed#any",
+      "Minx#bubu"
     ]
   },
   "playtime": "3 492h",
@@ -1413,7 +1413,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Ascent",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg",
-      "when": "há 15h",
+      "when": "há 16h",
       "timestamp": "2026-09-21T22:05:29.992+00:00",
       "won": false,
       "placement": "3rd",
@@ -1915,7 +1915,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Ascent",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg",
-        "when": "há 15h",
+        "when": "há 16h",
         "timestamp": "2026-09-21T22:05:29.992+00:00",
         "won": false,
         "placement": "3rd",
@@ -14630,7 +14630,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/displayicon.png",
         "map": "Bind",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/bind.jpg",
-        "when": "há 1499 dias",
+        "when": "há 1500 dias",
         "timestamp": "2022-08-15T02:03:09.354+00:00",
         "won": true,
         "placement": "6th",
