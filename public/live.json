@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T09:03:40.111Z",
+  "fetchedAt": "2026-09-22T09:05:44.925Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -39,11 +39,11 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
-      "Minx#bubu",
       "Chxse Atlantic#nez",
       "Fazed#any",
       "マズ ッ#MAZZ",
-      "wxlf#1410"
+      "wxlf#1410",
+      "Minx#bubu"
     ]
   },
   "playtime": "3 492h",
@@ -6082,7 +6082,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/0e38b510-41a8-5780-5e8f-568b2a4f2d6c/displayicon.png",
         "map": "Pearl",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/pearl.jpg",
-        "when": "há 455 dias",
+        "when": "há 456 dias",
         "timestamp": "2025-06-23T21:35:50.135+00:00",
         "won": true,
         "placement": "3rd",
@@ -7038,7 +7038,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/b444168c-4e35-8076-db47-ef9bf368f384/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 566 dias",
+        "when": "há 567 dias",
         "timestamp": "2025-03-04T21:36:10.094+00:00",
         "won": true,
         "placement": "4th",
@@ -11104,7 +11104,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 1059 dias",
+        "when": "há 1060 dias",
         "timestamp": "2023-10-28T21:34:40.891+00:00",
         "won": true,
         "placement": "9th",
