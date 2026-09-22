@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T07:45:37.053Z",
+  "fetchedAt": "2026-09-22T07:50:05.863Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -919,25 +919,6 @@
       "score": 694
     },
     {
-      "id": "9d85c932-4820-c060-09c3-668636d4df1b",
-      "episode": "V26",
-      "act": "ACT II",
-      "short": "V26: A2",
-      "current": false,
-      "matches": 159,
-      "wins": 77,
-      "losses": 77,
-      "winRate": 48.4,
-      "playtime": "87h",
-      "kd": "1.10",
-      "hs": "36.5%",
-      "acs": "229.2",
-      "adr": "151.0",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 627
-    },
-    {
       "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
       "episode": "V26",
       "act": "ACT I",
@@ -1462,7 +1443,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1dbf2edd-4729-0984-3115-daa5eed44993/displayicon.png",
       "map": "Summit",
       "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-      "when": "há 13h",
+      "when": "há 14h",
       "timestamp": "2026-09-21T18:17:23.91+00:00",
       "won": false,
       "placement": "4th",
@@ -1964,7 +1945,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1dbf2edd-4729-0984-3115-daa5eed44993/displayicon.png",
         "map": "Summit",
         "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-        "when": "há 13h",
+        "when": "há 14h",
         "timestamp": "2026-09-21T18:17:23.91+00:00",
         "won": false,
         "placement": "4th",
@@ -5704,7 +5685,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/f94c3b30-42be-e959-889c-5aa313dba261/displayicon.png",
         "map": "Lotus",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-        "when": "há 398 dias",
+        "when": "há 399 dias",
         "timestamp": "2025-08-19T20:18:57.423+00:00",
         "won": true,
         "placement": "4th",
