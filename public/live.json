@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T08:09:47.994Z",
+  "fetchedAt": "2026-09-22T08:11:53.402Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 0,
-    "body": 0,
-    "legs": 0,
-    "headHits": 0,
-    "bodyHits": 0,
-    "legHits": 0
+    "head": 41.3,
+    "body": 56,
+    "legs": 2.7,
+    "headHits": 272,
+    "bodyHits": 369,
+    "legHits": 18
   },
   "last20": {
-    "record": "0W – 1L (0%)",
-    "kd": 0,
-    "adr": 0
+    "record": "8W – 12L (40%)",
+    "kd": 0.9,
+    "adr": 139
   },
   "roles": [
     {
@@ -10974,7 +10974,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/displayicon.png",
         "map": "Ascent",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg",
-        "when": "há 1056 dias",
+        "when": "há 1057 dias",
         "timestamp": "2023-10-31T20:41:40.833+00:00",
         "won": true,
         "placement": "4th",
