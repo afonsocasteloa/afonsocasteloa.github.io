@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T10:48:01.277Z",
+  "fetchedAt": "2026-09-22T10:49:55.116Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "23"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -938,6 +938,25 @@
       "score": 627
     },
     {
+      "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
+      "episode": "V26",
+      "act": "ACT I",
+      "short": "V26: A1",
+      "current": false,
+      "matches": 332,
+      "wins": 166,
+      "losses": 164,
+      "winRate": 50,
+      "playtime": "181h",
+      "kd": "1.10",
+      "hs": "42.2%",
+      "acs": "226.8",
+      "adr": "149.3",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 577
+    },
+    {
       "id": "4c4b8cff-43eb-13d3-8f14-96b783c90cd2",
       "episode": "V25",
       "act": "ACT VI",
@@ -1031,6 +1050,25 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 456
+    },
+    {
+      "id": "476b0893-4c2e-abd6-c5fe-708facff0772",
+      "episode": "V25",
+      "act": "ACT I",
+      "short": "V25: A1",
+      "current": false,
+      "matches": 177,
+      "wins": 97,
+      "losses": 79,
+      "winRate": 54.8,
+      "playtime": "100h",
+      "kd": "1.05",
+      "hs": "37.0%",
+      "acs": "213.4",
+      "adr": "142.0",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 597
     },
     {
       "id": "dcde7346-4085-de4f-c463-2489ed47983b",
@@ -1164,6 +1202,25 @@
       "rank": "Diamond 2",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/19.png",
       "score": 604
+    },
+    {
+      "id": "03dfd004-45d4-ebfd-ab0a-948ce780dac4",
+      "episode": "EP 7",
+      "act": "ACT II",
+      "short": "E7: A2",
+      "current": false,
+      "matches": 261,
+      "wins": 124,
+      "losses": 131,
+      "winRate": 47.5,
+      "playtime": "158h",
+      "kd": "1.00",
+      "hs": "27.8%",
+      "acs": "201.3",
+      "adr": "133.0",
+      "rank": "Platinum 2",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/16.png",
+      "score": 421
     },
     {
       "id": "0981a882-4e7d-371a-70c4-c3b4f46c504a",
