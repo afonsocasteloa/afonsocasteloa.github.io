@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T13:58:19.263Z",
+  "fetchedAt": "2026-09-22T14:00:33.193Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -39,11 +39,11 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
+      "Minx#bubu",
       "Fazed#any",
       "Chxse Atlantic#nez",
       "マズ ッ#MAZZ",
-      "wxlf#1410",
-      "Minx#bubu"
+      "wxlf#1410"
     ]
   },
   "playtime": "3 492h",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "25"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1069,6 +1069,25 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 597
+    },
+    {
+      "id": "dcde7346-4085-de4f-c463-2489ed47983b",
+      "episode": "EP 9",
+      "act": "ACT III",
+      "short": "E9: A3",
+      "current": false,
+      "matches": 241,
+      "wins": 118,
+      "losses": 122,
+      "winRate": 49,
+      "playtime": "132h",
+      "kd": "1.08",
+      "hs": "39.6%",
+      "acs": "221.8",
+      "adr": "146.8",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 559
     },
     {
       "id": "292f58db-4c17-89a7-b1c0-ba988f0e9d98",
