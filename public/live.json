@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T20:59:41.762Z",
+  "fetchedAt": "2026-09-22T21:02:29.008Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1071,25 +1071,6 @@
       "score": 597
     },
     {
-      "id": "dcde7346-4085-de4f-c463-2489ed47983b",
-      "episode": "EP 9",
-      "act": "ACT III",
-      "short": "E9: A3",
-      "current": false,
-      "matches": 241,
-      "wins": 118,
-      "losses": 122,
-      "winRate": 49,
-      "playtime": "132h",
-      "kd": "1.08",
-      "hs": "39.6%",
-      "acs": "221.8",
-      "adr": "146.8",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 559
-    },
-    {
       "id": "292f58db-4c17-89a7-b1c0-ba988f0e9d98",
       "episode": "EP 9",
       "act": "ACT II",
@@ -1460,7 +1441,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Summit",
       "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-      "when": "há 22h",
+      "when": "há 23h",
       "timestamp": "2026-09-21T22:32:40.29+00:00",
       "won": true,
       "placement": "5th",
@@ -1961,7 +1942,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Summit",
         "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-        "when": "há 22h",
+        "when": "há 23h",
         "timestamp": "2026-09-21T22:32:40.29+00:00",
         "won": true,
         "placement": "5th",
