@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T09:35:26.866Z",
+  "fetchedAt": "2026-09-22T09:37:26.092Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -51,7 +51,7 @@
   "wins": 3025,
   "losses": 2987,
   "winRate": 49.6,
-  "trackerScore": 576,
+  "trackerScore": 465,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "24"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -862,6 +862,25 @@
   ],
   "acts": [
     {
+      "id": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b",
+      "episode": "V26",
+      "act": "ACT V",
+      "short": "V26: A5",
+      "current": true,
+      "matches": 163,
+      "wins": 83,
+      "losses": 80,
+      "winRate": 50.9,
+      "playtime": "89h",
+      "kd": "1.02",
+      "hs": "39.3%",
+      "acs": "213.7",
+      "adr": "143.0",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 465
+    },
+    {
       "id": "4f0864e2-40af-28a4-de2c-0e9e64e75f23",
       "episode": "V26",
       "act": "ACT IV",
@@ -898,6 +917,25 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 694
+    },
+    {
+      "id": "9d85c932-4820-c060-09c3-668636d4df1b",
+      "episode": "V26",
+      "act": "ACT II",
+      "short": "V26: A2",
+      "current": false,
+      "matches": 159,
+      "wins": 77,
+      "losses": 77,
+      "winRate": 48.4,
+      "playtime": "87h",
+      "kd": "1.10",
+      "hs": "36.5%",
+      "acs": "229.2",
+      "adr": "151.0",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 627
     },
     {
       "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
@@ -1877,7 +1915,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Ascent",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg",
-        "when": "há 11h",
+        "when": "há 12h",
         "timestamp": "2026-09-21T22:05:29.992+00:00",
         "won": false,
         "placement": "3rd",
@@ -6274,7 +6312,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 458 dias",
+        "when": "há 459 dias",
         "timestamp": "2025-06-20T22:07:54.582+00:00",
         "won": false,
         "placement": "5th",
@@ -7378,7 +7416,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 621 dias",
+        "when": "há 622 dias",
         "timestamp": "2025-01-08T22:07:15.933+00:00",
         "won": false,
         "placement": "4th",
