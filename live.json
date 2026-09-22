@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T08:43:19.448Z",
+  "fetchedAt": "2026-09-22T08:45:37.598Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "24"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 0,
-    "body": 0,
-    "legs": 0,
-    "headHits": 0,
-    "bodyHits": 0,
-    "legHits": 0
+    "head": 41.3,
+    "body": 56,
+    "legs": 2.7,
+    "headHits": 272,
+    "bodyHits": 369,
+    "legHits": 18
   },
   "last20": {
-    "record": "0W – 1L (0%)",
-    "kd": 0,
-    "adr": 0
+    "record": "8W – 12L (40%)",
+    "kd": 0.9,
+    "adr": 139
   },
   "roles": [
     {
@@ -1204,6 +1204,25 @@
       "score": 604
     },
     {
+      "id": "03dfd004-45d4-ebfd-ab0a-948ce780dac4",
+      "episode": "EP 7",
+      "act": "ACT II",
+      "short": "E7: A2",
+      "current": false,
+      "matches": 261,
+      "wins": 124,
+      "losses": 131,
+      "winRate": 47.5,
+      "playtime": "158h",
+      "kd": "1.00",
+      "hs": "27.8%",
+      "acs": "201.3",
+      "adr": "133.0",
+      "rank": "Platinum 2",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/16.png",
+      "score": 421
+    },
+    {
       "id": "0981a882-4e7d-371a-70c4-c3b4f46c504a",
       "episode": "EP 7",
       "act": "ACT I",
@@ -1280,6 +1299,25 @@
       "score": 523
     },
     {
+      "id": "aca29595-40e4-01f5-3f35-b1b3d304c96e",
+      "episode": "EP 5",
+      "act": "ACT III",
+      "short": "E5: A3",
+      "current": false,
+      "matches": 358,
+      "wins": 183,
+      "losses": 170,
+      "winRate": 51.1,
+      "playtime": "209h",
+      "kd": "0.95",
+      "hs": "21.4%",
+      "acs": "195.3",
+      "adr": "128.3",
+      "rank": "Gold 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/12.png",
+      "score": 280
+    },
+    {
       "id": "7a85de9a-4032-61a9-61d8-f4aa2b4a84b6",
       "episode": "EP 5",
       "act": "ACT II",
@@ -1325,7 +1363,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Haven",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-      "when": "há 9h",
+      "when": "há 10h",
       "timestamp": "2026-09-21T23:14:39.461+00:00",
       "won": true,
       "placement": "4th",
@@ -1827,7 +1865,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 9h",
+        "when": "há 10h",
         "timestamp": "2026-09-21T23:14:39.461+00:00",
         "won": true,
         "placement": "4th",
@@ -7175,7 +7213,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 569 dias",
+        "when": "há 570 dias",
         "timestamp": "2025-03-01T21:14:31.325+00:00",
         "won": true,
         "placement": "6th",
@@ -8992,7 +9030,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/f94c3b30-42be-e959-889c-5aa313dba261/displayicon.png",
         "map": "Bind",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/bind.jpg",
-        "when": "há 818 dias",
+        "when": "há 819 dias",
         "timestamp": "2024-06-25T21:14:41.37+00:00",
         "won": true,
         "placement": "8th",
@@ -12154,7 +12192,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/f94c3b30-42be-e959-889c-5aa313dba261/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 1185 dias",
+        "when": "há 1186 dias",
         "timestamp": "2023-06-24T21:15:23.593+00:00",
         "won": false,
         "placement": "5th",
