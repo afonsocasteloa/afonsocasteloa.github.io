@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T22:26:05.453Z",
+  "fetchedAt": "2026-09-22T22:28:20.031Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "23"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -938,6 +938,25 @@
       "score": 627
     },
     {
+      "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
+      "episode": "V26",
+      "act": "ACT I",
+      "short": "V26: A1",
+      "current": false,
+      "matches": 332,
+      "wins": 166,
+      "losses": 164,
+      "winRate": 50,
+      "playtime": "181h",
+      "kd": "1.10",
+      "hs": "42.2%",
+      "acs": "226.8",
+      "adr": "149.3",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 577
+    },
+    {
       "id": "4c4b8cff-43eb-13d3-8f14-96b783c90cd2",
       "episode": "V25",
       "act": "ACT VI",
@@ -974,6 +993,25 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 556
+    },
+    {
+      "id": "ac12e9b3-47e6-9599-8fa1-0bb473e5efc7",
+      "episode": "V25",
+      "act": "ACT IV",
+      "short": "V25: A4",
+      "current": false,
+      "matches": 247,
+      "wins": 116,
+      "losses": 128,
+      "winRate": 47,
+      "playtime": "137h",
+      "kd": "1.03",
+      "hs": "40.3%",
+      "acs": "209.3",
+      "adr": "139.2",
+      "rank": "Ascendant 2",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
+      "score": 497
     },
     {
       "id": "aef237a0-494d-3a14-a1c8-ec8de84e309c",
@@ -1126,6 +1164,25 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 492
+    },
+    {
+      "id": "ec876e6c-43e8-fa63-ffc1-2e8d4db25525",
+      "episode": "EP 8",
+      "act": "ACT I",
+      "short": "E8: A1",
+      "current": false,
+      "matches": 177,
+      "wins": 92,
+      "losses": 80,
+      "winRate": 52,
+      "playtime": "102h",
+      "kd": "1.11",
+      "hs": "29.9%",
+      "acs": "221.8",
+      "adr": "145.8",
+      "rank": "Ascendant 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/21.png",
+      "score": 632
     },
     {
       "id": "4401f9fd-4170-2e4c-4bc3-f3b4d7d150d1",
@@ -3167,7 +3224,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 93 dias",
+        "when": "há 94 dias",
         "timestamp": "2026-06-21T10:58:25.692+00:00",
         "won": false,
         "placement": "10th",
