@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T05:17:16.001Z",
+  "fetchedAt": "2026-09-23T05:19:19.321Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "25"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -936,6 +936,25 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 627
+    },
+    {
+      "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
+      "episode": "V26",
+      "act": "ACT I",
+      "short": "V26: A1",
+      "current": false,
+      "matches": 332,
+      "wins": 166,
+      "losses": 164,
+      "winRate": 50,
+      "playtime": "181h",
+      "kd": "1.10",
+      "hs": "42.2%",
+      "acs": "226.8",
+      "adr": "149.3",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 577
     },
     {
       "id": "4c4b8cff-43eb-13d3-8f14-96b783c90cd2",
@@ -11114,7 +11133,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/569fdd95-4d10-43ab-ca70-79becc718b46/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 1060 dias",
+        "when": "há 1061 dias",
         "timestamp": "2023-10-28T17:49:37.414+00:00",
         "won": true,
         "placement": "7th",
@@ -11314,7 +11333,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/displayicon.png",
         "map": "Breeze",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/breeze.jpg",
-        "when": "há 1061 dias",
+        "when": "há 1062 dias",
         "timestamp": "2023-10-27T17:49:18.268+00:00",
         "won": false,
         "placement": "6th",
