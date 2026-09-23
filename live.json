@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T12:30:20.880Z",
+  "fetchedAt": "2026-09-23T12:33:39.086Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -40,10 +40,10 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Minx#bubu",
+      "Chxse Atlantic#nez",
       "Fazed#any",
       "マズ ッ#MAZZ",
-      "wxlf#1410",
-      "Chxse Atlantic#nez"
+      "wxlf#1410"
     ]
   },
   "playtime": "3 494h",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "22"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -938,25 +938,6 @@
       "score": 627
     },
     {
-      "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
-      "episode": "V26",
-      "act": "ACT I",
-      "short": "V26: A1",
-      "current": false,
-      "matches": 332,
-      "wins": 166,
-      "losses": 164,
-      "winRate": 50,
-      "playtime": "181h",
-      "kd": "1.10",
-      "hs": "42.2%",
-      "acs": "226.8",
-      "adr": "149.3",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 577
-    },
-    {
       "id": "4c4b8cff-43eb-13d3-8f14-96b783c90cd2",
       "episode": "V25",
       "act": "ACT VI",
@@ -1090,44 +1071,6 @@
       "score": 559
     },
     {
-      "id": "292f58db-4c17-89a7-b1c0-ba988f0e9d98",
-      "episode": "EP 9",
-      "act": "ACT II",
-      "short": "E9: A2",
-      "current": false,
-      "matches": 208,
-      "wins": 102,
-      "losses": 104,
-      "winRate": 49,
-      "playtime": "118h",
-      "kd": "1.09",
-      "hs": "35.8%",
-      "acs": "217.1",
-      "adr": "143.7",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 560
-    },
-    {
-      "id": "52ca6698-41c1-e7de-4008-8994d2221209",
-      "episode": "EP 9",
-      "act": "ACT I",
-      "short": "E9: A1",
-      "current": false,
-      "matches": 213,
-      "wins": 105,
-      "losses": 105,
-      "winRate": 49.3,
-      "playtime": "123h",
-      "kd": "1.14",
-      "hs": "33.9%",
-      "acs": "224.5",
-      "adr": "147.6",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 681
-    },
-    {
       "id": "4539cac3-47ae-90e5-3d01-b3812ca3274e",
       "episode": "EP 8",
       "act": "ACT III",
@@ -1240,25 +1183,6 @@
       "rank": "Platinum 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/15.png",
       "score": 487
-    },
-    {
-      "id": "2de5423b-4aad-02ad-8d9b-c0a931958861",
-      "episode": "EP 6",
-      "act": "ACT III",
-      "short": "E6: A3",
-      "current": false,
-      "matches": 322,
-      "wins": 149,
-      "losses": 163,
-      "winRate": 46.3,
-      "playtime": "192h",
-      "kd": "1.08",
-      "hs": "25.8%",
-      "acs": "223.2",
-      "adr": "146.2",
-      "rank": "Gold 2",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/13.png",
-      "score": 547
     },
     {
       "id": "34093c29-4306-43de-452f-3f944bde22be",
