@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T07:57:27.487Z",
+  "fetchedAt": "2026-09-23T07:59:45.596Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 0,
-    "body": 0,
-    "legs": 0,
-    "headHits": 0,
-    "bodyHits": 0,
-    "legHits": 0
+    "head": 41.7,
+    "body": 54.9,
+    "legs": 3.4,
+    "headHits": 269,
+    "bodyHits": 354,
+    "legHits": 22
   },
   "last20": {
-    "record": "0W – 1L (0%)",
-    "kd": 0,
-    "adr": 0
+    "record": "9W – 11L (45%)",
+    "kd": 0.9,
+    "adr": 139
   },
   "roles": [
     {
@@ -2695,7 +2695,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 37 dias",
+        "when": "há 38 dias",
         "timestamp": "2026-08-16T20:29:26.29+00:00",
         "won": true,
         "placement": "5th",
@@ -7368,7 +7368,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
         "map": "Pearl",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/pearl.jpg",
-        "when": "há 573 dias",
+        "when": "há 574 dias",
         "timestamp": "2025-02-26T20:29:05.653+00:00",
         "won": false,
         "placement": "4th",
@@ -12686,7 +12686,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Pearl",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/pearl.jpg",
-        "when": "há 1247 dias",
+        "when": "há 1248 dias",
         "timestamp": "2023-04-24T20:28:17.523+00:00",
         "won": true,
         "placement": "3rd",
