@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T07:54:12.230Z",
+  "fetchedAt": "2026-09-23T07:57:27.487Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -42,8 +42,8 @@
       "マズ ッ#MAZZ",
       "wxlf#1410",
       "Chxse Atlantic#nez",
-      "Minx#bubu",
-      "Fazed#any"
+      "Fazed#any",
+      "Minx#bubu"
     ]
   },
   "playtime": "3 494h",
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 41.7,
-    "body": 54.9,
-    "legs": 3.4,
-    "headHits": 269,
-    "bodyHits": 354,
-    "legHits": 22
+    "head": 0,
+    "body": 0,
+    "legs": 0,
+    "headHits": 0,
+    "bodyHits": 0,
+    "legHits": 0
   },
   "last20": {
-    "record": "9W – 11L (45%)",
-    "kd": 0.9,
-    "adr": 139
+    "record": "0W – 1L (0%)",
+    "kd": 0,
+    "adr": 0
   },
   "roles": [
     {
@@ -11454,7 +11454,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 1064 dias",
+        "when": "há 1065 dias",
         "timestamp": "2023-10-24T20:26:19.098+00:00",
         "won": true,
         "placement": "2nd",
@@ -13623,7 +13623,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/8e253930-4c05-31dd-1b6c-968525494517/displayicon.png",
         "map": "Bind",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/bind.jpg",
-        "when": "há 1352 dias",
+        "when": "há 1353 dias",
         "timestamp": "2023-01-09T20:26:49.89+00:00",
         "won": true,
         "placement": "10th",
@@ -13796,7 +13796,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/bb2a4828-46eb-8cd1-e765-15848195d751/displayicon.png",
         "map": "Fracture",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/fracture.jpg",
-        "when": "há 1353 dias",
+        "when": "há 1354 dias",
         "timestamp": "2023-01-08T20:26:51.081+00:00",
         "won": true,
         "placement": "5th",
