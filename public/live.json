@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T04:03:18.685Z",
+  "fetchedAt": "2026-09-23T04:05:20.825Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -40,10 +40,10 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Chxse Atlantic#nez",
-      "Minx#bubu",
       "Fazed#any",
       "マズ ッ#MAZZ",
-      "wxlf#1410"
+      "wxlf#1410",
+      "Minx#bubu"
     ]
   },
   "playtime": "3 494h",
@@ -5323,7 +5323,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/df1cb487-4902-002e-5c17-d28e83e78588/displayicon.png",
         "map": "Ascent",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg",
-        "when": "há 346 dias",
+        "when": "há 347 dias",
         "timestamp": "2025-10-11T16:35:39.425+00:00",
         "won": true,
         "placement": "2nd",
@@ -5880,7 +5880,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/displayicon.png",
         "map": "Icebox",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg",
-        "when": "há 401 dias",
+        "when": "há 402 dias",
         "timestamp": "2025-08-17T16:34:00.283+00:00",
         "won": false,
         "placement": "7th",
@@ -8700,7 +8700,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/displayicon.png",
         "map": "Abyss",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/9.0/abyss.jpg",
-        "when": "há 757 dias",
+        "when": "há 758 dias",
         "timestamp": "2024-08-26T16:35:03.86+00:00",
         "won": true,
         "placement": "2nd",
