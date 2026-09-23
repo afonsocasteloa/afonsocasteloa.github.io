@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T15:19:21.066Z",
+  "fetchedAt": "2026-09-23T15:22:49.065Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,11 +125,11 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "23"
     },
     {
       "label": "Do Iron ao Immortal",
-      "value": "EP 5 → V25: A2"
+      "value": "EP 5 → V25: ACT II"
     }
   ],
   "accuracy": {
@@ -957,25 +957,6 @@
       "score": 577
     },
     {
-      "id": "4c4b8cff-43eb-13d3-8f14-96b783c90cd2",
-      "episode": "V25",
-      "act": "ACT VI",
-      "short": "V25: A6",
-      "current": false,
-      "matches": 300,
-      "wins": 152,
-      "losses": 142,
-      "winRate": 50.7,
-      "playtime": "164h",
-      "kd": "1.03",
-      "hs": "42.3%",
-      "acs": "215.4",
-      "adr": "141.7",
-      "rank": "Immortal 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
-      "score": 481
-    },
-    {
       "id": "5adc33fa-4f30-2899-f131-6fba64c5dd3a",
       "episode": "V25",
       "act": "ACT V",
@@ -1031,44 +1012,6 @@
       "rank": "Ascendant 2",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
       "score": 398
-    },
-    {
-      "id": "16118998-4705-5813-86dd-0292a2439d90",
-      "episode": "V25",
-      "act": "ACT II",
-      "short": "V25: A2",
-      "current": false,
-      "matches": 161,
-      "wins": 91,
-      "losses": 69,
-      "winRate": 56.5,
-      "playtime": "91h",
-      "kd": "0.98",
-      "hs": "34.5%",
-      "acs": "201.6",
-      "adr": "135.9",
-      "rank": "Immortal 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
-      "score": 456
-    },
-    {
-      "id": "476b0893-4c2e-abd6-c5fe-708facff0772",
-      "episode": "V25",
-      "act": "ACT I",
-      "short": "V25: A1",
-      "current": false,
-      "matches": 177,
-      "wins": 97,
-      "losses": 79,
-      "winRate": 54.8,
-      "playtime": "100h",
-      "kd": "1.05",
-      "hs": "37.0%",
-      "acs": "213.4",
-      "adr": "142.0",
-      "rank": "Immortal 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
-      "score": 597
     },
     {
       "id": "dcde7346-4085-de4f-c463-2489ed47983b",
