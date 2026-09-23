@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T01:26:14.816Z",
+  "fetchedAt": "2026-09-23T01:29:11.705Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "24"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1014,25 +1014,6 @@
       "score": 497
     },
     {
-      "id": "aef237a0-494d-3a14-a1c8-ec8de84e309c",
-      "episode": "V25",
-      "act": "ACT III",
-      "short": "V25: A3",
-      "current": false,
-      "matches": 176,
-      "wins": 67,
-      "losses": 106,
-      "winRate": 38.1,
-      "playtime": "96h",
-      "kd": "0.99",
-      "hs": "39.4%",
-      "acs": "213.6",
-      "adr": "141.6",
-      "rank": "Ascendant 2",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
-      "score": 398
-    },
-    {
       "id": "16118998-4705-5813-86dd-0292a2439d90",
       "episode": "V25",
       "act": "ACT II",
@@ -1107,25 +1088,6 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 560
-    },
-    {
-      "id": "52ca6698-41c1-e7de-4008-8994d2221209",
-      "episode": "EP 9",
-      "act": "ACT I",
-      "short": "E9: A1",
-      "current": false,
-      "matches": 213,
-      "wins": 105,
-      "losses": 105,
-      "winRate": 49.3,
-      "playtime": "123h",
-      "kd": "1.14",
-      "hs": "33.9%",
-      "acs": "224.5",
-      "adr": "147.6",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 681
     },
     {
       "id": "4539cac3-47ae-90e5-3d01-b3812ca3274e",
