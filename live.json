@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T11:55:32.784Z",
+  "fetchedAt": "2026-09-23T11:57:39.852Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -40,9 +40,9 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Chxse Atlantic#nez",
+      "Fazed#any",
       "マズ ッ#MAZZ",
       "wxlf#1410",
-      "Fazed#any",
       "Minx#bubu"
     ]
   },
@@ -7831,7 +7831,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 624 dias",
+        "when": "há 625 dias",
         "timestamp": "2025-01-07T00:27:03.46+00:00",
         "won": false,
         "placement": "MVP",
