@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T01:14:36.070Z",
+  "fetchedAt": "2026-09-23T01:16:39.151Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "25"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -898,6 +898,25 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 576
+    },
+    {
+      "id": "ce2783e8-44fc-dd48-3da3-33b5ba6c4a22",
+      "episode": "V26",
+      "act": "ACT III",
+      "short": "V26: A3",
+      "current": false,
+      "matches": 202,
+      "wins": 104,
+      "losses": 97,
+      "winRate": 51.5,
+      "playtime": "111h",
+      "kd": "1.12",
+      "hs": "39.3%",
+      "acs": "235.2",
+      "adr": "155.1",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 694
     },
     {
       "id": "9d85c932-4820-c060-09c3-668636d4df1b",
@@ -9703,7 +9722,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Ascent",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg",
-        "when": "há 878 dias",
+        "when": "há 879 dias",
         "timestamp": "2024-04-27T13:45:50.69+00:00",
         "won": false,
         "placement": "4th",
