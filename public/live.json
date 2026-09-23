@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-23T13:29:42.666Z",
+  "fetchedAt": "2026-09-23T13:32:30.267Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6654,
+  "views": 6662,
   "level": 846,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "24"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -919,6 +919,25 @@
       "score": 694
     },
     {
+      "id": "9d85c932-4820-c060-09c3-668636d4df1b",
+      "episode": "V26",
+      "act": "ACT II",
+      "short": "V26: A2",
+      "current": false,
+      "matches": 159,
+      "wins": 77,
+      "losses": 77,
+      "winRate": 48.4,
+      "playtime": "87h",
+      "kd": "1.10",
+      "hs": "36.5%",
+      "acs": "229.2",
+      "adr": "151.0",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 627
+    },
+    {
       "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
       "episode": "V26",
       "act": "ACT I",
@@ -936,6 +955,25 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 577
+    },
+    {
+      "id": "4c4b8cff-43eb-13d3-8f14-96b783c90cd2",
+      "episode": "V25",
+      "act": "ACT VI",
+      "short": "V25: A6",
+      "current": false,
+      "matches": 300,
+      "wins": 152,
+      "losses": 142,
+      "winRate": 50.7,
+      "playtime": "164h",
+      "kd": "1.03",
+      "hs": "42.3%",
+      "acs": "215.4",
+      "adr": "141.7",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 481
     },
     {
       "id": "5adc33fa-4f30-2899-f131-6fba64c5dd3a",
@@ -14402,7 +14440,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 1439 dias",
+        "when": "há 1440 dias",
         "timestamp": "2022-10-15T02:00:26.985+00:00",
         "won": false,
         "placement": "9th",
