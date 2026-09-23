@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T08:15:58.730Z",
+  "fetchedAt": "2026-09-23T08:18:08.088Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "22"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -900,6 +900,44 @@
       "score": 576
     },
     {
+      "id": "ce2783e8-44fc-dd48-3da3-33b5ba6c4a22",
+      "episode": "V26",
+      "act": "ACT III",
+      "short": "V26: A3",
+      "current": false,
+      "matches": 202,
+      "wins": 104,
+      "losses": 97,
+      "winRate": 51.5,
+      "playtime": "111h",
+      "kd": "1.12",
+      "hs": "39.3%",
+      "acs": "235.2",
+      "adr": "155.1",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 694
+    },
+    {
+      "id": "9d85c932-4820-c060-09c3-668636d4df1b",
+      "episode": "V26",
+      "act": "ACT II",
+      "short": "V26: A2",
+      "current": false,
+      "matches": 159,
+      "wins": 77,
+      "losses": 77,
+      "winRate": 48.4,
+      "playtime": "87h",
+      "kd": "1.10",
+      "hs": "36.5%",
+      "acs": "229.2",
+      "adr": "151.0",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 627
+    },
+    {
       "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
       "episode": "V26",
       "act": "ACT I",
@@ -974,6 +1012,25 @@
       "rank": "Ascendant 2",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
       "score": 497
+    },
+    {
+      "id": "aef237a0-494d-3a14-a1c8-ec8de84e309c",
+      "episode": "V25",
+      "act": "ACT III",
+      "short": "V25: A3",
+      "current": false,
+      "matches": 176,
+      "wins": 67,
+      "losses": 106,
+      "winRate": 38.1,
+      "playtime": "96h",
+      "kd": "0.99",
+      "hs": "39.4%",
+      "acs": "213.6",
+      "adr": "141.6",
+      "rank": "Ascendant 2",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
+      "score": 398
     },
     {
       "id": "16118998-4705-5813-86dd-0292a2439d90",
@@ -1069,6 +1126,25 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 681
+    },
+    {
+      "id": "4539cac3-47ae-90e5-3d01-b3812ca3274e",
+      "episode": "EP 8",
+      "act": "ACT III",
+      "short": "E8: A3",
+      "current": false,
+      "matches": 220,
+      "wins": 112,
+      "losses": 104,
+      "winRate": 50.9,
+      "playtime": "127h",
+      "kd": "1.14",
+      "hs": "35.5%",
+      "acs": "226.6",
+      "adr": "150.2",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 608
     },
     {
       "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
@@ -14089,7 +14165,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/8e253930-4c05-31dd-1b6c-968525494517/displayicon.png",
         "map": "Icebox",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg",
-        "when": "há 1437 dias",
+        "when": "há 1438 dias",
         "timestamp": "2022-10-16T20:46:30.918+00:00",
         "won": false,
         "placement": "5th",
