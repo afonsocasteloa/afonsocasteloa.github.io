@@ -131,7 +131,7 @@ function MeBody({ data, compact = false, now = null }: { data: TrackerSnapshot; 
     <section className="space-y-4">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="h-6 w-1 bg-[#ff4655]" />
+          <span className="section-mark" />
           <div>
             <h2 className="stat-num text-3xl">O meu jogo</h2>
             <p className="text-sm text-[#9aa3b2]">Portugal · PC · competitive · {rankWithRr(data.current)}</p>
@@ -460,7 +460,7 @@ function MatchRow({ match, now }: { match: MatchCard; now: number | null }) {
       href={trackerMatchHref(match.id)}
       target="_blank"
       rel="noreferrer"
-      className="tap lift relative overflow-hidden border border-white/10 bg-[#0c1018]"
+      className="tap match-row relative overflow-hidden border border-white/10 bg-[#0c1018]"
     >
       <img src={match.mapImage} alt="" className="absolute inset-0 h-full w-full object-cover opacity-20" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#05060a] via-[#05060a]/88 to-[#05060a]/55" />
@@ -598,7 +598,7 @@ function ActsBody({ data, compact = false }: { data: TrackerSnapshot; compact?: 
       <section className="space-y-4">
         <div className="flex items-end justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="h-6 w-1 bg-[#ff4655]" />
+            <span className="section-mark" />
             <div>
               <h2 className="stat-num text-3xl">Carreira em atos</h2>
               <p className="text-sm text-[#9aa3b2]">
@@ -627,7 +627,7 @@ function ActsBody({ data, compact = false }: { data: TrackerSnapshot; compact?: 
     <section className="space-y-6">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="h-6 w-1 bg-[#ff4655]" />
+          <span className="section-mark" />
           <div>
             <h2 className="stat-num text-3xl">Todos os atos</h2>
             <p className="text-sm text-[#9aa3b2]">
@@ -687,14 +687,15 @@ function OverviewBody({ data }: { data: TrackerSnapshot }) {
             </p>
           </div>
           <div className="flex items-end gap-[3px]" aria-hidden>
-            {form.map((match) => (
+            {form.map((match, i) => (
               <a
                 key={match.id}
                 href={trackerMatchHref(match.id)}
                 target="_blank"
                 rel="noreferrer"
                 title={`${match.won ? "W" : "L"} · ${match.map} · ${match.agent}`}
-                className={`h-8 w-2.5 ${match.won ? "bg-[#1be285]" : "bg-[#ff4655]"}`}
+                className={`form-bar h-8 w-2.5 ${match.won ? "bg-[#1be285]" : "bg-[#ff4655]"}`}
+                style={{ animationDelay: `${i * 28}ms` }}
               />
             ))}
           </div>
@@ -736,18 +737,18 @@ function OverviewBody({ data }: { data: TrackerSnapshot }) {
         </a>
 
         <a href="/partidas/" className="tap glass hud p-5">
-          <h2 className="stat-num text-3xl">Accuracy · last 20</h2>
+          <h2 className="stat-num text-3xl">Precisão · últimas 20</h2>
           <div className="mt-5 flex items-center gap-6">
             <div className="h-32 w-32 shrink-0 rounded-full" style={{ background: pie }} />
             <ul className="space-y-2 text-sm">
               <li>
-                Head <b>{acc.head}%</b> · {grouped(acc.headHits)} hits
+                Cabeça <b>{acc.head}%</b> · {grouped(acc.headHits)} hits
               </li>
               <li>
-                Body <b>{acc.body}%</b> · {grouped(acc.bodyHits)} hits
+                Corpo <b>{acc.body}%</b> · {grouped(acc.bodyHits)} hits
               </li>
               <li>
-                Legs <b>{acc.legs}%</b> · {grouped(acc.legHits)} hits
+                Pernas <b>{acc.legs}%</b> · {grouped(acc.legHits)} hits
               </li>
               <li className="text-[#9aa3b2]">
                 {data.last20.record} · {data.last20.kd} K/D · {data.last20.adr} ADR
@@ -856,7 +857,7 @@ function MatchesBody({
     <section className="space-y-3">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="h-6 w-1 bg-[#ff4655]" />
+          <span className="section-mark" />
           <div>
             <h2 className="stat-num text-3xl">{title}</h2>
             <p className="text-sm text-[#9aa3b2]">{subtitle}</p>
@@ -924,7 +925,7 @@ function AgentsBody({ data, preview }: { data: TrackerSnapshot; preview?: boolea
     <section>
       <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
         <div className="flex items-center gap-3">
-          <span className="h-6 w-1 bg-[#ff4655]" />
+          <span className="section-mark" />
           <h2 className="stat-num text-3xl">Agentes</h2>
         </div>
         {preview ? (
@@ -998,7 +999,7 @@ function MapsBody({ data, preview }: { data: TrackerSnapshot; preview?: boolean 
     <section>
       <div className="mb-4 flex items-end justify-between gap-3">
         <div className="flex items-center gap-3">
-          <span className="h-6 w-1 bg-[#ff4655]" />
+          <span className="section-mark" />
           <h2 className="stat-num text-3xl">Mapas</h2>
         </div>
         {preview ? (
@@ -1044,7 +1045,7 @@ function WeaponsBody({ data, preview }: { data: TrackerSnapshot; preview?: boole
     <section>
       <div className="mb-4 flex items-end justify-between gap-3">
         <div className="flex items-center gap-3">
-          <span className="h-6 w-1 bg-[#ff4655]" />
+          <span className="section-mark" />
           <h2 className="stat-num text-3xl">Armas</h2>
         </div>
         {preview ? (
@@ -1155,6 +1156,8 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
   }, [pull]);
 
   const liveTone = live ? "bg-[#1be285]" : "bg-[#ff8a7a]";
+  const rrPct =
+    typeof data.current.rr === "number" ? Math.max(0, Math.min(100, data.current.rr)) : null;
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
@@ -1163,17 +1166,8 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
       </a>
       <div className="atmosphere" />
       <div className="scanline" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[560px] opacity-50">
-        <img
-          src={data.banner}
-          alt=""
-          className="h-full w-full object-cover object-top"
-          style={{ maskImage: "linear-gradient(to bottom, black, transparent)" }}
-        />
-      </div>
-      <p className="watermark pointer-events-none absolute right-[-4%] top-24 select-none stat-num">VALORANT</p>
 
-      <header className="relative z-10 mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-5">
+      <header className="relative z-20 mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-5">
         <a href="/" className="stat-num text-sm tracking-[0.5em] text-[#ff4655]">
           FAZED
         </a>
@@ -1189,27 +1183,34 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
       </header>
 
       <main id="conteudo" className="relative z-10 mx-auto max-w-6xl px-5 pb-16">
-        <section className="clip-card glass hud overflow-hidden">
-          <div className="frame-line h-px w-full" />
-          <div className="grid gap-8 p-6 md:grid-cols-[1.2fr_280px] md:p-8">
-            <div>
-              <div className="flex items-end gap-4">
-                <img src={data.avatar} alt="" className="h-20 w-20 border border-white/20 object-cover" />
-                <div>
-                  <div className="flex items-center gap-2">
-                    <img src="https://trackercdn.com/cdn/flags/4x3/pt.svg" alt="" className="h-3.5 w-5 object-cover" />
-                    <h1 className="stat-num text-6xl leading-none md:text-7xl">{PLAYER.displayName}</h1>
-                  </div>
-                  <RiotId name={data.name} tag={data.tag} />
-                </div>
+        <section className="relative min-h-[68vh] overflow-hidden border border-white/10 md:min-h-[72vh]">
+          <img
+            src={data.banner}
+            alt=""
+            className="hero-banner absolute inset-0 h-full w-full object-cover object-[center_18%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#05060a] via-[#05060a]/88 to-[#05060a]/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#05060a] via-[#05060a]/25 to-transparent" />
+          <div className="frame-line absolute inset-x-0 top-0 h-px" />
+          <p className="watermark pointer-events-none absolute right-[-3%] top-[18%] select-none stat-num">AFONSO</p>
+
+          <div className="relative grid min-h-[68vh] items-end gap-8 p-6 md:min-h-[72vh] md:grid-cols-[1.25fr_0.75fr] md:p-10 lg:p-12">
+            <div className="hero-copy max-w-2xl pb-2">
+              <div className="flex items-center gap-2 text-[11px] tracking-[0.28em] text-[#9aa3b2] uppercase">
+                <img src="https://trackercdn.com/cdn/flags/4x3/pt.svg" alt="" className="h-3 w-4 object-cover" />
+                Portugal · PC · Competitive
               </div>
-              <p className="mt-4 max-w-xl text-sm leading-6 text-[#b7c0cc]">{PLAYER.about}</p>
-              <div className="mt-5 flex flex-wrap gap-3">
+              <h1 className="stat-num mt-3 text-[clamp(4.2rem,12vw,7.5rem)] leading-[0.86] tracking-[0.02em]">
+                {PLAYER.displayName}
+              </h1>
+              <RiotId name={data.name} tag={data.tag} />
+              <p className="mt-5 max-w-xl text-base leading-7 text-[#c7ced8] md:text-[1.05rem]">{PLAYER.about}</p>
+              <div className="mt-7 flex flex-wrap gap-3">
                 <a
                   href={PLAYER.trackerOverview}
                   target="_blank"
                   rel="noreferrer"
-                  className="clip-btn bg-[#ff4655] px-5 py-2 text-sm font-semibold tracking-wide text-[#05060a]"
+                  className="clip-btn bg-[#ff4655] px-5 py-2.5 text-sm font-semibold tracking-wide text-[#05060a]"
                 >
                   ABRIR TRACKER
                 </a>
@@ -1217,26 +1218,37 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
               </div>
             </div>
 
-            <div className="relative flex flex-col items-center justify-center overflow-hidden border border-white/10 bg-black/35 p-5 text-center">
-              <img src={data.cardWide} alt="" className="absolute inset-0 h-full w-full object-cover opacity-30" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#05060a] via-[#05060a]/70 to-transparent" />
-              <a href={currentAct ? actMatchesHref(currentAct.id) : "/atos/"} className="relative z-10 flex flex-col items-center">
-                <img src={data.current.icon} alt={data.current.name} className="rank-glow h-28 w-28 object-contain" />
-                <p className="stat-num mt-3 text-3xl">{rankWithRr(data.current)}</p>
-                <p className="text-sm text-[#9aa3b2]">Rating atual</p>
+            <div className="flex flex-col items-start justify-end gap-5 pb-1 md:items-end md:text-right">
+              <a
+                href={currentAct ? actMatchesHref(currentAct.id) : "/atos/"}
+                className="group flex flex-col items-start md:items-end"
+              >
+                <img
+                  src={data.current.icon}
+                  alt={data.current.name}
+                  className="rank-glow h-28 w-28 object-contain md:h-36 md:w-36"
+                />
+                <p className="stat-num mt-3 text-4xl md:text-5xl">{rankWithRr(data.current)}</p>
+                <p className="mt-1 text-xs tracking-[0.2em] text-[#9aa3b2] uppercase">Rating atual</p>
+                {rrPct != null ? (
+                  <div className="mt-3 w-44">
+                    <div className="h-1.5 overflow-hidden bg-white/10">
+                      <div className="rr-fill h-full" style={{ width: `${rrPct}%` }} />
+                    </div>
+                    <p className="mt-1 text-[10px] tracking-[0.16em] text-[#9aa3b2] uppercase">{rrPct} / 100 RR</p>
+                  </div>
+                ) : null}
               </a>
               <a
                 href={peak ? actMatchesHref(peak.id) : "/atos/"}
-                className="relative z-10 mt-4 flex items-center gap-3 border-t border-white/10 pt-4"
+                className="border-t border-white/15 pt-4"
               >
-                <img src={data.peak.icon} alt="" className="h-10 w-10 object-contain" />
-                <div className="text-left">
-                  <p className="text-[10px] tracking-[0.2em] text-[#9aa3b2] uppercase">Peak</p>
-                  <p className="stat-num text-lg">
-                    {data.peak.name} {data.peak.rr ? `· ${data.peak.rr} RR` : ""}
-                  </p>
-                  <p className="text-xs text-[#9aa3b2]">{data.peak.season}</p>
-                </div>
+                <p className="text-[10px] tracking-[0.2em] text-[#9aa3b2] uppercase">Peak</p>
+                <p className="stat-num text-2xl">
+                  {data.peak.name}
+                  {data.peak.rr != null ? ` · ${data.peak.rr} RR` : ""}
+                </p>
+                <p className="text-xs text-[#9aa3b2]">{data.peak.season}</p>
               </a>
             </div>
           </div>
@@ -1244,25 +1256,25 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
 
         <section className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {currentAct ? (
-            <a href={actMatchesHref(currentAct.id)} className="tap glass hud p-4">
+            <a href={actMatchesHref(currentAct.id)} className="tap glass hud lift p-4">
               <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Assinatura · acto atual</p>
               <p className="stat-num gold-stat mt-1 text-4xl">{currentAct.hs}</p>
               <p className="text-xs text-[#f5d76e]">{currentAct.short} HS%</p>
             </a>
           ) : null}
-          <a href="/atos/" className="tap glass hud p-4">
+          <a href="/atos/" className="tap glass hud lift p-4">
             <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Carreira</p>
             <p className="stat-num mt-1 text-4xl">{data.winRate}%</p>
             <p className="text-xs text-[#9aa3b2]">
               {grouped(data.wins)}W {grouped(data.losses)}L · {data.playtime}
             </p>
           </a>
-          <a href={currentAct ? actMatchesHref(currentAct.id) : "/partidas/"} className="tap glass hud p-4">
+          <a href={currentAct ? actMatchesHref(currentAct.id) : "/partidas/"} className="tap glass hud lift p-4">
             <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Tracker Score</p>
             <p className="stat-num mt-1 text-4xl text-[#ff4655]">{data.trackerScore}</p>
             <p className="text-xs text-[#9aa3b2]">de 1000 · acto atual {currentAct?.short ?? "—"}</p>
           </a>
-          <a href="/partidas/" className="tap glass hud p-4">
+          <a href="/partidas/" className="tap glass hud lift p-4">
             <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Sequência</p>
             <p className={`stat-num mt-1 text-4xl ${streak.won ? "text-[#1be285]" : "text-[#ff8a7a]"}`}>
               {streak.n}
@@ -1272,7 +1284,10 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
           </a>
         </section>
 
-        <nav className="sticky top-3 z-20 mt-8 flex flex-wrap gap-2 overflow-x-auto border border-white/10 bg-[#05060a]/85 p-2 backdrop-blur-md" aria-label="Secções">
+        <nav
+          className="site-nav sticky top-3 z-20 mt-8 flex flex-wrap gap-2 overflow-x-auto p-2"
+          aria-label="Secções"
+        >
           {TABS.map((item) => {
             const active = tabIsActive(item.id, tab, actId);
             return (
@@ -1315,8 +1330,9 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
         </div>
       </main>
 
-      <footer className="relative z-10 mx-auto max-w-6xl px-5 pb-10 text-xs text-[#9aa3b2]">
-        <div className="mb-3">
+      <footer className="relative z-10 mx-auto max-w-6xl border-t border-white/10 px-5 pt-8 pb-10 text-xs text-[#9aa3b2]">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
+          <p className="stat-num text-lg tracking-[0.28em] text-[#ff4655]">FAZED</p>
           <SocialsBar />
         </div>
         Site pessoal do Afonso —{" "}
