@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T03:44:36.458Z",
+  "fetchedAt": "2026-09-23T03:48:00.739Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -41,9 +41,9 @@
     "members": [
       "Chxse Atlantic#nez",
       "Fazed#any",
+      "Minx#bubu",
       "マズ ッ#MAZZ",
-      "wxlf#1410",
-      "Minx#bubu"
+      "wxlf#1410"
     ]
   },
   "playtime": "3 494h",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "23"
+      "value": "24"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -881,6 +881,25 @@
       "score": 467
     },
     {
+      "id": "4f0864e2-40af-28a4-de2c-0e9e64e75f23",
+      "episode": "V26",
+      "act": "ACT IV",
+      "short": "V26: A4",
+      "current": false,
+      "matches": 204,
+      "wins": 105,
+      "losses": 98,
+      "winRate": 51.5,
+      "playtime": "109h",
+      "kd": "1.04",
+      "hs": "38.7%",
+      "acs": "224.0",
+      "adr": "149.7",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 576
+    },
+    {
       "id": "ce2783e8-44fc-dd48-3da3-33b5ba6c4a22",
       "episode": "V26",
       "act": "ACT III",
@@ -898,44 +917,6 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 694
-    },
-    {
-      "id": "9d85c932-4820-c060-09c3-668636d4df1b",
-      "episode": "V26",
-      "act": "ACT II",
-      "short": "V26: A2",
-      "current": false,
-      "matches": 159,
-      "wins": 77,
-      "losses": 77,
-      "winRate": 48.4,
-      "playtime": "87h",
-      "kd": "1.10",
-      "hs": "36.5%",
-      "acs": "229.2",
-      "adr": "151.0",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 627
-    },
-    {
-      "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
-      "episode": "V26",
-      "act": "ACT I",
-      "short": "V26: A1",
-      "current": false,
-      "matches": 332,
-      "wins": 166,
-      "losses": 164,
-      "winRate": 50,
-      "playtime": "181h",
-      "kd": "1.10",
-      "hs": "42.2%",
-      "acs": "226.8",
-      "adr": "149.3",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 577
     },
     {
       "id": "4c4b8cff-43eb-13d3-8f14-96b783c90cd2",
@@ -1071,6 +1052,25 @@
       "score": 559
     },
     {
+      "id": "292f58db-4c17-89a7-b1c0-ba988f0e9d98",
+      "episode": "EP 9",
+      "act": "ACT II",
+      "short": "E9: A2",
+      "current": false,
+      "matches": 208,
+      "wins": 102,
+      "losses": 104,
+      "winRate": 49,
+      "playtime": "118h",
+      "kd": "1.09",
+      "hs": "35.8%",
+      "acs": "217.1",
+      "adr": "143.7",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 560
+    },
+    {
       "id": "52ca6698-41c1-e7de-4008-8994d2221209",
       "episode": "EP 9",
       "act": "ACT I",
@@ -1164,6 +1164,25 @@
       "rank": "Diamond 2",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/19.png",
       "score": 604
+    },
+    {
+      "id": "03dfd004-45d4-ebfd-ab0a-948ce780dac4",
+      "episode": "EP 7",
+      "act": "ACT II",
+      "short": "E7: A2",
+      "current": false,
+      "matches": 261,
+      "wins": 124,
+      "losses": 131,
+      "winRate": 47.5,
+      "playtime": "158h",
+      "kd": "1.00",
+      "hs": "27.8%",
+      "acs": "201.3",
+      "adr": "133.0",
+      "rank": "Platinum 2",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/16.png",
+      "score": 421
     },
     {
       "id": "0981a882-4e7d-371a-70c4-c3b4f46c504a",
@@ -13813,7 +13832,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
         "map": "Pearl",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/pearl.jpg",
-        "when": "há 1353 dias",
+        "when": "há 1354 dias",
         "timestamp": "2023-01-08T16:17:16.433+00:00",
         "won": true,
         "placement": "7th",
