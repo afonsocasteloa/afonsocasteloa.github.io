@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T04:10:33.723Z",
+  "fetchedAt": "2026-09-23T04:14:04.970Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -39,8 +39,8 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
-      "Chxse Atlantic#nez",
       "Fazed#any",
+      "Chxse Atlantic#nez",
       "マズ ッ#MAZZ",
       "wxlf#1410",
       "Minx#bubu"
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -995,25 +995,6 @@
       "score": 556
     },
     {
-      "id": "ac12e9b3-47e6-9599-8fa1-0bb473e5efc7",
-      "episode": "V25",
-      "act": "ACT IV",
-      "short": "V25: A4",
-      "current": false,
-      "matches": 247,
-      "wins": 116,
-      "losses": 128,
-      "winRate": 47,
-      "playtime": "137h",
-      "kd": "1.03",
-      "hs": "40.3%",
-      "acs": "209.3",
-      "adr": "139.2",
-      "rank": "Ascendant 2",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
-      "score": 497
-    },
-    {
       "id": "aef237a0-494d-3a14-a1c8-ec8de84e309c",
       "episode": "V25",
       "act": "ACT III",
@@ -1438,7 +1419,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
       "map": "Lotus",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-      "when": "há 10h",
+      "when": "há 11h",
       "timestamp": "2026-09-22T17:41:56.086+00:00",
       "won": true,
       "placement": "10th",
@@ -1942,7 +1923,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
         "map": "Lotus",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg",
-        "when": "há 10h",
+        "when": "há 11h",
         "timestamp": "2026-09-22T17:41:56.086+00:00",
         "won": true,
         "placement": "10th",
@@ -9898,7 +9879,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/707eab51-4836-f488-046a-cda6bf494859/displayicon.png",
         "map": "Icebox",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg",
-        "when": "há 880 dias",
+        "when": "há 881 dias",
         "timestamp": "2024-04-25T16:42:46.44+00:00",
         "won": false,
         "placement": "9th",
