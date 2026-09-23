@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-23T05:02:47.481Z",
+  "fetchedAt": "2026-09-23T05:05:39.607Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6532,
+  "views": 6539,
   "level": 846,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -974,25 +974,6 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 481
-    },
-    {
-      "id": "5adc33fa-4f30-2899-f131-6fba64c5dd3a",
-      "episode": "V25",
-      "act": "ACT V",
-      "short": "V25: A5",
-      "current": false,
-      "matches": 269,
-      "wins": 145,
-      "losses": 124,
-      "winRate": 53.9,
-      "playtime": "148h",
-      "kd": "1.03",
-      "hs": "38.2%",
-      "acs": "214.5",
-      "adr": "142.3",
-      "rank": "Immortal 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
-      "score": 556
     },
     {
       "id": "ac12e9b3-47e6-9599-8fa1-0bb473e5efc7",
@@ -14870,7 +14851,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/601dbbe7-43ce-be57-2a40-4abd24953621/displayicon.png",
         "map": "Pearl",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/pearl.jpg",
-        "when": "há 1502 dias",
+        "when": "há 1503 dias",
         "timestamp": "2022-08-12T17:33:47.126+00:00",
         "won": false,
         "placement": "9th",
