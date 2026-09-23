@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T13:53:20.766Z",
+  "fetchedAt": "2026-09-23T13:56:44.726Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "24"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -976,6 +976,25 @@
       "score": 481
     },
     {
+      "id": "5adc33fa-4f30-2899-f131-6fba64c5dd3a",
+      "episode": "V25",
+      "act": "ACT V",
+      "short": "V25: A5",
+      "current": false,
+      "matches": 269,
+      "wins": 145,
+      "losses": 124,
+      "winRate": 53.9,
+      "playtime": "148h",
+      "kd": "1.03",
+      "hs": "38.2%",
+      "acs": "214.5",
+      "adr": "142.3",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 556
+    },
+    {
       "id": "ac12e9b3-47e6-9599-8fa1-0bb473e5efc7",
       "episode": "V25",
       "act": "ACT IV",
@@ -1166,23 +1185,23 @@
       "score": 632
     },
     {
-      "id": "4401f9fd-4170-2e4c-4bc3-f3b4d7d150d1",
+      "id": "03dfd004-45d4-ebfd-ab0a-948ce780dac4",
       "episode": "EP 7",
-      "act": "ACT III",
-      "short": "E7: A3",
+      "act": "ACT II",
+      "short": "E7: A2",
       "current": false,
-      "matches": 263,
-      "wins": 129,
-      "losses": 132,
-      "winRate": 49,
-      "playtime": "156h",
-      "kd": "1.11",
-      "hs": "29.5%",
-      "acs": "215.1",
-      "adr": "142.4",
-      "rank": "Diamond 2",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/19.png",
-      "score": 604
+      "matches": 261,
+      "wins": 124,
+      "losses": 131,
+      "winRate": 47.5,
+      "playtime": "158h",
+      "kd": "1.00",
+      "hs": "27.8%",
+      "acs": "201.3",
+      "adr": "133.0",
+      "rank": "Platinum 2",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/16.png",
+      "score": 421
     },
     {
       "id": "0981a882-4e7d-371a-70c4-c3b4f46c504a",
