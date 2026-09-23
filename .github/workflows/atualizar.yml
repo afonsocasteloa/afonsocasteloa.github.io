@@ -6,16 +6,13 @@ on:
   workflow_dispatch:
   push:
     branches: [source]
-  repository_dispatch:
-    types: [tracker-refresh]
 
 concurrency:
   group: tracker-site
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: write
-  actions: write
 
 jobs:
   atualizar:
@@ -88,9 +85,3 @@ jobs:
           git add -A
           git diff --staged --quiet || git commit -m "Atualizar o site com os dados mais recentes do Tracker."
           git push
-
-      - name: Agendar a próxima leitura
-        if: always()
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run "Atualizar Tracker" --repo "$GITHUB_REPOSITORY"
