@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-23T04:30:55.970Z",
+  "fetchedAt": "2026-09-23T04:34:25.900Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6525,
+  "views": 6532,
   "level": 846,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1012,25 +1012,6 @@
       "rank": "Ascendant 2",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
       "score": 497
-    },
-    {
-      "id": "aef237a0-494d-3a14-a1c8-ec8de84e309c",
-      "episode": "V25",
-      "act": "ACT III",
-      "short": "V25: A3",
-      "current": false,
-      "matches": 176,
-      "wins": 67,
-      "losses": 106,
-      "winRate": 38.1,
-      "playtime": "96h",
-      "kd": "0.99",
-      "hs": "39.4%",
-      "acs": "213.6",
-      "adr": "141.6",
-      "rank": "Ascendant 2",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
-      "score": 398
     },
     {
       "id": "16118998-4705-5813-86dd-0292a2439d90",
@@ -3331,7 +3312,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/displayicon.png",
         "map": "Breeze",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/breeze.jpg",
-        "when": "há 94 dias",
+        "when": "há 95 dias",
         "timestamp": "2026-06-20T17:02:19.337+00:00",
         "won": false,
         "placement": "5th",
@@ -8041,7 +8022,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/displayicon.png",
         "map": "Sunset",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/sunset.jpg",
-        "when": "há 700 dias",
+        "when": "há 701 dias",
         "timestamp": "2024-10-22T17:03:47.74+00:00",
         "won": false,
         "placement": "9th",
@@ -11356,7 +11337,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/displayicon.png",
         "map": "Sunset",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/sunset.jpg",
-        "when": "há 1061 dias",
+        "when": "há 1062 dias",
         "timestamp": "2023-10-27T17:02:42.522+00:00",
         "won": false,
         "placement": "6th",
