@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T04:50:49.494Z",
+  "fetchedAt": "2026-09-23T04:53:20.271Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -39,8 +39,8 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
-      "Chxse Atlantic#nez",
       "Fazed#any",
+      "Chxse Atlantic#nez",
       "マズ ッ#MAZZ",
       "wxlf#1410",
       "Minx#bubu"
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "25"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -879,6 +879,25 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 467
+    },
+    {
+      "id": "4f0864e2-40af-28a4-de2c-0e9e64e75f23",
+      "episode": "V26",
+      "act": "ACT IV",
+      "short": "V26: A4",
+      "current": false,
+      "matches": 204,
+      "wins": 105,
+      "losses": 98,
+      "winRate": 51.5,
+      "playtime": "109h",
+      "kd": "1.04",
+      "hs": "38.7%",
+      "acs": "224.0",
+      "adr": "149.7",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 576
     },
     {
       "id": "ce2783e8-44fc-dd48-3da3-33b5ba6c4a22",
@@ -11542,7 +11561,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 1120 dias",
+        "when": "há 1121 dias",
         "timestamp": "2023-08-29T17:22:55.774+00:00",
         "won": true,
         "placement": "MVP",
@@ -13627,7 +13646,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/707eab51-4836-f488-046a-cda6bf494859/displayicon.png",
         "map": "Breeze",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/breeze.jpg",
-        "when": "há 1352 dias",
+        "when": "há 1353 dias",
         "timestamp": "2023-01-09T17:23:25.109+00:00",
         "won": false,
         "placement": "6th",
