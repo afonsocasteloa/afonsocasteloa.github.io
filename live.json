@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T10:58:00.649Z",
+  "fetchedAt": "2026-09-23T11:01:05.646Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "23"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 0,
-    "body": 0,
-    "legs": 0,
-    "headHits": 0,
-    "bodyHits": 0,
-    "legHits": 0
+    "head": 41.7,
+    "body": 54.9,
+    "legs": 3.4,
+    "headHits": 269,
+    "bodyHits": 354,
+    "legHits": 22
   },
   "last20": {
-    "record": "0W – 1L (0%)",
-    "kd": 0,
-    "adr": 0
+    "record": "9W – 11L (45%)",
+    "kd": 0.9,
+    "adr": 139
   },
   "roles": [
     {
@@ -1052,6 +1052,25 @@
       "score": 456
     },
     {
+      "id": "476b0893-4c2e-abd6-c5fe-708facff0772",
+      "episode": "V25",
+      "act": "ACT I",
+      "short": "V25: A1",
+      "current": false,
+      "matches": 177,
+      "wins": 97,
+      "losses": 79,
+      "winRate": 54.8,
+      "playtime": "100h",
+      "kd": "1.05",
+      "hs": "37.0%",
+      "acs": "213.4",
+      "adr": "142.0",
+      "rank": "Immortal 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
+      "score": 597
+    },
+    {
       "id": "dcde7346-4085-de4f-c463-2489ed47983b",
       "episode": "EP 9",
       "act": "ACT III",
@@ -1069,6 +1088,25 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 559
+    },
+    {
+      "id": "292f58db-4c17-89a7-b1c0-ba988f0e9d98",
+      "episode": "EP 9",
+      "act": "ACT II",
+      "short": "E9: A2",
+      "current": false,
+      "matches": 208,
+      "wins": 102,
+      "losses": 104,
+      "winRate": 49,
+      "playtime": "118h",
+      "kd": "1.09",
+      "hs": "35.8%",
+      "acs": "217.1",
+      "adr": "143.7",
+      "rank": "Ascendant 3",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
+      "score": 560
     },
     {
       "id": "52ca6698-41c1-e7de-4008-8994d2221209",
@@ -1126,6 +1164,25 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 492
+    },
+    {
+      "id": "ec876e6c-43e8-fa63-ffc1-2e8d4db25525",
+      "episode": "EP 8",
+      "act": "ACT I",
+      "short": "E8: A1",
+      "current": false,
+      "matches": 177,
+      "wins": 92,
+      "losses": 80,
+      "winRate": 52,
+      "playtime": "102h",
+      "kd": "1.11",
+      "hs": "29.9%",
+      "acs": "221.8",
+      "adr": "145.8",
+      "rank": "Ascendant 1",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/21.png",
+      "score": 632
     },
     {
       "id": "4401f9fd-4170-2e4c-4bc3-f3b4d7d150d1",
