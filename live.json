@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-23T15:02:39.912Z",
+  "fetchedAt": "2026-09-23T15:06:10.983Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6676,
+  "views": 6683,
   "level": 846,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "24"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -938,25 +938,6 @@
       "score": 627
     },
     {
-      "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
-      "episode": "V26",
-      "act": "ACT I",
-      "short": "V26: A1",
-      "current": false,
-      "matches": 332,
-      "wins": 166,
-      "losses": 164,
-      "winRate": 50,
-      "playtime": "181h",
-      "kd": "1.10",
-      "hs": "42.2%",
-      "acs": "226.8",
-      "adr": "149.3",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 577
-    },
-    {
       "id": "4c4b8cff-43eb-13d3-8f14-96b783c90cd2",
       "episode": "V25",
       "act": "ACT VI",
@@ -1240,25 +1221,6 @@
       "rank": "Platinum 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/15.png",
       "score": 487
-    },
-    {
-      "id": "2de5423b-4aad-02ad-8d9b-c0a931958861",
-      "episode": "EP 6",
-      "act": "ACT III",
-      "short": "E6: A3",
-      "current": false,
-      "matches": 322,
-      "wins": 149,
-      "losses": 163,
-      "winRate": 46.3,
-      "playtime": "192h",
-      "kd": "1.08",
-      "hs": "25.8%",
-      "acs": "223.2",
-      "adr": "146.2",
-      "rank": "Gold 2",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/13.png",
-      "score": 547
     },
     {
       "id": "34093c29-4306-43de-452f-3f944bde22be",
