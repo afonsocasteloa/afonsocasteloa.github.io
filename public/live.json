@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T05:07:49.186Z",
+  "fetchedAt": "2026-09-23T05:10:30.188Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -39,11 +39,11 @@
     "league": "IBIT · Contender · #27",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
-      "Minx#bubu",
-      "Fazed#any",
       "Chxse Atlantic#nez",
+      "Fazed#any",
       "マズ ッ#MAZZ",
-      "wxlf#1410"
+      "wxlf#1410",
+      "Minx#bubu"
     ]
   },
   "playtime": "3 494h",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "25"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1090,25 +1090,6 @@
       "score": 559
     },
     {
-      "id": "292f58db-4c17-89a7-b1c0-ba988f0e9d98",
-      "episode": "EP 9",
-      "act": "ACT II",
-      "short": "E9: A2",
-      "current": false,
-      "matches": 208,
-      "wins": 102,
-      "losses": 104,
-      "winRate": 49,
-      "playtime": "118h",
-      "kd": "1.09",
-      "hs": "35.8%",
-      "acs": "217.1",
-      "adr": "143.7",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 560
-    },
-    {
       "id": "52ca6698-41c1-e7de-4008-8994d2221209",
       "episode": "EP 9",
       "act": "ACT I",
@@ -1412,7 +1393,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Haven",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-      "when": "há 10h",
+      "when": "há 11h",
       "timestamp": "2026-09-22T18:38:49.394+00:00",
       "won": true,
       "placement": "2nd",
@@ -1916,7 +1897,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 10h",
+        "when": "há 11h",
         "timestamp": "2026-09-22T18:38:49.394+00:00",
         "won": true,
         "placement": "2nd",
@@ -3308,7 +3289,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
         "map": "Fracture",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/fracture.jpg",
-        "when": "há 94 dias",
+        "when": "há 95 dias",
         "timestamp": "2026-06-20T17:38:54.211+00:00",
         "won": false,
         "placement": "7th",
