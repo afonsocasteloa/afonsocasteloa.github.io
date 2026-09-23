@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T07:36:45.076Z",
+  "fetchedAt": "2026-09-23T07:39:56.477Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -40,10 +40,10 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Minx#bubu",
-      "Chxse Atlantic#nez",
-      "Fazed#any",
       "マズ ッ#MAZZ",
-      "wxlf#1410"
+      "wxlf#1410",
+      "Chxse Atlantic#nez",
+      "Fazed#any"
     ]
   },
   "playtime": "3 494h",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "24"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -1147,25 +1147,6 @@
       "score": 608
     },
     {
-      "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
-      "episode": "EP 8",
-      "act": "ACT II",
-      "short": "E8: A2",
-      "current": false,
-      "matches": 186,
-      "wins": 102,
-      "losses": 83,
-      "winRate": 54.8,
-      "playtime": "107h",
-      "kd": "1.03",
-      "hs": "31.3%",
-      "acs": "204.8",
-      "adr": "134.3",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 492
-    },
-    {
       "id": "ec876e6c-43e8-fa63-ffc1-2e8d4db25525",
       "episode": "EP 8",
       "act": "ACT I",
@@ -1316,25 +1297,6 @@
       "rank": "Gold 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/12.png",
       "score": 280
-    },
-    {
-      "id": "7a85de9a-4032-61a9-61d8-f4aa2b4a84b6",
-      "episode": "EP 5",
-      "act": "ACT II",
-      "short": "E5: A2",
-      "current": false,
-      "matches": 184,
-      "wins": 87,
-      "losses": 93,
-      "winRate": 47.3,
-      "playtime": "106h",
-      "kd": "0.80",
-      "hs": "16.2%",
-      "acs": "167.9",
-      "adr": "110.5",
-      "rank": "Bronze 2",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/7.png",
-      "score": 107
     },
     {
       "id": "67e373c7-48f7-b422-641b-079ace30b427",
@@ -12222,7 +12184,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/f94c3b30-42be-e959-889c-5aa313dba261/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 1186 dias",
+        "when": "há 1187 dias",
         "timestamp": "2023-06-24T20:09:27.001+00:00",
         "won": false,
         "placement": "7th",
