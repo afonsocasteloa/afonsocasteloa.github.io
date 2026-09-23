@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T06:18:59.301Z",
+  "fetchedAt": "2026-09-23T06:21:57.536Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -51,7 +51,7 @@
   "wins": 3028,
   "losses": 2988,
   "winRate": 49.6,
-  "trackerScore": 467,
+  "trackerScore": 576,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "23"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -862,25 +862,6 @@
   ],
   "acts": [
     {
-      "id": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b",
-      "episode": "V26",
-      "act": "ACT V",
-      "short": "V26: A5",
-      "current": true,
-      "matches": 167,
-      "wins": 86,
-      "losses": 81,
-      "winRate": 51.5,
-      "playtime": "91h",
-      "kd": "1.01",
-      "hs": "39.2%",
-      "acs": "213.3",
-      "adr": "142.9",
-      "rank": "Immortal 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
-      "score": 467
-    },
-    {
       "id": "4f0864e2-40af-28a4-de2c-0e9e64e75f23",
       "episode": "V26",
       "act": "ACT IV",
@@ -993,25 +974,6 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 556
-    },
-    {
-      "id": "ac12e9b3-47e6-9599-8fa1-0bb473e5efc7",
-      "episode": "V25",
-      "act": "ACT IV",
-      "short": "V25: A4",
-      "current": false,
-      "matches": 247,
-      "wins": 116,
-      "losses": 128,
-      "winRate": 47,
-      "playtime": "137h",
-      "kd": "1.03",
-      "hs": "40.3%",
-      "acs": "209.3",
-      "adr": "139.2",
-      "rank": "Ascendant 2",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
-      "score": 497
     },
     {
       "id": "aef237a0-494d-3a14-a1c8-ec8de84e309c",
@@ -1259,25 +1221,6 @@
       "rank": "Gold 2",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/13.png",
       "score": 547
-    },
-    {
-      "id": "34093c29-4306-43de-452f-3f944bde22be",
-      "episode": "EP 6",
-      "act": "ACT II",
-      "short": "E6: A2",
-      "current": false,
-      "matches": 300,
-      "wins": 145,
-      "losses": 145,
-      "winRate": 48.3,
-      "playtime": "180h",
-      "kd": "1.11",
-      "hs": "24.4%",
-      "acs": "222.0",
-      "adr": "145.5",
-      "rank": "Gold 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/12.png",
-      "score": 554
     },
     {
       "id": "9c91a445-4f78-1baa-a3ea-8f8aadf4914d",
