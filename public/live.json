@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T12:20:20.499Z",
+  "fetchedAt": "2026-09-23T12:22:58.038Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "25"
+      "value": "26"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -133,17 +133,17 @@
     }
   ],
   "accuracy": {
-    "head": 0,
-    "body": 0,
-    "legs": 0,
-    "headHits": 0,
-    "bodyHits": 0,
-    "legHits": 0
+    "head": 41.7,
+    "body": 54.9,
+    "legs": 3.4,
+    "headHits": 269,
+    "bodyHits": 354,
+    "legHits": 22
   },
   "last20": {
-    "record": "0W – 1L (0%)",
-    "kd": 0,
-    "adr": 0
+    "record": "9W – 11L (45%)",
+    "kd": 0.9,
+    "adr": 139
   },
   "roles": [
     {
@@ -993,6 +993,25 @@
       "rank": "Immortal 1",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png",
       "score": 556
+    },
+    {
+      "id": "ac12e9b3-47e6-9599-8fa1-0bb473e5efc7",
+      "episode": "V25",
+      "act": "ACT IV",
+      "short": "V25: A4",
+      "current": false,
+      "matches": 247,
+      "wins": 116,
+      "losses": 128,
+      "winRate": 47,
+      "playtime": "137h",
+      "kd": "1.03",
+      "hs": "40.3%",
+      "acs": "209.3",
+      "adr": "139.2",
+      "rank": "Ascendant 2",
+      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png",
+      "score": 497
     },
     {
       "id": "aef237a0-494d-3a14-a1c8-ec8de84e309c",
@@ -12309,7 +12328,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Pearl",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/pearl.jpg",
-        "when": "há 1188 dias",
+        "when": "há 1189 dias",
         "timestamp": "2023-06-23T00:52:01.781+00:00",
         "won": true,
         "placement": "8th",
