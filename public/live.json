@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T08:45:22.725Z",
+  "fetchedAt": "2026-09-23T08:49:00.790Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
@@ -40,10 +40,10 @@
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
       "Chxse Atlantic#nez",
-      "Minx#bubu",
       "Fazed#any",
       "マズ ッ#MAZZ",
-      "wxlf#1410"
+      "wxlf#1410",
+      "Minx#bubu"
     ]
   },
   "playtime": "3 494h",
@@ -125,7 +125,7 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "24"
     },
     {
       "label": "Do Iron ao Immortal",
@@ -919,25 +919,6 @@
       "score": 694
     },
     {
-      "id": "9d85c932-4820-c060-09c3-668636d4df1b",
-      "episode": "V26",
-      "act": "ACT II",
-      "short": "V26: A2",
-      "current": false,
-      "matches": 159,
-      "wins": 77,
-      "losses": 77,
-      "winRate": 48.4,
-      "playtime": "87h",
-      "kd": "1.10",
-      "hs": "36.5%",
-      "acs": "229.2",
-      "adr": "151.0",
-      "rank": "Ascendant 3",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
-      "score": 627
-    },
-    {
       "id": "3ea2b318-423b-cf86-25da-7cbb0eefbe2d",
       "episode": "V26",
       "act": "ACT I",
@@ -1164,25 +1145,6 @@
       "rank": "Ascendant 3",
       "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/23.png",
       "score": 492
-    },
-    {
-      "id": "ec876e6c-43e8-fa63-ffc1-2e8d4db25525",
-      "episode": "EP 8",
-      "act": "ACT I",
-      "short": "E8: A1",
-      "current": false,
-      "matches": 177,
-      "wins": 92,
-      "losses": 80,
-      "winRate": 52,
-      "playtime": "102h",
-      "kd": "1.11",
-      "hs": "29.9%",
-      "acs": "221.8",
-      "adr": "145.8",
-      "rank": "Ascendant 1",
-      "rankIcon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/21.png",
-      "score": 632
     },
     {
       "id": "4401f9fd-4170-2e4c-4bc3-f3b4d7d150d1",
@@ -4257,7 +4219,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/7f94d92c-4234-0a36-9646-3a87eb8b5c89/displayicon.png",
         "map": "Split",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-        "when": "há 191 dias",
+        "when": "há 192 dias",
         "timestamp": "2026-03-15T21:18:54.226+00:00",
         "won": false,
         "placement": "7th",
@@ -8217,7 +8179,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
         "map": "Icebox",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg",
-        "when": "há 702 dias",
+        "when": "há 703 dias",
         "timestamp": "2024-10-20T21:18:26.13+00:00",
         "won": true,
         "placement": "7th",
@@ -12993,7 +12955,7 @@
         "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
         "map": "Haven",
         "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-        "when": "há 1295 dias",
+        "when": "há 1296 dias",
         "timestamp": "2023-03-07T21:19:09.153+00:00",
         "won": true,
         "placement": "MVP",
