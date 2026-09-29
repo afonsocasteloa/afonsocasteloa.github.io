@@ -12,6 +12,17 @@ import {
   trackerMatchHref,
   trackerPlayerHref,
 } from "@/lib/hrefs";
+import {
+  AccuracyCrosshair,
+  AgentOrbit,
+  CommandDock,
+  CountUp,
+  FormTape,
+  MatchCinema,
+  OpsTicker,
+  RankAscent,
+  usePointerParallax,
+} from "@/components/site-fx";
 import type { ActRow, MatchCard, TabId, TrackerSnapshot } from "@/lib/types";
 
 const TABS: { id: TabId; label: string }[] = [
@@ -543,32 +554,7 @@ function ActCard({ act }: { act: ActRow }) {
 }
 
 function RankJourney({ acts }: { acts: ActRow[] }) {
-  const journey = [...acts].reverse();
-  return (
-    <div className="clip-card glass hud p-4">
-      <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Caminho de rank</p>
-      <div className="mt-3 flex flex-wrap items-end gap-2">
-        {journey.map((act) => (
-          <a
-            key={act.id}
-            href={actMatchesHref(act.id)}
-            className="flex w-11 flex-col items-center gap-1"
-            title={`${act.short} · ${act.rank}`}
-            aria-label={`${act.short} · ver partidas`}
-          >
-            <img
-              src={act.rankIcon}
-              alt={act.rank}
-              className={`h-8 w-8 object-contain ${act.current ? "rank-glow" : "opacity-80"}`}
-            />
-            <span className={`text-[8px] leading-tight ${act.current ? "text-[#ff4655]" : "text-[#9aa3b2]"}`}>
-              {act.short}
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  );
+  return <RankAscent acts={acts} />;
 }
 
 function ActsBody({ data, compact = false }: { data: TrackerSnapshot; compact?: boolean }) {
@@ -671,36 +657,12 @@ function ActsBody({ data, compact = false }: { data: TrackerSnapshot; compact?: 
   );
 }
 
-function OverviewBody({ data }: { data: TrackerSnapshot }) {
+function OverviewBody({ data, now }: { data: TrackerSnapshot; now: number | null }) {
   const acc = data.accuracy;
-  const pie = `conic-gradient(#ff4655 0 ${acc.head}%, #ece8e1 ${acc.head}% ${acc.head + acc.body}%, #6b7280 ${acc.head + acc.body}% 100%)`;
-  const form = [...data.recent].reverse();
 
   return (
     <div className="space-y-6">
-      <section className="clip-card glass hud p-4">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div>
-            <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Forma · últimas 20</p>
-            <p className="stat-num mt-1 text-2xl">
-              {data.last20.record} · {data.last20.kd} K/D · {data.last20.adr} ADR
-            </p>
-          </div>
-          <div className="flex items-end gap-[3px]" aria-hidden>
-            {form.map((match, i) => (
-              <a
-                key={match.id}
-                href={trackerMatchHref(match.id)}
-                target="_blank"
-                rel="noreferrer"
-                title={`${match.won ? "W" : "L"} · ${match.map} · ${match.agent}`}
-                className={`form-bar h-8 w-2.5 ${match.won ? "bg-[#1be285]" : "bg-[#ff4655]"}`}
-                style={{ animationDelay: `${i * 28}ms` }}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <FormTape matches={data.recent} now={now} />
 
       <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {data.overview.map((stat) => (
@@ -736,26 +698,14 @@ function OverviewBody({ data }: { data: TrackerSnapshot }) {
           </div>
         </a>
 
-        <a href="/partidas/" className="tap glass hud p-5">
-          <h2 className="stat-num text-3xl">Precisão · últimas 20</h2>
-          <div className="mt-5 flex items-center gap-6">
-            <div className="h-32 w-32 shrink-0 rounded-full" style={{ background: pie }} />
-            <ul className="space-y-2 text-sm">
-              <li>
-                Cabeça <b>{acc.head}%</b> · {grouped(acc.headHits)} hits
-              </li>
-              <li>
-                Corpo <b>{acc.body}%</b> · {grouped(acc.bodyHits)} hits
-              </li>
-              <li>
-                Pernas <b>{acc.legs}%</b> · {grouped(acc.legHits)} hits
-              </li>
-              <li className="text-[#9aa3b2]">
-                {data.last20.record} · {data.last20.kd} K/D · {data.last20.adr} ADR
-              </li>
-            </ul>
-          </div>
-        </a>
+        <AccuracyCrosshair
+          head={acc.head}
+          body={acc.body}
+          legs={acc.legs}
+          headHits={acc.headHits}
+          bodyHits={acc.bodyHits}
+          legHits={acc.legHits}
+        />
       </section>
 
       <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -922,11 +872,12 @@ function AgentsBody({ data, preview }: { data: TrackerSnapshot; preview?: boolea
   const rows = preview ? sorted.slice(0, 6) : sorted;
 
   return (
-    <section>
+    <section className="space-y-6">
+      {!preview ? <AgentOrbit agents={sorted} /> : null}
       <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
         <div className="flex items-center gap-3">
           <span className="section-mark" />
-          <h2 className="stat-num text-3xl">Agentes</h2>
+          <h2 className="stat-num text-3xl">{preview ? "Agentes" : "Todos os agentes"}</h2>
         </div>
         {preview ? (
           <a href="/agentes/" className="text-xs text-[#ff4655] underline">
@@ -994,13 +945,16 @@ function AgentsBody({ data, preview }: { data: TrackerSnapshot; preview?: boolea
 }
 
 function MapsBody({ data, preview }: { data: TrackerSnapshot; preview?: boolean }) {
-  const rows = preview ? data.maps.slice(0, 6) : data.maps;
+  const rows = preview ? data.maps.slice(0, 5) : data.maps;
   return (
-    <section>
+    <section className="reveal">
       <div className="mb-4 flex items-end justify-between gap-3">
         <div className="flex items-center gap-3">
           <span className="section-mark" />
-          <h2 className="stat-num text-3xl">Mapas</h2>
+          <div>
+            <h2 className="stat-num text-3xl">Mapas</h2>
+            <p className="text-sm text-[#9aa3b2]">Território competitivo · WR real do Tracker</p>
+          </div>
         </div>
         {preview ? (
           <a href="/mapas/" className="text-xs text-[#ff4655] underline">
@@ -1008,21 +962,21 @@ function MapsBody({ data, preview }: { data: TrackerSnapshot; preview?: boolean 
           </a>
         ) : null}
       </div>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="map-mosaic">
         {rows.map((map) => (
-          <a key={map.name} href={mapMatchesHref(map.name)} className="tap lift relative overflow-hidden border border-white/10">
-            <img src={map.image} alt="" className="h-52 w-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+          <a key={map.name} href={mapMatchesHref(map.name)} className="tap map-tile">
+            <img src={map.image} alt="" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-4">
-              <div className="flex items-end justify-between">
-                <p className="stat-num text-3xl">{map.name}</p>
+              <div className="flex items-end justify-between gap-3">
+                <p className="stat-num text-3xl md:text-4xl">{map.name}</p>
                 <p className={`stat-num text-2xl ${wrClass(map.winRate)}`}>{map.winRate}%</p>
               </div>
               <p className="text-xs text-[#d5dbe6]">
                 {map.wins}W – {map.losses}L
               </p>
               <div className="mt-2 h-1.5 bg-white/15">
-                <div className="h-full bg-[#1be285]" style={{ width: `${map.winRate}%` }} />
+                <div className="kill-bar h-full bg-[#1be285]" style={{ width: `${map.winRate}%`, background: "linear-gradient(90deg,#1be285,#9ef5c8)" }} />
               </div>
               <p className="mt-2 text-[10px] tracking-[0.18em] uppercase text-[#ff4655]">Ver partidas →</p>
             </div>
@@ -1068,7 +1022,7 @@ function WeaponsBody({ data, preview }: { data: TrackerSnapshot; preview?: boole
             <p className="stat-num text-3xl">{weapon.name}</p>
             <p className="text-sm text-[#9aa3b2]">{grouped(weapon.kills)} kills</p>
             <div className="mt-3 h-1.5 overflow-hidden bg-white/10">
-              <div className="h-full bg-[#ff4655]" style={{ width: `${(weapon.kills / maxKills) * 100}%` }} />
+              <div className="kill-bar h-full" style={{ width: `${(weapon.kills / maxKills) * 100}%` }} />
             </div>
             <div className="mt-4 h-2 overflow-hidden bg-white/10">
               <div className="flex h-full">
@@ -1078,7 +1032,7 @@ function WeaponsBody({ data, preview }: { data: TrackerSnapshot; preview?: boole
               </div>
             </div>
             <p className="mt-2 text-xs text-[#9aa3b2]">
-              HS {weapon.head}% · Body {weapon.body}% · Legs {weapon.legs}%
+              Cabeça {weapon.head}% · Corpo {weapon.body}% · Pernas {weapon.legs}%
             </p>
             <p className="mt-3 text-[10px] tracking-[0.18em] uppercase text-[#ff4655]">Ver no Tracker →</p>
           </a>
@@ -1099,10 +1053,13 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
   const [refreshing, setRefreshing] = useState(false);
   const now = useNow();
   const query = useQueryFilters();
+  const heroRef = usePointerParallax(22);
   const currentAct = data.acts.find((act) => act.current);
   const peak = peakAct(data);
   const streak = useMemo(() => streakOf(data.recent), [data.recent]);
   const updated = now ? relativePt(data.fetchedAt, now) : null;
+  const lastMatch = data.recent[0];
+  const hsNum = currentAct ? Number.parseFloat(String(currentAct.hs).replace("%", "").replace(",", ".")) : NaN;
 
   const pull = useCallback(async (signal?: AbortSignal) => {
     setRefreshing(true);
@@ -1160,7 +1117,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
     typeof data.current.rr === "number" ? Math.max(0, Math.min(100, data.current.rr)) : null;
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="site-shell relative min-h-screen overflow-x-hidden">
       <a href="#conteudo" className="skip-link">
         Saltar para o conteúdo
       </a>
@@ -1172,6 +1129,13 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
           FAZED
         </a>
         <div className="flex flex-wrap items-center justify-end gap-3 text-xs text-[#9aa3b2]">
+          <OpsTicker match={lastMatch} now={now} />
+          <CommandDock
+            riotId={`${data.name}#${data.tag}`}
+            onCopy={() => {
+              void copyText(`${data.name}#${data.tag}`);
+            }}
+          />
           <span className={`h-2 w-2 rounded-full ${liveTone} ${live ? "live-dot" : ""}`} />
           <span>
             {live ? "Ao vivo" : "Snapshot"}
@@ -1182,29 +1146,35 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
         </div>
       </header>
 
-      <main id="conteudo" className="relative z-10 mx-auto max-w-6xl px-5 pb-16">
-        <section className="relative min-h-[68vh] overflow-hidden border border-white/10 md:min-h-[72vh]">
+      <section
+        ref={heroRef}
+        className="hero-stage relative z-10 overflow-hidden"
+      >
           <img
             src={data.banner}
             alt=""
             className="hero-banner absolute inset-0 h-full w-full object-cover object-[center_18%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#05060a] via-[#05060a]/88 to-[#05060a]/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#05060a] via-[#05060a]/25 to-transparent" />
-          <div className="frame-line absolute inset-x-0 top-0 h-px" />
-          <p className="watermark pointer-events-none absolute right-[-3%] top-[18%] select-none stat-num">AFONSO</p>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#05060a] via-[#05060a]/86 to-[#05060a]/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#05060a] via-[#05060a]/15 to-transparent" />
+          <div className="hud-grid" />
+          <div className="frame-line absolute inset-x-0 top-0 z-[3] h-px" />
+          <p className="watermark pointer-events-none absolute right-[-2%] top-[12%] z-[3] select-none stat-num">AFONSO</p>
 
-          <div className="relative grid min-h-[68vh] items-end gap-8 p-6 md:min-h-[72vh] md:grid-cols-[1.25fr_0.75fr] md:p-10 lg:p-12">
+          <div className="relative z-[4] mx-auto grid min-h-[min(92vh,900px)] max-w-6xl items-end gap-8 px-5 py-10 md:grid-cols-[1.25fr_0.75fr] md:px-8 md:py-14 lg:px-5">
             <div className="hero-copy max-w-2xl pb-2">
               <div className="flex items-center gap-2 text-[11px] tracking-[0.28em] text-[#9aa3b2] uppercase">
                 <img src="https://trackercdn.com/cdn/flags/4x3/pt.svg" alt="" className="h-3 w-4 object-cover" />
                 Portugal · PC · Competitive
               </div>
-              <h1 className="stat-num mt-3 text-[clamp(4.2rem,12vw,7.5rem)] leading-[0.86] tracking-[0.02em]">
+              <h1
+                className="glitch-name stat-num mt-3 text-[clamp(4.6rem,14vw,8.5rem)] leading-[0.82] tracking-[0.02em]"
+                data-text={PLAYER.displayName}
+              >
                 {PLAYER.displayName}
               </h1>
               <RiotId name={data.name} tag={data.tag} />
-              <p className="mt-5 max-w-xl text-base leading-7 text-[#c7ced8] md:text-[1.05rem]">{PLAYER.about}</p>
+              <p className="mt-5 max-w-xl text-base leading-7 text-[#c7ced8] md:text-[1.08rem]">{PLAYER.about}</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
                   href={PLAYER.trackerOverview}
@@ -1218,7 +1188,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
               </div>
             </div>
 
-            <div className="flex flex-col items-start justify-end gap-5 pb-1 md:items-end md:text-right">
+            <div className="hero-rank flex flex-col items-start justify-end gap-5 pb-1 md:items-end md:text-right">
               <a
                 href={currentAct ? actMatchesHref(currentAct.id) : "/atos/"}
                 className="group flex flex-col items-start md:items-end"
@@ -1226,12 +1196,12 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
                 <img
                   src={data.current.icon}
                   alt={data.current.name}
-                  className="rank-glow h-28 w-28 object-contain md:h-36 md:w-36"
+                  className="rank-glow h-28 w-28 object-contain md:h-44 md:w-44"
                 />
                 <p className="stat-num mt-3 text-4xl md:text-5xl">{rankWithRr(data.current)}</p>
                 <p className="mt-1 text-xs tracking-[0.2em] text-[#9aa3b2] uppercase">Rating atual</p>
                 {rrPct != null ? (
-                  <div className="mt-3 w-44">
+                  <div className="mt-3 w-52">
                     <div className="h-1.5 overflow-hidden bg-white/10">
                       <div className="rr-fill h-full" style={{ width: `${rrPct}%` }} />
                     </div>
@@ -1239,10 +1209,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
                   </div>
                 ) : null}
               </a>
-              <a
-                href={peak ? actMatchesHref(peak.id) : "/atos/"}
-                className="border-t border-white/15 pt-4"
-              >
+              <a href={peak ? actMatchesHref(peak.id) : "/atos/"} className="border-t border-white/15 pt-4">
                 <p className="text-[10px] tracking-[0.2em] text-[#9aa3b2] uppercase">Peak</p>
                 <p className="stat-num text-2xl">
                   {data.peak.name}
@@ -1254,30 +1221,38 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
           </div>
         </section>
 
-        <section className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <main id="conteudo" className="relative z-10 mx-auto max-w-6xl px-5 pb-16">
+        <section className="dossier-strip mt-0 grid-cols-2 md:grid-cols-4">
           {currentAct ? (
-            <a href={actMatchesHref(currentAct.id)} className="tap glass hud lift p-4">
+            <a href={actMatchesHref(currentAct.id)} className="tap stat-slab">
               <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Assinatura · acto atual</p>
-              <p className="stat-num gold-stat mt-1 text-4xl">{currentAct.hs}</p>
+              <p className="stat-num gold-stat mt-1 text-4xl">
+                {Number.isFinite(hsNum) ? <CountUp value={Math.round(hsNum)} /> : currentAct.hs}
+                {Number.isFinite(hsNum) ? "%" : ""}
+              </p>
               <p className="text-xs text-[#f5d76e]">{currentAct.short} HS%</p>
             </a>
           ) : null}
-          <a href="/atos/" className="tap glass hud lift p-4">
+          <a href="/atos/" className="tap stat-slab">
             <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Carreira</p>
-            <p className="stat-num mt-1 text-4xl">{data.winRate}%</p>
+            <p className="stat-num mt-1 text-4xl">
+              <CountUp value={Math.round(data.winRate)} />%
+            </p>
             <p className="text-xs text-[#9aa3b2]">
               {grouped(data.wins)}W {grouped(data.losses)}L · {data.playtime}
             </p>
           </a>
-          <a href={currentAct ? actMatchesHref(currentAct.id) : "/partidas/"} className="tap glass hud lift p-4">
+          <a href={currentAct ? actMatchesHref(currentAct.id) : "/partidas/"} className="tap stat-slab">
             <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Tracker Score</p>
-            <p className="stat-num mt-1 text-4xl text-[#ff4655]">{data.trackerScore}</p>
+            <p className="stat-num mt-1 text-4xl text-[#ff4655]">
+              <CountUp value={data.trackerScore} />
+            </p>
             <p className="text-xs text-[#9aa3b2]">de 1000 · acto atual {currentAct?.short ?? "—"}</p>
           </a>
-          <a href="/partidas/" className="tap glass hud lift p-4">
+          <a href="/partidas/" className="tap stat-slab">
             <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Sequência</p>
             <p className={`stat-num mt-1 text-4xl ${streak.won ? "text-[#1be285]" : "text-[#ff8a7a]"}`}>
-              {streak.n}
+              <CountUp value={streak.n} />
               {streak.won ? "W" : "L"}
             </p>
             <p className="text-xs text-[#9aa3b2]">últimas competitivas</p>
@@ -1311,8 +1286,10 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
           {tab === "overview" ? (
             <>
               <MeBody data={data} compact now={now} />
+              <AgentOrbit agents={data.agents} />
               <ActsBody data={data} compact />
-              <OverviewBody data={data} />
+              <OverviewBody data={data} now={now} />
+              <MatchCinema matches={data.recent} now={now} />
               <MatchesBody data={data} now={now} preview />
               <AgentsBody data={data} preview />
               <MapsBody data={data} preview />
@@ -1322,7 +1299,10 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
           {tab === "about" ? <MeBody data={data} now={now} /> : null}
           {tab === "acts" ? <ActsBody data={data} /> : null}
           {tab === "matches" ? (
-            <MatchesBody data={data} now={now} actId={actId} agente={query.agente} mapa={query.mapa} />
+            <>
+              {!actId ? <MatchCinema matches={data.recent} now={now} /> : null}
+              <MatchesBody data={data} now={now} actId={actId} agente={query.agente} mapa={query.mapa} />
+            </>
           ) : null}
           {tab === "agents" ? <AgentsBody data={data} /> : null}
           {tab === "maps" ? <MapsBody data={data} /> : null}
@@ -1344,6 +1324,8 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
           Fazed#any no Tracker.gg
         </a>
         . Competitive {PLAYER.seasonLabel} · {PLAYER.seasonRange}. O site atualiza sozinho a partir do Tracker.
+        {" "}
+        Atalho: <kbd className="border border-white/15 px-1">/</kbd> ou <kbd className="border border-white/15 px-1">Ctrl+K</kbd>.
       </footer>
     </div>
   );
