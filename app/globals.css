@@ -319,10 +319,75 @@ body {
 
 .form-tape { border: 1px solid rgba(255, 255, 255, 0.08); }
 
+.rank-ascent--pro {
+  position: relative;
+  border: 1px solid rgba(255, 70, 85, 0.18);
+  background:
+    linear-gradient(165deg, rgba(18, 20, 28, 0.92), rgba(7, 8, 14, 0.98)),
+    radial-gradient(800px 240px at 80% 0%, rgba(255, 70, 85, 0.12), transparent 60%);
+}
+
+.rank-ascent .ascent-glow {
+  pointer-events: none;
+  position: absolute;
+  inset: -10% 20% auto auto;
+  width: 280px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 70, 85, 0.2), transparent 70%);
+  filter: blur(8px);
+}
+
 .rank-ascent .ascent-line {
-  stroke-dasharray: 900;
-  stroke-dashoffset: 900;
-  animation: draw-line 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+  animation: draw-line 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.rank-ascent .ascent-area {
+  opacity: 0;
+  animation: fade-area 1.2s ease 0.4s forwards;
+}
+
+@keyframes fade-area {
+  to { opacity: 1; }
+}
+
+.rank-ascent .ascent-pulse {
+  animation: pulse-rank 2.4s ease-in-out infinite;
+}
+
+@keyframes ring-breathe {
+  0%, 100% { opacity: 0.35; transform: scale(0.92); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.rank-ascent .ascent-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ring-breathe 1.8s ease-in-out infinite;
+}
+
+.rank-ascent .ascent-hit { cursor: pointer; }
+
+.rank-ascent .ascent-node image {
+  transition: transform 160ms ease, filter 160ms ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.rank-ascent .ascent-node.is-on image {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 10px rgba(255, 70, 85, 0.55));
+}
+
+.rank-ascent .ascent-panel {
+  color: inherit;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+}
+
+.ascent-label {
+  font-family: var(--font-display), ui-sans-serif, sans-serif;
+  letter-spacing: 0.08em;
 }
 
 @keyframes draw-line {
@@ -646,6 +711,9 @@ body {
   .kill-bar,
   .form-bar,
   .rank-ascent .ascent-line,
+  .rank-ascent .ascent-area,
+  .rank-ascent .ascent-pulse,
+  .rank-ascent .ascent-ring,
   .glitch-name::before,
   .glitch-name::after,
   .reveal { animation: none; }

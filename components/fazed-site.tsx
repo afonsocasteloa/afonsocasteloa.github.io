@@ -586,9 +586,9 @@ function ActsBody({ data, compact = false }: { data: TrackerSnapshot; compact?: 
           <div className="flex items-center gap-3">
             <span className="section-mark" />
             <div>
-              <h2 className="stat-num text-3xl">Carreira em atos</h2>
+              <h2 className="stat-num text-3xl md:text-4xl">Carreira em atos</h2>
               <p className="text-sm text-[#9aa3b2]">
-                {data.acts.length} atos · {data.playtime} · {grouped(data.matches)} partidas
+                {data.acts.length} atos · {data.playtime} · {grouped(data.matches)} partidas · Iron → Immortal
               </p>
             </div>
           </div>

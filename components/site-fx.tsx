@@ -246,48 +246,190 @@ export function FormTape({ matches, now }: { matches: MatchCard[]; now: number |
 
 export function RankAscent({ acts }: { acts: ActRow[] }) {
   const journey = [...acts].reverse();
+  const [active, setActive] = useState(() => Math.max(0, journey.findIndex((a) => a.current)));
   if (journey.length < 2) return null;
-  const w = 640;
-  const h = 160;
-  const pad = 18;
+
+  const w = 960;
+  const h = 280;
+  const padX = 36;
+  const padY = 52;
   const scores = journey.map((act) => act.score || 100);
   const min = Math.min(...scores);
   const max = Math.max(...scores);
   const span = Math.max(1, max - min);
   const points = journey.map((act, i) => {
-    const x = pad + (i * (w - pad * 2)) / Math.max(1, journey.length - 1);
-    const y = h - pad - ((act.score - min) / span) * (h - pad * 2);
-    return { x, y, act };
+    const x = padX + (i * (w - padX * 2)) / Math.max(1, journey.length - 1);
+    const y = h - padY - ((act.score - min) / span) * (h - padY * 2 - 8);
+    return { x, y, act, i };
   });
-  const d = points.map((p, i) => `${i === 0 ? "M" : "L"}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(" ");
+  const focus = points[Math.min(active, points.length - 1)] ?? points[points.length - 1];
+  const peakPoint = [...points].sort((a, b) => b.act.score - a.act.score)[0];
+  const first = points[0];
+  const last = points[points.length - 1];
+
+  const lineD = points
+    .map((p, i) => {
+      if (i === 0) return `M ${p.x.toFixed(1)} ${p.y.toFixed(1)}`;
+      const prev = points[i - 1];
+      const cpx = (prev.x + p.x) / 2;
+      return `C ${cpx.toFixed(1)} ${prev.y.toFixed(1)}, ${cpx.toFixed(1)} ${p.y.toFixed(1)}, ${p.x.toFixed(1)} ${p.y.toFixed(1)}`;
+    })
+    .join(" ");
+  const areaD = `${lineD} L ${last.x.toFixed(1)} ${h - 12} L ${first.x.toFixed(1)} ${h - 12} Z`;
 
   return (
-    <div className="rank-ascent glass hud p-4">
-      <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
+    <div className="rank-ascent rank-ascent--pro glass hud overflow-hidden">
+      <div className="ascent-glow" aria-hidden />
+      <div className="relative z-[1] flex flex-wrap items-end justify-between gap-3 border-b border-white/10 px-5 py-4">
         <div>
-          <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Ascensão · Tracker Score</p>
-          <p className="stat-num text-2xl">Do Iron ao Immortal</p>
+          <p className="text-[10px] tracking-[0.28em] text-[#ff4655] uppercase">Ascensão · Tracker Score</p>
+          <p className="stat-num mt-1 text-3xl md:text-4xl">Do Iron ao Immortal</p>
+          <p className="mt-1 text-xs text-[#9aa3b2]">
+            {journey.length} atos · linha pelo TRS · passa o rato num rank
+          </p>
         </div>
-        <p className="text-xs text-[#9aa3b2]">{journey.length} atos · linha pelo TRS de cada ato</p>
+        <div className="flex flex-wrap gap-4 text-right">
+          <div>
+            <p className="text-[10px] tracking-[0.18em] text-[#9aa3b2] uppercase">Início</p>
+            <p className="stat-num text-lg">{first.act.rank}</p>
+          </div>
+          <div>
+            <p className="text-[10px] tracking-[0.18em] text-[#9aa3b2] uppercase">Agora</p>
+            <p className="stat-num text-lg text-[#ff4655]">{last.act.rank}</p>
+          </div>
+          <div>
+            <p className="text-[10px] tracking-[0.18em] text-[#9aa3b2] uppercase">Pico TRS</p>
+            <p className="stat-num text-lg gold-stat">{peakPoint.act.score}</p>
+          </div>
+        </div>
       </div>
-      <div className="overflow-x-auto">
-        <svg viewBox={`0 0 ${w} ${h}`} className="h-40 w-full min-w-[520px]" role="img" aria-label="Caminho de Tracker Score por ato">
+
+      <div className="relative z-[1] overflow-x-auto px-2 pb-2 pt-3 md:px-4">
+        <svg
+          viewBox={`0 0 ${w} ${h}`}
+          className="h-[220px] w-full min-w-[720px] md:h-[280px]"
+          role="img"
+          aria-label="Caminho de Tracker Score por ato"
+        >
           <defs>
             <linearGradient id="ascentStroke" x1="0" x2="1" y1="0" y2="0">
               <stop offset="0%" stopColor="#ff8a7a" />
-              <stop offset="100%" stopColor="#ff4655" />
+              <stop offset="55%" stopColor="#ff4655" />
+              <stop offset="100%" stopColor="#f5d76e" />
             </linearGradient>
+            <linearGradient id="ascentFill" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stopColor="rgba(255,70,85,0.35)" />
+              <stop offset="100%" stopColor="rgba(255,70,85,0)" />
+            </linearGradient>
+            <filter id="ascentBloom" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3.5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
           </defs>
-          <path d={d} fill="none" stroke="url(#ascentStroke)" strokeWidth="2.5" className="ascent-line" />
-          {points.map((p) => (
-            <a key={p.act.id} href={actMatchesHref(p.act.id)}>
-              <title>{`${p.act.short} · ${p.act.rank} · TRS ${p.act.score}`}</title>
-              <circle cx={p.x} cy={p.y} r={p.act.current ? 6 : 4} className={p.act.current ? "fill-[#ff4655]" : "fill-[#ece8e1]"} />
-              <image href={p.act.rankIcon} x={p.x - 10} y={p.y - 28} width="20" height="20" />
-            </a>
-          ))}
+
+          {Array.from({ length: 5 }).map((_, i) => {
+            const y = padY + ((h - padY * 2) * i) / 4;
+            return (
+              <line
+                key={i}
+                x1={padX}
+                x2={w - padX}
+                y1={y}
+                y2={y}
+                stroke="rgba(255,255,255,0.05)"
+                strokeDasharray="4 8"
+              />
+            );
+          })}
+
+          <path d={areaD} fill="url(#ascentFill)" className="ascent-area" />
+          <path
+            d={lineD}
+            fill="none"
+            stroke="url(#ascentStroke)"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            filter="url(#ascentBloom)"
+            className="ascent-line"
+          />
+
+          {points.map((p) => {
+            const on = p.i === focus.i;
+            return (
+              <g key={p.act.id} className={`ascent-node ${on ? "is-on" : ""}`}>
+                <a
+                  href={actMatchesHref(p.act.id)}
+                  onMouseEnter={() => setActive(p.i)}
+                  onFocus={() => setActive(p.i)}
+                >
+                  <title>{`${p.act.short} · ${p.act.rank} · TRS ${p.act.score}`}</title>
+                  <circle cx={p.x} cy={p.y} r={on ? 18 : 14} className="ascent-hit" fill="transparent" />
+                  {on ? (
+                    <circle cx={p.x} cy={p.y} r="10" className="ascent-ring" fill="none" stroke="#ff4655" strokeWidth="1.5" />
+                  ) : null}
+                  <circle
+                    cx={p.x}
+                    cy={p.y}
+                    r={on || p.act.current ? 5.5 : 3.5}
+                    fill={on || p.act.current ? "#ff4655" : "#ece8e1"}
+                    className={p.act.current ? "ascent-pulse" : undefined}
+                  />
+                  <image
+                    href={p.act.rankIcon}
+                    x={p.x - (on ? 16 : 12)}
+                    y={p.y - (on ? 44 : 34)}
+                    width={on ? 32 : 24}
+                    height={on ? 32 : 24}
+                    className={on || p.act.current ? "rank-glow" : "opacity-85"}
+                  />
+                </a>
+              </g>
+            );
+          })}
+
+          <text x={first.x} y={h - 8} textAnchor="middle" className="ascent-label fill-[#9aa3b2]" fontSize="11">
+            {first.act.short}
+          </text>
+          <text x={last.x} y={h - 8} textAnchor="middle" className="ascent-label fill-[#ff4655]" fontSize="11">
+            {last.act.short}
+          </text>
         </svg>
       </div>
+
+      <a
+        href={actMatchesHref(focus.act.id)}
+        className="ascent-panel relative z-[1] mx-4 mb-4 grid gap-3 border border-white/10 bg-black/35 p-4 no-underline transition hover:border-[#ff4655]/50 sm:grid-cols-[auto_1fr_auto]"
+      >
+        <img src={focus.act.rankIcon} alt="" className="rank-glow h-16 w-16 object-contain" />
+        <div className="min-w-0">
+          <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">
+            {focus.act.current ? "Acto atual" : focus.act.episode} · {focus.act.act}
+          </p>
+          <p className="stat-num mt-1 text-3xl text-[#ece8e1]">
+            {focus.act.short} <span className="text-[#ff4655]">· {focus.act.rank}</span>
+          </p>
+          <p className="mt-1 text-xs text-[#9aa3b2]">
+            {focus.act.wins}W – {focus.act.losses}L · {focus.act.matches} partidas · {focus.act.playtime}
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-2 sm:min-w-[200px]">
+          {[
+            ["TRS", String(focus.act.score)],
+            ["WR", `${focus.act.winRate}%`],
+            ["K/D", focus.act.kd],
+            ["HS%", focus.act.hs],
+          ].map(([label, value]) => (
+            <div key={label} className="border border-white/10 bg-black/25 px-2 py-1.5 text-center">
+              <p className="text-[9px] tracking-[0.16em] text-[#9aa3b2] uppercase">{label}</p>
+              <p className="stat-num text-lg text-[#ece8e1]">{value}</p>
+            </div>
+          ))}
+        </div>
+      </a>
     </div>
   );
 }
