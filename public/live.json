@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-10-01T16:44:06.854Z",
+  "fetchedAt": "2026-10-01T21:25:28.076Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6766,
+  "views": 6767,
   "level": 851,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/d30271ae-4ce1-5ed2-c55f-f08a6247c274/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -36,22 +36,16 @@
   "premier": {
     "name": "Krypto Gaming",
     "tag": "KRYP",
-    "league": "IBIT · Contender · #27",
-    "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
-    "members": [
-      "Minx#bubu",
-      "Rayquaza#nez",
-      "MXZ#VLR",
-      "Fazed#any",
-      "wxlf#1410"
-    ]
+    "league": "—",
+    "icon": "",
+    "members": []
   },
-  "playtime": "3 510h",
-  "matches": 6135,
-  "wins": 3046,
+  "playtime": "3 511h",
+  "matches": 6136,
+  "wins": 3047,
   "losses": 3002,
-  "winRate": 49.6,
-  "trackerScore": 476,
+  "winRate": 49.7,
+  "trackerScore": 0,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -70,13 +64,13 @@
     },
     {
       "label": "Win %",
-      "value": "49.6%",
-      "hint": "3046W 3002L"
+      "value": "49.7%",
+      "hint": "3047W 3002L"
     },
     {
       "label": "Wins",
-      "value": "3 046",
-      "hint": "6135 partidas"
+      "value": "3 047",
+      "hint": "6136 partidas"
     },
     {
       "label": "KAST",
@@ -97,15 +91,15 @@
   "extras": [
     {
       "label": "Kills",
-      "value": "99 578"
+      "value": "99 596"
     },
     {
       "label": "Deaths",
-      "value": "94 895"
+      "value": "94 906"
     },
     {
       "label": "Assists",
-      "value": "24 924"
+      "value": "24 929"
     },
     {
       "label": "KAD",
@@ -121,29 +115,29 @@
     },
     {
       "label": "Flawless",
-      "value": "4 757"
+      "value": "4 758"
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "0"
     },
     {
       "label": "Do Iron ao Immortal",
-      "value": "EP 5 → V25: A2"
+      "value": "—"
     }
   ],
   "accuracy": {
-    "head": 44.2,
-    "body": 54.3,
-    "legs": 1.4,
-    "headHits": 277,
-    "bodyHits": 340,
-    "legHits": 9
+    "head": 44.3,
+    "body": 54.5,
+    "legs": 1.3,
+    "headHits": 282,
+    "bodyHits": 347,
+    "legHits": 8
   },
   "last20": {
     "record": "11W – 9L (55%)",
-    "kd": 1,
-    "adr": 140
+    "kd": 1.1,
+    "adr": 144
   },
   "roles": [
     {
@@ -157,10 +151,10 @@
     {
       "name": "Initiator",
       "icon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
-      "winRate": 50.9,
-      "record": "718W – 692L",
+      "winRate": 51,
+      "record": "719W – 692L",
       "kda": 1.37,
-      "kdaLine": "22K / 22K / 7.42K"
+      "kdaLine": "22K / 22K / 7.43K"
     },
     {
       "name": "Sentinel",
@@ -184,7 +178,7 @@
       "name": "Vandal",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/9c82e19d-4575-0200-1a81-3eacf00cf872/shop/newimage.png",
-      "kills": 48801,
+      "kills": 48809,
       "head": 43,
       "body": 53,
       "legs": 3
@@ -193,7 +187,7 @@
       "name": "Phantom",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/ee8e8d15-496b-07ac-e5f6-8fae5d4c7b1a/shop/newimage.png",
-      "kills": 14023,
+      "kills": 14026,
       "head": 40,
       "body": 56,
       "legs": 4
@@ -202,7 +196,7 @@
       "name": "Sheriff",
       "type": "Sidearms",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/e336c6b8-418d-9340-d77f-7a9e4cfe0702/shop/newimage.png",
-      "kills": 9361,
+      "kills": 9362,
       "head": 54,
       "body": 45,
       "legs": 1
@@ -211,7 +205,7 @@
       "name": "Ghost",
       "type": "Sidearms",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/1baa85b4-4c70-1284-64bb-6481dfc3bb4e/shop/newimage.png",
-      "kills": 4097,
+      "kills": 4098,
       "head": 46,
       "body": 52,
       "legs": 2
@@ -229,7 +223,7 @@
       "name": "Guardian",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/4ade7faa-4cf1-8376-95ef-39884480959b/shop/newimage.png",
-      "kills": 3432,
+      "kills": 3433,
       "head": 51,
       "body": 48,
       "legs": 1
@@ -238,7 +232,7 @@
       "name": "Classic",
       "type": "Sidearms",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/29a0cfab-485b-f5d5-779a-b59f85e204a8/shop/newimage.png",
-      "kills": 3043,
+      "kills": 3045,
       "head": 40,
       "body": 58,
       "legs": 3
@@ -283,7 +277,7 @@
       "name": "Outlaw",
       "type": "Sniper Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/5f0aaf7a-4289-3998-d5ff-eb9a5cf7ef5c/shop/newimage.png",
-      "kills": 790,
+      "kills": 791,
       "head": 29,
       "body": 71,
       "legs": 1
@@ -391,9 +385,9 @@
       "name": "Warden",
       "type": "Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/8db0a1bf-4a50-832a-4566-faaaa6d250ca/shop/newimage.png",
-      "kills": 14,
-      "head": 57,
-      "body": 43,
+      "kills": 15,
+      "head": 58,
+      "body": 42,
       "legs": 0
     }
   ],
@@ -443,8 +437,8 @@
     {
       "name": "Sunset",
       "image": "https://media.valorant-api.com/maps/92584fbe-486a-b1b2-9faa-39b0f486b498/splash.png",
-      "winRate": 50.2,
-      "wins": 220,
+      "winRate": 50.3,
+      "wins": 221,
       "losses": 214
     },
     {
@@ -507,12 +501,12 @@
     {
       "name": "Sova",
       "icon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
-      "hours": "332h",
-      "matches": 591,
-      "winRate": 53.3,
+      "hours": "333h",
+      "matches": 592,
+      "winRate": 53.4,
       "kd": 1.05,
-      "adr": 139.9,
-      "acs": 207.9,
+      "adr": 140,
+      "acs": 208,
       "dd": 8,
       "bestMap": "Haven",
       "bestMapWr": "59% WR"
@@ -1367,12 +1361,38 @@
   ],
   "recent": [
     {
+      "id": "8fbef3e4-cfbf-4ee1-8e13-332c9f05aa3f",
+      "agent": "Sova",
+      "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
+      "map": "Sunset",
+      "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/sunset.jpg",
+      "when": "há 3h",
+      "timestamp": "2026-10-01T18:26:58.928+00:00",
+      "won": true,
+      "placement": "2nd",
+      "roundsWon": 13,
+      "roundsLost": 5,
+      "kills": 18,
+      "deaths": 11,
+      "assists": 5,
+      "kd": 1.6,
+      "acs": 259,
+      "hs": 40,
+      "dd": 47,
+      "trs": 900,
+      "badges": [
+        "High KAST",
+        "3k"
+      ],
+      "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
+    },
+    {
       "id": "4fd43132-a026-43f6-9431-dc0a0e5ec7f2",
       "agent": "Skye",
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
       "map": "Split",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/split.jpg",
-      "when": "há 18h",
+      "when": "há 23h",
       "timestamp": "2026-09-30T22:42:31.615+00:00",
       "won": false,
       "placement": "9th",
@@ -1395,7 +1415,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Haven",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-      "when": "há 19h",
+      "when": "há 23h",
       "timestamp": "2026-09-30T21:57:33.756+00:00",
       "won": true,
       "placement": "6th",
@@ -1838,29 +1858,6 @@
       "hs": 60,
       "dd": -29,
       "trs": 428,
-      "badges": [],
-      "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
-    },
-    {
-      "id": "977fbd57-d414-4f8a-9f3f-b46b4b82e5a4",
-      "agent": "Sova",
-      "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
-      "map": "Abyss",
-      "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/9.0/abyss.jpg",
-      "when": "há 6 dias",
-      "timestamp": "2026-09-26T00:29:48.875+00:00",
-      "won": true,
-      "placement": "9th",
-      "roundsWon": 13,
-      "roundsLost": 9,
-      "kills": 10,
-      "deaths": 14,
-      "assists": 4,
-      "kd": 0.7,
-      "acs": 121,
-      "hs": 38,
-      "dd": -29,
-      "trs": 514,
       "badges": [],
       "seasonId": "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
     }
