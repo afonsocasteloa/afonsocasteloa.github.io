@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-30T23:47:47.294Z",
+  "fetchedAt": "2026-10-01T02:34:51.078Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6762,
+  "views": 6764,
   "level": 851,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/d30271ae-4ce1-5ed2-c55f-f08a6247c274/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -36,22 +36,16 @@
   "premier": {
     "name": "Krypto Gaming",
     "tag": "KRYP",
-    "league": "IBIT · Contender · #27",
-    "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
-    "members": [
-      "wxlf#1410",
-      "Rayquaza#nez",
-      "Fazed#any",
-      "MXZ#VLR",
-      "Minx#bubu"
-    ]
+    "league": "—",
+    "icon": "",
+    "members": []
   },
   "playtime": "3 510h",
   "matches": 6135,
   "wins": 3046,
   "losses": 3002,
   "winRate": 49.6,
-  "trackerScore": 476,
+  "trackerScore": 0,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -125,25 +119,25 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "0"
     },
     {
       "label": "Do Iron ao Immortal",
-      "value": "EP 5 → V25: A2"
+      "value": "—"
     }
   ],
   "accuracy": {
-    "head": 44.2,
-    "body": 54.3,
-    "legs": 1.4,
-    "headHits": 277,
-    "bodyHits": 340,
-    "legHits": 9
+    "head": 0,
+    "body": 0,
+    "legs": 0,
+    "headHits": 0,
+    "bodyHits": 0,
+    "legHits": 0
   },
   "last20": {
-    "record": "11W – 9L (55%)",
-    "kd": 1,
-    "adr": 140
+    "record": "0W – 1L (0%)",
+    "kd": 0,
+    "adr": 0
   },
   "roles": [
     {
