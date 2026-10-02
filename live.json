@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-10-02T01:03:07.144Z",
+  "fetchedAt": "2026-10-02T06:57:19.822Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6770,
+  "views": 6771,
   "level": 851,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/d30271ae-4ce1-5ed2-c55f-f08a6247c274/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -45,7 +45,7 @@
   "wins": 3047,
   "losses": 3004,
   "winRate": 49.6,
-  "trackerScore": 694,
+  "trackerScore": 0,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -119,11 +119,11 @@
     },
     {
       "label": "Atos jogados",
-      "value": "12"
+      "value": "0"
     },
     {
       "label": "Do Iron ao Immortal",
-      "value": "EP 5 → V25: A2"
+      "value": "—"
     }
   ],
   "accuracy": {
