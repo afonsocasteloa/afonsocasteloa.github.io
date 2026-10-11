@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-10-11T13:13:42.583Z",
+  "fetchedAt": "2026-10-11T18:11:26.659Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6870,
+  "views": 6871,
   "level": 858,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/dee6814e-42f5-50c2-9f5d-da88301ba56b/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -39,10 +39,10 @@
     "league": "IBIT · Contender · #25",
     "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
     "members": [
-      "Rayquaza#nez",
-      "Fazed#any",
       "MXZ#VLR",
       "wxlf#1410",
+      "Rayquaza#nez",
+      "Fazed#any",
       "Minx#bubu"
     ]
   },
@@ -51,7 +51,7 @@
   "wins": 3075,
   "losses": 3024,
   "winRate": 49.7,
-  "trackerScore": 523,
+  "trackerScore": 0,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -125,11 +125,11 @@
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "0"
     },
     {
       "label": "Do Iron ao Immortal",
-      "value": "EP 5 → V25: A2"
+      "value": "—"
     }
   ],
   "accuracy": {
@@ -1372,7 +1372,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1dbf2edd-4729-0984-3115-daa5eed44993/displayicon.png",
       "map": "Sunset",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/sunset.jpg",
-      "when": "há 1h",
+      "when": "há 6h",
       "timestamp": "2026-10-11T12:09:36.84+00:00",
       "won": false,
       "placement": "8th",
@@ -1395,7 +1395,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1dbf2edd-4729-0984-3115-daa5eed44993/displayicon.png",
       "map": "Sunset",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/sunset.jpg",
-      "when": "há 3h",
+      "when": "há 7h",
       "timestamp": "2026-10-11T10:43:28.21+00:00",
       "won": false,
       "placement": "MVP",
@@ -1420,7 +1420,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/1dbf2edd-4729-0984-3115-daa5eed44993/displayicon.png",
       "map": "Summit",
       "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-      "when": "há 14h",
+      "when": "há 19h",
       "timestamp": "2026-10-10T23:08:24.752+00:00",
       "won": false,
       "placement": "2nd",
@@ -1445,7 +1445,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Haven",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/haven.jpg",
-      "when": "há 15h",
+      "when": "há 20h",
       "timestamp": "2026-10-10T22:28:15.377+00:00",
       "won": true,
       "placement": "3rd",
@@ -1470,7 +1470,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Ascent",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg",
-      "when": "há 15h",
+      "when": "há 20h",
       "timestamp": "2026-10-10T21:52:16.32+00:00",
       "won": true,
       "placement": "7th",
@@ -1496,7 +1496,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Summit",
       "mapImage": "https://titles.trackercdn.com/valorant-api/maps/756da597-416b-c0f2-f47b-afbdf28670bc/splash.png",
-      "when": "há 16h",
+      "when": "há 21h",
       "timestamp": "2026-10-10T21:22:09.051+00:00",
       "won": true,
       "placement": "2nd",
@@ -1522,7 +1522,7 @@
       "agentIcon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
       "map": "Ascent",
       "mapImage": "https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg",
-      "when": "há 17h",
+      "when": "há 22h",
       "timestamp": "2026-10-10T20:19:31.355+00:00",
       "won": false,
       "placement": "8th",
