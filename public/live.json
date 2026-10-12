@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-10-11T22:00:54.230Z",
+  "fetchedAt": "2026-10-12T01:03:17.774Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6875,
+  "views": 6878,
   "level": 858,
   "avatar": "https://titles.trackercdn.com/valorant-api/playercards/dee6814e-42f5-50c2-9f5d-da88301ba56b/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
@@ -36,22 +36,16 @@
   "premier": {
     "name": "Krypto Gaming",
     "tag": "KRYP",
-    "league": "IBIT · Contender · #25",
-    "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
-    "members": [
-      "Rayquaza#nez",
-      "Fazed#any",
-      "MXZ#VLR",
-      "wxlf#1410",
-      "Minx#bubu"
-    ]
+    "league": "—",
+    "icon": "",
+    "members": []
   },
-  "playtime": "3 539h",
-  "matches": 6187,
-  "wins": 3075,
-  "losses": 3024,
+  "playtime": "3 540h",
+  "matches": 6189,
+  "wins": 3076,
+  "losses": 3025,
   "winRate": 49.7,
-  "trackerScore": 523,
+  "trackerScore": 0,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -71,12 +65,12 @@
     {
       "label": "Win %",
       "value": "49.7%",
-      "hint": "3075W 3024L"
+      "hint": "3076W 3025L"
     },
     {
       "label": "Wins",
-      "value": "3 075",
-      "hint": "6187 partidas"
+      "value": "3 076",
+      "hint": "6189 partidas"
     },
     {
       "label": "KAST",
@@ -97,15 +91,15 @@
   "extras": [
     {
       "label": "Kills",
-      "value": "100 450"
+      "value": "100 482"
     },
     {
       "label": "Deaths",
-      "value": "95 670"
+      "value": "95 703"
     },
     {
       "label": "Assists",
-      "value": "25 152"
+      "value": "25 175"
     },
     {
       "label": "KAD",
@@ -121,29 +115,29 @@
     },
     {
       "label": "Flawless",
-      "value": "4 806"
+      "value": "4 810"
     },
     {
       "label": "Atos jogados",
-      "value": "26"
+      "value": "0"
     },
     {
       "label": "Do Iron ao Immortal",
-      "value": "EP 5 → V25: A2"
+      "value": "—"
     }
   ],
   "accuracy": {
-    "head": 37.6,
-    "body": 60,
-    "legs": 2.4,
-    "headHits": 276,
-    "bodyHits": 441,
-    "legHits": 18
+    "head": 0,
+    "body": 0,
+    "legs": 0,
+    "headHits": 0,
+    "bodyHits": 0,
+    "legHits": 0
   },
   "last20": {
-    "record": "10W – 10L (50%)",
-    "kd": 1.1,
-    "adr": 154
+    "record": "0W – 1L (0%)",
+    "kd": 0,
+    "adr": 0
   },
   "roles": [
     {
@@ -158,9 +152,9 @@
       "name": "Initiator",
       "icon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
       "winRate": 51,
-      "record": "737W – 707L",
+      "record": "738W – 708L",
       "kda": 1.37,
-      "kdaLine": "23K / 22K / 7.58K"
+      "kdaLine": "23K / 22K / 7.6K"
     },
     {
       "name": "Sentinel",
@@ -184,7 +178,7 @@
       "name": "Vandal",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/9c82e19d-4575-0200-1a81-3eacf00cf872/shop/newimage.png",
-      "kills": 49235,
+      "kills": 49245,
       "head": 44,
       "body": 53,
       "legs": 3
@@ -193,7 +187,7 @@
       "name": "Phantom",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/ee8e8d15-496b-07ac-e5f6-8fae5d4c7b1a/shop/newimage.png",
-      "kills": 14140,
+      "kills": 14154,
       "head": 40,
       "body": 56,
       "legs": 4
@@ -202,7 +196,7 @@
       "name": "Sheriff",
       "type": "Sidearms",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/e336c6b8-418d-9340-d77f-7a9e4cfe0702/shop/newimage.png",
-      "kills": 9458,
+      "kills": 9460,
       "head": 54,
       "body": 45,
       "legs": 1
@@ -211,7 +205,7 @@
       "name": "Ghost",
       "type": "Sidearms",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/1baa85b4-4c70-1284-64bb-6481dfc3bb4e/shop/newimage.png",
-      "kills": 4114,
+      "kills": 4115,
       "head": 46,
       "body": 52,
       "legs": 2
@@ -229,7 +223,7 @@
       "name": "Guardian",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/4ade7faa-4cf1-8376-95ef-39884480959b/shop/newimage.png",
-      "kills": 3506,
+      "kills": 3511,
       "head": 51,
       "body": 48,
       "legs": 1
@@ -465,8 +459,8 @@
       "name": "Split",
       "image": "https://media.valorant-api.com/maps/d960549e-485c-e861-8d71-aa9d1aed12a2/splash.png",
       "winRate": 48.1,
-      "wins": 322,
-      "losses": 341
+      "wins": 323,
+      "losses": 342
     },
     {
       "name": "Breeze",
@@ -637,9 +631,9 @@
     {
       "name": "Skye",
       "icon": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
-      "hours": "112h",
-      "matches": 188,
-      "winRate": 47.3,
+      "hours": "113h",
+      "matches": 190,
+      "winRate": 47.4,
       "kd": 1.01,
       "adr": 130.2,
       "acs": 200.7,
