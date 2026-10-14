@@ -1,13 +1,13 @@
 {
-  "fetchedAt": "2026-10-14T17:35:37.805Z",
+  "fetchedAt": "2026-10-14T21:01:39.244Z",
   "name": "Fazed",
   "tag": "any",
   "country": "PT",
-  "views": 6896,
+  "views": 6899,
   "level": 859,
-  "avatar": "https://titles.trackercdn.com/valorant-api/playercards/c7e58b09-4b1f-ca2a-5ab6-daa6cab2fa6c/displayicon.png",
+  "avatar": "https://titles.trackercdn.com/valorant-api/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/displayicon.png",
   "banner": "https://trackercdn.com/cdn/tracker.gg/valorant/images/heroes/hero-jett.jpg",
-  "cardWide": "https://media.valorant-api.com/playercards/c7e58b09-4b1f-ca2a-5ab6-daa6cab2fa6c/wideart.png",
+  "cardWide": "https://media.valorant-api.com/playercards/7fb96942-4e17-f92d-7bdb-f6ab40170df0/wideart.png",
   "badges": [
     {
       "name": "One Trick Pony",
@@ -23,9 +23,9 @@
     }
   ],
   "current": {
-    "name": "Ascendant 2",
+    "name": "Immortal 1",
     "rr": null,
-    "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/22.png"
+    "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/24.png"
   },
   "peak": {
     "name": "Immortal 3",
@@ -36,22 +36,16 @@
   "premier": {
     "name": "Krypto Gaming",
     "tag": "KRYP",
-    "league": "IBIT · Contender · #25",
-    "icon": "https://trackercdn.com/cdn/tracker.gg/valorant/premier/team-icons/99d009eb-4075-71c8-6785-b8b4af9aed69.png",
-    "members": [
-      "Fazed#any",
-      "MXZ#VLR",
-      "wxlf#1410",
-      "Rayquaza#nez",
-      "Minx#bubu"
-    ]
+    "league": "—",
+    "icon": "",
+    "members": []
   },
-  "playtime": "3 542h",
-  "matches": 6193,
-  "wins": 3077,
+  "playtime": "3 544h",
+  "matches": 6195,
+  "wins": 3078,
   "losses": 3028,
   "winRate": 49.7,
-  "trackerScore": 398,
+  "trackerScore": 0,
   "overview": [
     {
       "label": "Damage / Ronda",
@@ -71,12 +65,12 @@
     {
       "label": "Win %",
       "value": "49.7%",
-      "hint": "3077W 3028L"
+      "hint": "3078W 3028L"
     },
     {
       "label": "Wins",
-      "value": "3 077",
-      "hint": "6193 partidas"
+      "value": "3 078",
+      "hint": "6195 partidas"
     },
     {
       "label": "KAST",
@@ -97,15 +91,15 @@
   "extras": [
     {
       "label": "Kills",
-      "value": "100 540"
+      "value": "100 577"
     },
     {
       "label": "Deaths",
-      "value": "95 765"
+      "value": "95 804"
     },
     {
       "label": "Assists",
-      "value": "25 193"
+      "value": "25 203"
     },
     {
       "label": "KAD",
@@ -121,15 +115,15 @@
     },
     {
       "label": "Flawless",
-      "value": "4 813"
+      "value": "4 816"
     },
     {
       "label": "Atos jogados",
-      "value": "12"
+      "value": "0"
     },
     {
       "label": "Do Iron ao Immortal",
-      "value": "EP 5 → V25: A2"
+      "value": "—"
     }
   ],
   "accuracy": {
@@ -158,9 +152,9 @@
       "name": "Initiator",
       "icon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
       "winRate": 51,
-      "record": "739W – 710L",
+      "record": "740W – 710L",
       "kda": 1.37,
-      "kdaLine": "23K / 22K / 7.61K"
+      "kdaLine": "23K / 22K / 7.62K"
     },
     {
       "name": "Sentinel",
@@ -184,7 +178,7 @@
       "name": "Vandal",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/9c82e19d-4575-0200-1a81-3eacf00cf872/shop/newimage.png",
-      "kills": 49274,
+      "kills": 49277,
       "head": 44,
       "body": 53,
       "legs": 3
@@ -193,7 +187,7 @@
       "name": "Phantom",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/ee8e8d15-496b-07ac-e5f6-8fae5d4c7b1a/shop/newimage.png",
-      "kills": 14162,
+      "kills": 14190,
       "head": 40,
       "body": 56,
       "legs": 4
@@ -229,7 +223,7 @@
       "name": "Guardian",
       "type": "Assault Rifles",
       "icon": "https://titles.trackercdn.com/valorant-api/weapons/4ade7faa-4cf1-8376-95ef-39884480959b/shop/newimage.png",
-      "kills": 3518,
+      "kills": 3523,
       "head": 51,
       "body": 48,
       "legs": 1
@@ -423,7 +417,7 @@
       "name": "Haven",
       "image": "https://media.valorant-api.com/maps/2bee0dc9-4ffe-519b-1cbd-7fbe763a6047/splash.png",
       "winRate": 52.2,
-      "wins": 420,
+      "wins": 421,
       "losses": 378
     },
     {
@@ -443,7 +437,7 @@
     {
       "name": "Sunset",
       "image": "https://media.valorant-api.com/maps/92584fbe-486a-b1b2-9faa-39b0f486b498/splash.png",
-      "winRate": 50.6,
+      "winRate": 50.4,
       "wins": 226,
       "losses": 217
     },
@@ -507,8 +501,8 @@
     {
       "name": "Sova",
       "icon": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
-      "hours": "349h",
-      "matches": 621,
+      "hours": "350h",
+      "matches": 623,
       "winRate": 53.1,
       "kd": 1.05,
       "adr": 139.9,
