@@ -1,5 +1,6 @@
 import { SitePage } from "@/components/site-page";
 import { CAREER_ACTS } from "@/lib/acts";
+import { RIOT_ID } from "@/lib/config";
 import { getTrackerSnapshot } from "@/lib/tracker";
 
 export const dynamicParams = false;
@@ -17,8 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ actId: st
   return {
     title: act ? `${act.short} · partidas` : "Ato",
     description: act
-      ? `Partidas competitivas de Fazed#any em ${act.short} — ${act.episode} ${act.act}.`
-      : "Partidas competitivas de Fazed#any.",
+      ? `Partidas competitivas de ${RIOT_ID} em ${act.short} — ${act.episode} ${act.act}.`
+      : `Partidas competitivas de ${RIOT_ID}.`,
   };
 }
 

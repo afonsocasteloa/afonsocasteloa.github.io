@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { LIVE_URLS, PLAYER, REFRESH_MS, SOCIALS, type SocialLink } from "@/lib/config";
+import { LIVE_URLS, PLAYER, REFRESH_MS, RIOT_ID, SOCIALS, type SocialLink } from "@/lib/config";
 import { grouped, hintTone, isSnapshot, rankWithRr, relativePt, signed, tabHref, wrClass } from "@/lib/format";
 import { buildIdentity } from "@/lib/identity";
 import {
@@ -38,9 +39,13 @@ const TABS: { id: TabId; label: string }[] = [
 function useNow(ms = 30_000) {
   const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
-    setNow(Date.now());
-    const id = window.setInterval(() => setNow(Date.now()), ms);
-    return () => window.clearInterval(id);
+    const update = () => setNow(Date.now());
+    const initial = window.setTimeout(update, 0);
+    const interval = window.setInterval(update, ms);
+    return () => {
+      window.clearTimeout(initial);
+      window.clearInterval(interval);
+    };
   }, [ms]);
   return now;
 }
@@ -592,9 +597,9 @@ function ActsBody({ data, compact = false }: { data: TrackerSnapshot; compact?: 
               </p>
             </div>
           </div>
-          <a href="/atos/" className="text-xs text-[#ff4655] underline">
+          <Link href="/atos/" className="text-xs text-[#ff4655] underline">
             Ver todos os atos
-          </a>
+          </Link>
         </div>
         <RankJourney acts={data.acts} />
         <div className="grid gap-3 md:grid-cols-2">
@@ -820,9 +825,9 @@ function MatchesBody({
         ) : (
           <div className="flex flex-wrap items-center gap-2">
             {act ? (
-              <a href="/atos/" className="text-xs text-[#ff4655] underline">
+              <Link href="/atos/" className="text-xs text-[#ff4655] underline">
                 Todos os atos
-              </a>
+              </Link>
             ) : null}
             {agente || mapa ? (
               <a href="/partidas/" className="text-xs text-[#ff4655] underline">
@@ -1049,7 +1054,7 @@ function WeaponsBody({ data, preview }: { data: TrackerSnapshot; preview?: boole
 
 export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot; tab: TabId; actId?: string }) {
   const [data, setData] = useState(initial);
-  const [live, setLive] = useState(true);
+  const [feedReachable, setFeedReachable] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const now = useNow();
   const query = useQueryFilters();
@@ -1082,11 +1087,13 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
         .map((row) => row.value)
         .sort((a, b) => Date.parse(b.fetchedAt) - Date.parse(a.fetchedAt));
       if (!snapshots.length) throw new Error("live");
-      setData(snapshots[0]);
-      setLive(true);
+      if (signal?.aborted) return;
+      const latest = snapshots[0];
+      setData((current) => (Date.parse(latest.fetchedAt) >= Date.parse(current.fetchedAt) ? latest : current));
+      setFeedReachable(true);
     } catch (error) {
       if (signal?.aborted || (error instanceof DOMException && error.name === "AbortError")) return;
-      setLive(false);
+      setFeedReachable(false);
     } finally {
       if (!signal?.aborted) setRefreshing(false);
     }
@@ -1094,24 +1101,27 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
 
   useEffect(() => {
     const ctrl = new AbortController();
-    void pull(ctrl.signal);
-    const id = window.setInterval(() => void pull(), REFRESH_MS);
+    const refresh = () => void pull(ctrl.signal);
+    const initial = window.setTimeout(refresh, 0);
+    const id = window.setInterval(refresh, REFRESH_MS);
     const onVis = () => {
-      if (document.visibilityState === "visible") void pull();
+      if (document.visibilityState === "visible") refresh();
     };
-    const onFocus = () => void pull();
     document.addEventListener("visibilitychange", onVis);
-    window.addEventListener("focus", onFocus);
-    window.addEventListener("online", onFocus);
+    window.addEventListener("focus", refresh);
+    window.addEventListener("online", refresh);
     return () => {
       ctrl.abort();
+      window.clearTimeout(initial);
       window.clearInterval(id);
       document.removeEventListener("visibilitychange", onVis);
-      window.removeEventListener("focus", onFocus);
-      window.removeEventListener("online", onFocus);
+      window.removeEventListener("focus", refresh);
+      window.removeEventListener("online", refresh);
     };
   }, [pull]);
 
+  const snapshotAge = now === null ? Infinity : now - Date.parse(data.fetchedAt);
+  const live = feedReachable && snapshotAge >= 0 && snapshotAge < 2 * 60 * 60 * 1000;
   const liveTone = live ? "bg-[#1be285]" : "bg-[#ff8a7a]";
   const rrPct =
     typeof data.current.rr === "number" ? Math.max(0, Math.min(100, data.current.rr)) : null;
@@ -1125,20 +1135,20 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
       <div className="scanline" />
 
       <header className="relative z-20 mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-5">
-        <a href="/" className="stat-num text-sm tracking-[0.5em] text-[#ff4655]">
+        <Link href="/" className="stat-num text-sm tracking-[0.5em] text-[#ff4655]">
           FAZED
-        </a>
+        </Link>
         <div className="flex flex-wrap items-center justify-end gap-3 text-xs text-[#9aa3b2]">
           <OpsTicker match={lastMatch} now={now} />
           <CommandDock
-            riotId={`${data.name}#${data.tag}`}
+            riotId={RIOT_ID}
             onCopy={() => {
-              void copyText(`${data.name}#${data.tag}`);
+              void copyText(RIOT_ID);
             }}
           />
           <span className={`h-2 w-2 rounded-full ${liveTone} ${live ? "live-dot" : ""}`} />
           <span>
-            {live ? "Ao vivo" : "Snapshot"}
+            {live ? "Atualizado" : "Dados em arquivo"}
             {updated ? ` · atualizado ${updated}` : ""}
             {refreshing ? " · a ler…" : ""}
           </span>
@@ -1173,7 +1183,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
               >
                 {PLAYER.displayName}
               </h1>
-              <RiotId name={data.name} tag={data.tag} />
+              <RiotId name={PLAYER.riotName} tag={PLAYER.riotTag} />
               <p className="mt-5 max-w-xl text-base leading-7 text-[#c7ced8] md:text-[1.08rem]">{PLAYER.about}</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
@@ -1233,7 +1243,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
               <p className="text-xs text-[#f5d76e]">{currentAct.short} HS%</p>
             </a>
           ) : null}
-          <a href="/atos/" className="tap stat-slab">
+          <Link href="/atos/" className="tap stat-slab">
             <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Carreira</p>
             <p className="stat-num mt-1 text-4xl">
               <CountUp value={Math.round(data.winRate)} />%
@@ -1241,7 +1251,7 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
             <p className="text-xs text-[#9aa3b2]">
               {grouped(data.wins)}W {grouped(data.losses)}L · {data.playtime}
             </p>
-          </a>
+          </Link>
           <a href={currentAct ? actMatchesHref(currentAct.id) : "/partidas/"} className="tap stat-slab">
             <p className="text-[10px] tracking-[0.22em] text-[#9aa3b2] uppercase">Tracker Score</p>
             <p className="stat-num mt-1 text-4xl text-[#ff4655]">
@@ -1316,12 +1326,12 @@ export function FazedSite({ data: initial, tab, actId }: { data: TrackerSnapshot
           <SocialsBar />
         </div>
         Site pessoal do Afonso —{" "}
-        <Copyable text={`${data.name}#${data.tag}`} className="inline text-[#ece8e1] underline decoration-white/20 hover:decoration-[#ff4655]">
-          {(copied) => (copied ? "Copiado" : `${data.name}#${data.tag}`)}
+        <Copyable text={RIOT_ID} className="inline text-[#ece8e1] underline decoration-white/20 hover:decoration-[#ff4655]">
+          {(copied) => (copied ? "Copiado" : RIOT_ID)}
         </Copyable>
         . Dados do perfil público{" "}
         <a className="text-[#ece8e1] underline" href={PLAYER.trackerOverview} target="_blank" rel="noreferrer">
-          Fazed#any no Tracker.gg
+          {RIOT_ID} no Tracker.gg
         </a>
         . Competitive {PLAYER.seasonLabel} · {PLAYER.seasonRange}. O site atualiza sozinho a partir do Tracker.
         {" "}

@@ -1,4 +1,4 @@
-import { PLAYER, SOCIALS } from "@/lib/config";
+import { PLAYER, RIOT_ID, SOCIALS } from "@/lib/config";
 import { grouped, rankWithRr } from "@/lib/format";
 import type { ActRow, AgentRow, MapRow, MatchCard, TrackerSnapshot, WeaponRow } from "@/lib/types";
 
@@ -85,7 +85,7 @@ export function personJsonLd(data: TrackerSnapshot) {
 }
 
 export function buildIdentity(data: TrackerSnapshot): Identity {
-  const handle = `${data.name}#${data.tag}`;
+  const handle = RIOT_ID;
   const hours = hoursFrom(data.playtime);
   const days = hours ? Math.round(hours / 24) : 0;
   const origin = data.acts[data.acts.length - 1];

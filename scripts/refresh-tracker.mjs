@@ -1,13 +1,14 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import player from "../lib/player.json" with { type: "json" };
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const livePath = join(root, "public", "live.json");
-const PLAYER = "Fazed#any";
+const PLAYER = `${player.name}#${player.tag}`;
 const ENCODED = encodeURIComponent(PLAYER);
 const TRACKER =
-  "https://tracker.gg/valorant/profile/riot/Fazed%23any/overview?platform=pc&playlist=competitive";
+  `https://tracker.gg/valorant/profile/riot/${ENCODED}/overview?platform=pc&playlist=competitive`;
 const API = "https://api.tracker.gg/api/v2/valorant/standard";
 const MAP_IDS = {
   Ascent: "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319",
@@ -162,7 +163,7 @@ async function playwright() {
 
 async function launchSession(kind) {
   const pw = await playwright();
-  const args = ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage"];
+  const args = ["--disable-dev-shm-usage"];
   let browser;
   if (kind === "firefox") {
     browser = await pw.firefox.launch({ headless: true });
@@ -177,21 +178,22 @@ async function launchSession(kind) {
     });
   }
 
-  const firefox = kind === "firefox";
   const context = await browser.newContext({
-    userAgent: firefox
-      ? "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0"
-      : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     locale: "pt-PT",
     viewport: { width: 1444, height: 1800 },
     extraHTTPHeaders: { "Accept-Language": "pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7" },
   });
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, "webdriver", { get: () => undefined });
-  });
   const page = await context.newPage();
   page.setDefaultTimeout(120_000);
   return { browser, page };
+}
+
+class TrackerAccessError extends Error {}
+
+function checkTrackerAccess(status) {
+  if (status === 403 || status === 429) {
+    throw new TrackerAccessError(`Tracker returned HTTP ${status}. Refresh stopped; the last snapshot was kept.`);
+  }
 }
 
 async function grab(page, url, tries = 4) {
@@ -212,7 +214,7 @@ async function grab(page, url, tries = 4) {
           json = null;
         }
         last = { ok: res.ok, status: res.status, json };
-        if (json && res.status !== 403 && res.status !== 429) return last;
+        if (json || res.status === 403 || res.status === 429) return last;
       } catch {
         last = { ok: false, status: 0, json: null };
       }
@@ -221,7 +223,8 @@ async function grab(page, url, tries = 4) {
     return last;
   }, { url, tries });
 
-  if (fromPage?.json) return fromPage;
+  checkTrackerAccess(fromPage.status);
+  if (fromPage.json) return fromPage;
 
   try {
     const res = await page.request.get(url, {
@@ -231,15 +234,18 @@ async function grab(page, url, tries = 4) {
         referer: TRACKER,
       },
     });
+    checkTrackerAccess(res.status());
     const json = await res.json().catch(() => null);
     return { ok: res.ok(), status: res.status(), json };
-  } catch {
+  } catch (error) {
+    if (error instanceof TrackerAccessError) throw error;
     return fromPage || { ok: false, status: 0, json: null };
   }
 }
 
 async function warmUp(page) {
-  await page.goto(TRACKER, { waitUntil: "domcontentloaded", timeout: 120_000 });
+  const response = await page.goto(TRACKER, { waitUntil: "domcontentloaded", timeout: 120_000 });
+  checkTrackerAccess(response?.status());
   const probe = `${API}/profile/riot/${ENCODED}`;
   for (let i = 0; i < 18; i += 1) {
     const row = await grab(page, probe, 1);
@@ -317,6 +323,7 @@ async function scrape() {
       console.log(`A ler o Tracker com ${kind}...`);
       return await scrapeWith(kind);
     } catch (error) {
+      if (error instanceof TrackerAccessError) throw error;
       console.error(`${kind} falhou:`, error);
       errors.push(`${kind}: ${error?.message || error}`);
     }

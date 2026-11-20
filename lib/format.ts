@@ -50,6 +50,7 @@ export function isSnapshot(value: unknown): value is import("@/lib/types").Track
   if (!value || typeof value !== "object") return false;
   const row = value as Record<string, unknown>;
   if (typeof row.name !== "string" || !Array.isArray(row.acts) || !Array.isArray(row.recent)) return false;
+  if (typeof row.fetchedAt !== "string" || !Number.isFinite(Date.parse(row.fetchedAt))) return false;
   if (!row.matchesByAct || typeof row.matchesByAct !== "object") row.matchesByAct = {};
   return true;
 }

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Teko } from "next/font/google";
-import { PLAYER } from "@/lib/config";
+import { PLAYER, RIOT_ID } from "@/lib/config";
 import { getTrackerSnapshot } from "@/lib/tracker";
 import "./globals.css";
 
@@ -26,15 +26,16 @@ export const viewport: Viewport = {
 export function generateMetadata(): Metadata {
   const data = getTrackerSnapshot();
   const description = PLAYER.about;
+  const title = `${PLAYER.displayName} · ${RIOT_ID}`;
   const image = data.cardWide || data.avatar;
   return {
     metadataBase: new URL("https://afonsocasteloa.github.io"),
     title: {
-      default: "Afonso · Fazed#any",
-      template: "%s · Fazed#any",
+      default: title,
+      template: `%s · ${RIOT_ID}`,
     },
     description,
-    keywords: ["Afonso", "Fazed", "Fazed#any", "Valorant", "Immortal", "Tracker", "Portugal", "Krypto Gaming"],
+    keywords: ["Afonso", "Fazed", RIOT_ID, "Valorant", "Immortal", "Tracker", "Portugal", "Krypto Gaming"],
     authors: [{ name: "Afonso" }],
     creator: "Afonso",
     robots: { index: true, follow: true },
@@ -42,16 +43,16 @@ export function generateMetadata(): Metadata {
     manifest: "/manifest.webmanifest",
     alternates: { canonical: "/" },
     openGraph: {
-      title: "Afonso · Fazed#any",
+      title,
       description,
       locale: "pt_PT",
       type: "profile",
       url: "https://afonsocasteloa.github.io/",
-      images: image ? [{ url: image, alt: "Afonso · Fazed#any" }] : undefined,
+      images: image ? [{ url: image, alt: title }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
-      title: "Afonso · Fazed#any",
+      title,
       description,
       images: image ? [image] : undefined,
     },

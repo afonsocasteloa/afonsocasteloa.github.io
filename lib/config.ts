@@ -1,29 +1,36 @@
+import player from "./player.json";
+
+export const RIOT_ID = `${player.name}#${player.tag}`;
+const trackerProfile = `https://tracker.gg/valorant/profile/riot/${encodeURIComponent(RIOT_ID)}`;
+const competitive = "platform=pc&playlist=competitive";
+const seasonId = "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b";
+
 export const PLAYER = {
   displayName: "Afonso",
-  riotName: "Fazed",
-  riotTag: "any",
+  riotName: player.name,
+  riotTag: player.tag,
   age: 19,
   about:
     "Tenho 19 anos e o meu sonho é um dia ser jogador profissional de Valorant. Jogo ranked em PC, aqui em Portugal, e neste momento estou a focar-me no Iniciador — o papel em que quero evoluir.",
   platform: "pc",
-  seasonId: "8102cd81-43a0-d0d7-bd59-47b8fe9bed1b",
+  seasonId,
   seasonLabel: "Todos os atos",
   seasonShort: "Carreira",
   seasonRange: "EP 5 → V26 ACT V",
   trackerMatches:
-    "https://tracker.gg/valorant/profile/riot/Fazed%23any/matches?platform=pc&playlist=competitive",
+    `${trackerProfile}/matches?${competitive}`,
   trackerOverview:
-    "https://tracker.gg/valorant/profile/riot/Fazed%23any/overview?platform=pc&playlist=competitive",
+    `${trackerProfile}/overview?${competitive}`,
   trackerCurrent:
-    "https://tracker.gg/valorant/profile/riot/Fazed%23any/overview?platform=pc&playlist=competitive&season=8102cd81-43a0-d0d7-bd59-47b8fe9bed1b",
+    `${trackerProfile}/overview?${competitive}&season=${seasonId}`,
   trackerAgents:
-    "https://tracker.gg/valorant/profile/riot/Fazed%23any/agents?platform=pc&playlist=competitive",
+    `${trackerProfile}/agents?${competitive}`,
   trackerMaps:
-    "https://tracker.gg/valorant/profile/riot/Fazed%23any/maps?platform=pc&playlist=competitive",
+    `${trackerProfile}/maps?${competitive}`,
   trackerWeapons:
-    "https://tracker.gg/valorant/profile/riot/Fazed%23any/weapons?platform=pc&playlist=competitive",
+    `${trackerProfile}/weapons?${competitive}`,
   trackerPerformance:
-    "https://tracker.gg/valorant/profile/riot/Fazed%23any/performance?platform=pc&playlist=competitive",
+    `${trackerProfile}/performance?${competitive}`,
 } as const;
 
 export type SocialLink = {

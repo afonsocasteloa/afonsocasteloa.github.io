@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { PLAYER } from "@/lib/config";
 import { relativePt, wrClass } from "@/lib/format";
 import { actMatchesHref, agentMatchesHref, trackerMatchHref } from "@/lib/hrefs";
-import type { ActRow, AgentRow, MatchCard, TrackerSnapshot } from "@/lib/types";
+import type { ActRow, AgentRow, MatchCard } from "@/lib/types";
 
 export function usePointerParallax(strength = 18) {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -40,8 +40,8 @@ export function CountUp({ value, className }: { value: number; className?: strin
     const el = ref.current;
     if (!el) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setN(value);
-      return;
+      const frame = requestAnimationFrame(() => setN(value));
+      return () => cancelAnimationFrame(frame);
     }
     let frame = 0;
     let start: number | null = null;
@@ -110,22 +110,23 @@ export function CommandDock({
       if (tag === "INPUT" || tag === "TEXTAREA") return;
       if ((event.key === "k" || event.key === "K") && (event.metaKey || event.ctrlKey)) {
         event.preventDefault();
+        if (!open) setQ("");
         setOpen(true);
         return;
       }
       if (event.key === "/" && !event.metaKey && !event.ctrlKey) {
         event.preventDefault();
+        if (!open) setQ("");
         setOpen(true);
       }
       if (event.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [open]);
 
   useEffect(() => {
     if (!open) return;
-    setQ("");
     const id = window.setTimeout(() => inputRef.current?.focus(), 30);
     return () => window.clearTimeout(id);
   }, [open]);
@@ -134,7 +135,10 @@ export function CommandDock({
     return (
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setQ("");
+          setOpen(true);
+        }}
         className="hidden items-center gap-2 border border-white/10 bg-black/30 px-3 py-1.5 text-[11px] tracking-[0.16em] text-[#9aa3b2] uppercase hover:border-[#ff4655] md:inline-flex"
         title="Abrir comando (Ctrl+K ou /)"
       >
