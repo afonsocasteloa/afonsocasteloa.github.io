@@ -2,14 +2,14 @@ name: Atualizar Tracker
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
   push:
     branches: [source]
 
 concurrency:
   group: tracker-site
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -29,59 +29,60 @@ jobs:
           cache: npm
 
       - uses: actions/cache@v4
+        if: github.event_name != 'push'
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - run: npm ci
-      - run: npx playwright install --with-deps chrome firefox chromium
+      - if: github.event_name != 'push'
+        run: npx playwright install --with-deps chrome firefox chromium
 
       - name: Ler o Tracker
+        if: github.event_name != 'push'
         id: scrape
+        continue-on-error: true
         timeout-minutes: 20
         env:
           CI: true
           PLAYWRIGHT_CHROMIUM_USE_HEADLESS_SHELL: "0"
-        run: |
-          set -e
-          n=0
-          until [ "$n" -ge 3 ]; do
-            if node scripts/refresh-tracker.mjs; then
-              exit 0
-            fi
-            n=$((n + 1))
-            echo "Falhou a leitura $n, nova tentativa..."
-            sleep 20
-          done
-          exit 1
+        run: npm run refresh
 
       - name: Guardar live.json
-        if: success()
+        if: steps.scrape.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/live.json
-          git diff --staged --quiet || git commit -m "Atualizar live.json a partir do Tracker. [skip ci]"
+          git diff --staged --quiet || git commit -m "Refresh Tracker snapshot. [skip ci]"
           git push origin HEAD:source
 
       - name: Construir o site
-        if: success()
+        id: build
+        if: github.event_name != 'schedule' || steps.scrape.outcome == 'success'
         run: npm run build
 
       - name: Publicar GitHub Pages
-        if: success()
+        if: steps.build.outcome == 'success'
         uses: actions/checkout@v4
         with:
           ref: main
           path: gh-pages-main
 
       - name: Copiar site estático
-        if: success()
+        if: steps.build.outcome == 'success'
         run: |
+          touch out/.nojekyll
           rsync -a --delete --exclude '.git' --exclude '.github' out/ gh-pages-main/
           cd gh-pages-main
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --staged --quiet || git commit -m "Atualizar o site com os dados mais recentes do Tracker."
+          git diff --staged --quiet || git commit -m "Publish static site."
           git push
+
+      - name: Assinalar falha na recolha do Tracker
+        if: '!cancelled() && steps.scrape.outcome == ''failure'''
+        run: |
+          echo '::error::Tracker refresh failed. The last snapshot was kept.'
+          exit 1
